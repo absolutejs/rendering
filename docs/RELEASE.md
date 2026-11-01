@@ -21,3 +21,13 @@ The tarball named in archive.sha256 is the release input. Source and this exact
 archive must be pushed before npm publication. Game adoption uses the published
 version, not a local dependency patch. License follows the existing AbsoluteJS
 BSL convention. PAAS is untouched.
+
+Publication was accepted by npm on November 1, 2026 with exit code 0 and a
+processing notice. Registry metadata was still unavailable at 22:54 UTC; game
+adoption remains pending public verification. Do not infer availability from
+the publish exit code alone.
+
+The initial GitHub check stopped before installation because the BVM installer
+did not select a default runtime. CI now explicitly installs the qualified
+1.4.4+absolute.1 runtime, and .bun-version records that selection. This changes
+CI only; the previously qualified release archive remains unchanged.

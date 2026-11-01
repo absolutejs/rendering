@@ -19,6 +19,7 @@ jobs:
         run: |
           curl -fsSL https://raw.githubusercontent.com/absolutejs/bvm/1ed34a5dc634c9812ab9d5c8c17081868d4bd9a8/install.sh -o "$RUNNER_TEMP/install-bvm.sh"
           sh "$RUNNER_TEMP/install-bvm.sh"
+          "$HOME/.bvm/bin/bvm" install 1.4.4+absolute.1 --default
           echo "$HOME/.bvm/bin" >> "$GITHUB_PATH"
       - run: bun --version
       - run: bun install --frozen-lockfile --ignore-scripts
