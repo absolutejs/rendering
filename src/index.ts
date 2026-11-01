@@ -85,3 +85,9 @@ export function cloneRenderMaterial<T extends Material>(source: T): T {
   } else copy.onBeforeRender = source.onBeforeRender;
   return copy;
 }
+
+export {
+  renderTargetScope,
+  readTargetPixelsScoped,
+  readFloatTargetScoped,
+} from "./renderTargetScope.js";

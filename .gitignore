@@ -2,3 +2,5 @@ node_modules/
 dist/
 *.tgz
 docs/archive-consumer/
+
+docs/archive-consumer-0.2/

@@ -35,3 +35,22 @@ This retains onBeforeCompile, customProgramCacheKey and onBeforeRender. A regist
 Qualified against Three r186. No React dependency and no animation loop. Runtime cost is a small callback and destination check per affected draw; switching sampling modes can select another cached shader program. Hardware frame-rate improvements are not claimed. Game-specific foliage algorithms, lighting, world generation and simulation remain outside this package.
 
 Use `bun run check:package` to build declarations and run the ownership/policy tests. Browser evidence is retained under docs/.
+
+## Scoped captures and readback
+
+`renderTargetScope(renderer, run)` restores the render target, cube face, mip,
+viewport, scissor and scissor-test state even if synchronous work throws. The
+callback must finish renderer mutations synchronously; do not hold a scope over
+an await.
+
+`readTargetPixelsScoped(renderer, target, width, height, buffer, textureIndex?)`
+submits a byte/float read from a neutral target and restores the caller through
+Three's target setter. This avoids restoring a resolve framebuffer in place of
+its multisample draw attachment, or treating a cube framebuffer array as a single
+framebuffer.
+
+`readFloatTargetScoped(...)` submits asynchronous float readback in the same
+neutral state, restores the caller immediately, and returns the exact supplied
+Float32Array on completion. It never restores stale renderer state after await.
+Allocate supported targets and correctly sized buffers before calling these
+helpers. The helpers do not choose formats, sample counts or capture resolution.

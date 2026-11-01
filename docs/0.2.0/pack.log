@@ -1,0 +1,17 @@
+bun pack v1.4.4+absolute.1 (38afee6c8)
+
+packed 1.12KB package.json
+packed 3.44KB LICENSE
+packed 4.0KB README.md
+packed 1.14KB dist/index.d.ts
+packed 3.35KB dist/index.js
+packed 1.49KB dist/renderTargetScope.d.ts
+packed 2.34KB dist/renderTargetScope.js
+
+/home/alexkahn/alex/rendering/docs/0.2.0/absolutejs-rendering-0.2.0.tgz
+
+Total files: 7
+Shasum: 2396b536373e0ea8f32d5838952d43b985012f1c
+Integrity: sha512-TZGl4oh3vqZI8[...]Oae9AAsaABFMg==
+Unpacked size: 16.89KB
+Packed size: 5.83KB

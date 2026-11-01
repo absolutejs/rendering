@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/rendering",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Render-destination coverage policies and callback-preserving material ownership for Three.js applications.",
   "type": "module",
   "main": "./dist/index.js",

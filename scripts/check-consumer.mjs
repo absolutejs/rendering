@@ -8,3 +8,6 @@ copy.onBeforeRender(renderer);
 assert.equal(copy.alphaToCoverage,false);assert.equal(source.alphaToCoverage,true);assert.equal(destinationIsMultisampled(renderer),false);
 copy.dispose();source.dispose();
 console.log('Built ESM consumer passed');
+const scoped = await import('../dist/index.js');
+for (const name of ['renderTargetScope','readTargetPixelsScoped','readFloatTargetScoped']) assert.equal(typeof scoped[name], 'function');
+console.log('Scoped capture exports passed');

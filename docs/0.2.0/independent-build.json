@@ -1,0 +1,21 @@
+{
+  "matched": true,
+  "files": [
+    {
+      "file": "index.d.ts",
+      "sha256": "74f22a953f47273f40fe5664b4d291e62a1422a9e40709ccfa5c466f325eade0"
+    },
+    {
+      "file": "index.js",
+      "sha256": "09040b74ffda7e11997cce8055d0d0dd6ac52ffc0f3475cc8e2f2d54e5a8e231"
+    },
+    {
+      "file": "renderTargetScope.d.ts",
+      "sha256": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa"
+    },
+    {
+      "file": "renderTargetScope.js",
+      "sha256": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb"
+    }
+  ]
+}
