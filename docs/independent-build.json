@@ -1,0 +1,13 @@
+{
+  "identical": true,
+  "files": [
+    {
+      "file": "index.d.ts",
+      "sha256": "c3c71e2700083031dfde2f49df507ca51a0e99dcb98ab71f83f5142c8a7bb1ff"
+    },
+    {
+      "file": "index.js",
+      "sha256": "e421e4120bdb18b69adea6f09863b68ba9273b34893ebb67dcf64533d94e27e7"
+    }
+  ]
+}

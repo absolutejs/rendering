@@ -1,0 +1,2 @@
+$ bun scripts/verify-browser.cjs
+{"passed":true,"draws":192,"stablePrograms":true,"disposed":{"geometries":0,"textures":0}}

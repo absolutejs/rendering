@@ -1,0 +1,15 @@
+bun pack v1.4.4+absolute.1 (38afee6c8)
+
+packed 1.12KB package.json
+packed 3.44KB LICENSE
+packed 3.0KB README.md
+packed 1.0KB dist/index.d.ts
+packed 3.25KB dist/index.js
+
+/home/alexkahn/alex/rendering/docs/absolutejs-rendering-0.1.0.tgz
+
+Total files: 5
+Shasum: d2a547a7dfa279e1e0366dd5a527b66b520bd919
+Integrity: sha512-gQDtcxyAVKu5f[...]2vZN9WNid2TpA==
+Unpacked size: 11.84KB
+Packed size: 4.59KB

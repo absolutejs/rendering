@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { MeshBasicMaterial } from 'three';
+import { bindAlphaToCoverageDestination, cloneRenderMaterial, destinationIsMultisampled } from '../dist/index.js';
+const source=new MeshBasicMaterial();source.alphaToCoverage=true;
+bindAlphaToCoverageDestination(source);
+const copy=cloneRenderMaterial(source), renderer={getRenderTarget:()=>({samples:0}),capabilities:{maxSamples:4}};
+copy.onBeforeRender(renderer);
+assert.equal(copy.alphaToCoverage,false);assert.equal(source.alphaToCoverage,true);assert.equal(destinationIsMultisampled(renderer),false);
+copy.dispose();source.dispose();
+console.log('Built ESM consumer passed');

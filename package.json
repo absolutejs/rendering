@@ -1,0 +1,46 @@
+{
+  "name": "@absolutejs/rendering",
+  "version": "0.1.0",
+  "description": "Render-destination coverage policies and callback-preserving material ownership for Three.js applications.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "license": "BSL-1.1",
+  "author": "Alex Kahn",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/absolutejs/rendering.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "bun test ./tests",
+    "check:package": "bun run build && bun run test",
+    "test:browser": "bun scripts/verify-browser.cjs"
+  },
+  "peerDependencies": {
+    "three": ">=0.186.0 <0.187.0"
+  },
+  "devDependencies": {
+    "three": "0.186.1",
+    "@types/three": "0.186.0",
+    "@types/bun": "1.4.2",
+    "typescript": "5.9.3",
+    "playwright": "1.61.1"
+  }
+}

@@ -1,0 +1,17 @@
+$ bun run build && bun run test
+$ tsc -p tsconfig.json
+$ bun test ./tests
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+tests/coverage.test.ts:
+(pass) destination selection distinguishes canvas, multisampled targets and reflection targets without repeated context queries [0.57ms]
+(pass) coverage switches before draw, preserves prior callback context and invalidates only changed program variants [0.82ms]
+(pass) rebind updates preference without callback chains and disposal respects subsequent owners [0.57ms]
+(pass) clones retain shader hooks, borrow textures and own destination policy independently even after offscreen draws [1.32ms]
+(pass) unbound clone preserves authored render callback without installing a sampling policy [0.21ms]
+(pass) context loss is not cached as permanent lack of sampling [0.12ms]
+
+ 6 pass
+ 0 fail
+ 36 expect() calls
+Ran 6 tests across 1 file. [79.00ms]
