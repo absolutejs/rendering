@@ -20,3 +20,8 @@ All browsers use bounded SwiftShader. Hardware timing is not claimed. These
 checks are renderer-resource lifecycle evidence, not whole-world water acceptance.
 Source and the exact archive must be backed up before npm publication; game
 adoption must use the verified public release, not a local dependency patch.
+
+Publication completed after renewed npm browser confirmation. Public registry
+SHA1 and full SHA512 integrity match the qualified archive; publication.json
+records the verification time and SHA256. Game adoption may now use exact public
+0.2.0. The package GitHub check passed at run 41360515187.
