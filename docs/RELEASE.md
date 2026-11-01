@@ -31,3 +31,5 @@ The initial GitHub check stopped before installation because the BVM installer
 did not select a default runtime. CI now explicitly installs the qualified
 1.4.4+absolute.1 runtime, and .bun-version records that selection. This changes
 CI only; the previously qualified release archive remains unchanged.
+
+Public registry verification succeeded at 22:59 UTC November 1. Registry SHA1 and full SHA512 integrity both match the exact qualified archive. The corrected GitHub check passes (run 41359475801). Game adoption can now use the exact public 0.1.0 release.
