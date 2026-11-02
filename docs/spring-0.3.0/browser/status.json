@@ -1,0 +1,4 @@
+{
+  "status": "failed",
+  "detail": "TypeError: run.event is not a function. (In 'run.event(\"spring.control\", rows[rows.length - 1])', 'run.event' is undefined)"
+}

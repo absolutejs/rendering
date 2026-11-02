@@ -1,0 +1,68 @@
+{
+  "error": "TypeError: run.event is not a function. (In 'run.event(\"spring.control\", rows[rows.length - 1])', 'run.event' is undefined)",
+  "rows": [
+    {
+      "candidate": false,
+      "before": {
+        "frames": 1,
+        "callbackValue": 0,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 0,
+        "opacity": 1,
+        "canvas": true
+      },
+      "afterWeb": {
+        "frames": 14,
+        "callbackValue": 0,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 0,
+        "opacity": 0,
+        "canvas": true
+      },
+      "afterThree": {
+        "frames": 27,
+        "callbackValue": 0,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 1,
+        "opacity": 0,
+        "canvas": true
+      },
+      "withoutCanvas": {
+        "frames": 62,
+        "callbackValue": 1,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": null,
+        "opacity": 0,
+        "canvas": false,
+        "complete": false
+      },
+      "paused": {
+        "frames": 30,
+        "callbackValue": 0.055333333338300386,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 1,
+        "opacity": 0,
+        "canvas": true
+      },
+      "stillPaused": {
+        "frames": 30,
+        "callbackValue": 0.055333333338300386,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 1,
+        "opacity": 0,
+        "canvas": true
+      },
+      "resumed": {
+        "frames": 62,
+        "callbackValue": 1,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 1,
+        "opacity": 0,
+        "canvas": true
+      },
+      "webFrames": 13,
+      "threeFrames": 13
+    }
+  ],
+  "errors": []
+}

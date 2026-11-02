@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "archive": "absolutejs-rendering-0.3.0.tgz",
+  "sha256": "2774c167189ad78950fc86cdf82832c8edf3fa301535b1ff155ef8a3982796fa",
+  "integrity": "sha512-D7slfAYSKTbuXogjuJ2bOr2/+RraR/N2dopmVGQsWYOTfUkRva2Y2VlFVT5wb+Qto92z1myt1l7VTioTlSfElg==",
+  "verifiedDistFiles": [
+    "index.d.ts",
+    "index.js",
+    "spring.js",
+    "spring.d.ts",
+    "renderTargetScope.d.ts",
+    "renderTargetScope.js"
+  ]
+}

@@ -1,0 +1,12 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+tests/spring.test.ts:
+(node:2336905) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+(pass) Three spring hosts do not install a demand scheduler [0.14ms]
+
+ 1 pass
+ 0 fail
+ 5 expect() calls
+Ran 1 test across 1 file. [136.00ms]

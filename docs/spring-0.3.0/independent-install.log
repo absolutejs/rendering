@@ -1,0 +1,18 @@
+bun install v1.4.4+absolute.1 (38afee6c8)
+
++ @react-spring/animated@10.1.2
++ @react-spring/shared@10.1.2
++ @react-spring/three@10.1.2
++ @react-spring/web@10.1.2
++ @react-three/fiber@9.8.2
++ @types/bun@1.4.2
++ @types/react@19.3.0
++ @types/react-dom@19.3.0
++ @types/three@0.186.0
++ playwright@1.61.1
++ react@19.3.0
++ react-dom@19.3.0
++ three@0.186.1
++ typescript@5.9.3
+
+39 packages installed [83.00ms]

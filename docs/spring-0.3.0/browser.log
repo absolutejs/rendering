@@ -1,0 +1,10 @@
+126 | 				stillPaused,
+127 | 				resumed,
+128 | 				webFrames,
+129 | 				threeFrames
+130 | 			});
+131 | 			run.event('spring.control', rows[rows.length - 1]);
+             ^
+TypeError: run.event is not a function. (In 'run.event("spring.control", rows[rows.length - 1])', 'run.event' is undefined)
+      at <anonymous> (/home/alexkahn/alex/rendering-spring-release/scripts/verify-spring.cjs:131:8)
+

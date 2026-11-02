@@ -4,3 +4,8 @@ dist/
 docs/archive-consumer/
 
 docs/archive-consumer-0.2/
+
+docs/spring-0.3.0/independent/
+
+.package-cache/
+docs/spring-0.3.0/archive-consumer/

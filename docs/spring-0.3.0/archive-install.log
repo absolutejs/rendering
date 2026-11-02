@@ -1,0 +1,21 @@
+bun install v1.4.4+absolute.1 (38afee6c8)
+Resolving dependencies
+Resolved, downloaded and extracted [1]
+Saved lockfile
+
++ @absolutejs/rendering@../absolutejs-rendering-0.3.0.tgz
++ @react-spring/animated@10.1.2
++ @react-spring/shared@10.1.2
++ @react-spring/three@10.1.2
++ @react-spring/web@10.1.2
++ @react-three/fiber@9.8.2
++ @types/bun@1.4.2 (v1.4.4 available)
++ @types/react@19.3.0
++ @types/react-dom@19.3.0
++ @types/three@0.186.0 (v0.187.0 available)
++ react@19.3.0 (v19.3.1 available)
++ react-dom@19.3.0 (v19.3.1 available)
++ three@0.186.1 (v0.187.0 available)
++ typescript@5.9.3 (v7.0.2 available)
+
+38 packages installed [90.00ms]

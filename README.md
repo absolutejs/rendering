@@ -54,3 +54,36 @@ neutral state, restores the caller immediately, and returns the exact supplied
 Float32Array on completion. It never restores stale renderer state after await.
 Allocate supported targets and correctly sized buffers before calling these
 helpers. The helpers do not choose formats, sample counts or capture resolution.
+
+## React Spring with demand-rendered Fiber scenes
+
+The optional `@absolutejs/rendering/spring` entry provides `animated.mesh`,
+`animated.group`, `useSpring`, `easings`, and `createFiberSpringHost` for other
+explicit Fiber primitives:
+
+```tsx
+import { animated, useSpring } from '@absolutejs/rendering/spring';
+
+function MovingGroup({ x }: { x: number }) {
+  const motion = useSpring({ x });
+  return <animated.group position-x={motion.x}>{/* scene content */}</animated.group>;
+}
+```
+
+It keeps React Spring's normal scheduler. Three prop updates invalidate the
+owning Fiber root through `applyProps`; DOM-only animation does not render a
+scene and can finish without a mounted Canvas. No `useFrame`, manual animation
+clock, global scheduler replacement, or unconditional render loop is installed.
+
+Do not also runtime-import `@react-spring/three`: that entry installs a global
+Fiber-driven scheduler even when its consuming component is never mounted. This
+adapter does not override or repair another module's global scheduler changes.
+Type-only imports from that package are safe. Test your actual application's
+eager import graph as well as isolated components.
+
+Use `createFiberSpringHost(['instancedMesh', 'meshStandardMaterial'])` to opt into
+additional hosts without registering every Three constructor. React, Fiber and
+React Spring peers are optional for the core material utilities, but required
+when using this subpath. `@react-spring/three` supplies host types only; it is not
+runtime-imported by this entry. The tested versions are React 19.3, Fiber 9.8.2,
+Three 0.186.1 and React Spring 10.1.2.

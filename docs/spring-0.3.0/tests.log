@@ -1,0 +1,28 @@
+$ bun test ./tests
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+tests/render-target-scope.test.ts:
+(pass) offscreen scopes restore attachment and clipping after thrown work [0.37ms]
+(pass) synchronous reads submit from a neutral target and rebind the multisample attachment [0.42ms]
+(pass) nested scopes restore their immediate owner before the outer scope unwinds [0.25ms]
+(pass) async read restores immediately and never overwrites intervening work on resolution [0.41ms]
+(pass) async submission failures, rejections and wrong buffers do not leak state [1.00ms]
+
+tests/coverage.test.ts:
+(pass) destination selection distinguishes canvas, multisampled targets and reflection targets without repeated context queries [0.24ms]
+(pass) coverage switches before draw, preserves prior callback context and invalidates only changed program variants [0.45ms]
+(pass) rebind updates preference without callback chains and disposal respects subsequent owners [0.16ms]
+(pass) clones retain shader hooks, borrow textures and own destination policy independently even after offscreen draws [1.11ms]
+(pass) unbound clone preserves authored render callback without installing a sampling policy [0.13ms]
+(pass) context loss is not cached as permanent lack of sampling [0.07ms]
+
+tests/spring.test.ts:
+(node:11) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+(pass) Three spring hosts do not install a demand scheduler [0.27ms]
+
+ 12 pass
+ 0 fail
+ 69 expect() calls
+Ran 12 tests across 3 files. [151.00ms]

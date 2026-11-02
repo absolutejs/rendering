@@ -1,0 +1,4 @@
+tests/spring-types.ts(3,33): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Object literal may only specify known properties, and '"position-x"' does not exist in type 'Attributes & AnimatedProps<Mutable<Overwrite<Partial<Overwrite<Group<Object3DEventMap>, MathProps<Group<Object3DEventMap>> & ReactProps<Group<...>> & Partial<...>>>, Omit<...>>>>'.
+error: "tsc" exited with code 2
