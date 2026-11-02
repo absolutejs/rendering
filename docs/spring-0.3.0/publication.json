@@ -1,0 +1,10 @@
+{
+  "version": "0.3.0",
+  "npmPublishAccepted": true,
+  "registryVerified": true,
+  "sourceCommit": "7ab7538162a219d19d62861613f53a42139664b8",
+  "archiveVerification": "archive-verification.json",
+  "integrity": "sha512-D7slfAYSKTbuXogjuJ2bOr2/+RraR/N2dopmVGQsWYOTfUkRva2Y2VlFVT5wb+Qto92z1myt1l7VTioTlSfElg==",
+  "shasum": "0e4c5cf380f4775d013aa7d8ea5ccf4c8a608810",
+  "tarball": "https://registry.npmjs.org/@absolutejs/rendering/-/rendering-0.3.0.tgz"
+}

@@ -1,0 +1,17 @@
+{
+  "shasum": "0e4c5cf380f4775d013aa7d8ea5ccf4c8a608810",
+  "tarball": "https://registry.npmjs.org/@absolutejs/rendering/-/rendering-0.3.0.tgz",
+  "fileCount": 9,
+  "integrity": "sha512-D7slfAYSKTbuXogjuJ2bOr2/+RraR/N2dopmVGQsWYOTfUkRva2Y2VlFVT5wb+Qto92z1myt1l7VTioTlSfElg==",
+  "signatures": [
+    {
+      "sig": "MEYCIQD86dYex8NZhq6WMIy7j0UANBU/jKVMbPy12T0ikFyVsAIhAMM23Y9ohLDMgprWziunBZRKg+zMwTwt/jSELhC9PICH",
+      "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+    },
+    {
+      "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+      "sig": "MEUCIQDDlojFiipWEz0pGqFdXWk2kMTyCFatIMwvEIFnEo6+2gIgK3uvetotU+0hMubTwjXnB2tG19qu40/mkWo7wrhI/wo="
+    }
+  ],
+  "unpackedSize": 21067
+}
