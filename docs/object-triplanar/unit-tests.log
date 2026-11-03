@@ -1,0 +1,12 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+tests/object-triplanar.test.ts:
+(pass) projection validates bounded finite inputs before creating a material [0.28ms]
+(pass) mapping borrows textures and isolates projection inputs and cloned uniforms [0.77ms]
+(pass) shader integration rejects drift instead of silently leaving a UV channel active [0.33ms]
+(pass) rigid scope rejects skinning and active morphs while permitting static meshes [0.24ms]
+
+ 4 pass
+ 0 fail
+ 22 expect() calls
+Ran 4 tests across 1 file. [29.00ms]

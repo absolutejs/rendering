@@ -91,3 +91,9 @@ export {
   readTargetPixelsScoped,
   readFloatTargetScoped,
 } from "./renderTargetScope.js";
+
+export { createObjectTriplanarMaterial } from "./objectTriplanar.js";
+export type {
+  ObjectTriplanarProjection,
+  ObjectTriplanarMaterialParameters,
+} from "./objectTriplanar.js";
