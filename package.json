@@ -1,7 +1,7 @@
 {
   "name": "@absolutejs/rendering",
-  "version": "0.3.0",
-  "description": "Render-destination coverage policies and callback-preserving material ownership for Three.js applications.",
+  "version": "0.4.0",
+  "description": "Three.js material ownership, destination coverage, rigid-object triplanar mapping and isolated React Spring hosts.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -37,7 +37,8 @@
     "test": "bun test ./tests",
     "check:package": "bun run build && bun run test",
     "test:browser": "bun scripts/verify-browser.cjs",
-    "test:spring:browser": "bun scripts/verify-spring.cjs"
+    "test:spring:browser": "bun scripts/verify-spring.cjs",
+    "test:triplanar:browser": "bun scripts/verify-triplanar.cjs"
   },
   "peerDependencies": {
     "three": ">=0.186.0 <0.187.0",

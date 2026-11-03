@@ -6,7 +6,25 @@ const { chromium } = require("playwright");
   const out = process.env.TRIPLANAR_OUT;
   if (!out || fs.existsSync(out)) throw Error("Fresh TRIPLANAR_OUT required");
   fs.mkdirSync(out, { recursive: true });
+  const moduleUnderTest = process.env.TRIPLANAR_MODULE
+    ? path.resolve(process.env.TRIPLANAR_MODULE)
+    : null;
   const build = await Bun.build({
+    plugins: moduleUnderTest
+      ? [
+          {
+            name: "explicit-archive-module",
+            setup(builder) {
+              builder.onResolve({ filter: /^\.\.\/src$/ }, () => ({
+                path: moduleUnderTest,
+              }));
+              builder.onResolve({ filter: /^three$/ }, () => ({
+                path: path.resolve("node_modules/three/build/three.module.js"),
+              }));
+            },
+          },
+        ]
+      : [],
     entrypoints: ["tests/object-triplanar-browser.ts"],
     target: "browser",
     minify: true,
@@ -47,6 +65,13 @@ const { chromium } = require("playwright");
     });
     const result = await page.evaluate(() => globalThis.triplanarResult);
     result.errors = errors;
+    result.moduleUnderTest = moduleUnderTest ?? "src/index.ts";
+    result.moduleSha256 = moduleUnderTest
+      ? crypto
+          .createHash("sha256")
+          .update(fs.readFileSync(moduleUnderTest))
+          .digest("hex")
+      : null;
     result.bundleSha256 = crypto
       .createHash("sha256")
       .update(source)

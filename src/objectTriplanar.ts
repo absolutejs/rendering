@@ -121,6 +121,13 @@ export function createObjectTriplanarMaterial(
       this.alphaTest > 0
     )
       throw Error("Object triplanar mapping requires opaque coverage");
+    if (
+      this.bumpMap ||
+      this.displacementMap ||
+      this.normalMapType !== TangentSpaceNormalMap ||
+      (this.map as { isVideoTexture?: boolean } | null)?.isVideoTexture
+    )
+      throw Error("Unsupported object-triplanar map type");
     const mesh = object as typeof object & {
       isSkinnedMesh?: boolean;
       morphTargetInfluences?: number[];

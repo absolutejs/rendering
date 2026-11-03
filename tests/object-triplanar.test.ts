@@ -121,3 +121,19 @@ test("opaque scope rejects coverage that would require matching custom shadow sh
   ).toThrow("opaque coverage");
   material.dispose();
 });
+
+test("unsupported post-construction map changes reject before drawing", () => {
+  const material = createObjectTriplanarMaterial();
+  material.normalMapType = ObjectSpaceNormalMap;
+  expect(() =>
+    material.onBeforeRender(
+      {} as any,
+      {} as any,
+      {} as any,
+      {} as any,
+      new Mesh(),
+      {} as any,
+    ),
+  ).toThrow("map type");
+  material.dispose();
+});

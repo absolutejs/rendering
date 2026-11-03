@@ -87,3 +87,47 @@ React Spring peers are optional for the core material utilities, but required
 when using this subpath. `@react-spring/three` supplies host types only; it is not
 runtime-imported by this entry. The tested versions are React 19.3, Fiber 9.8.2,
 Three 0.186.1 and React Spring 10.1.2.
+
+## Rigid-object triplanar materials
+
+`createObjectTriplanarMaterial` keeps color, normal detail and roughness aligned
+without depending on mesh UVs. Coordinates remain local to the geometry, so a
+moving rigid object does not slide through a world-space texture field.
+
+```ts
+import { createObjectTriplanarMaterial } from '@absolutejs/rendering';
+import { RepeatWrapping, SRGBColorSpace, Vector2 } from 'three';
+
+for (const texture of [albedo, normal, roughness]) {
+  texture.wrapS = texture.wrapT = RepeatWrapping;
+}
+albedo.colorSpace = SRGBColorSpace; // normal and roughness remain non-color data
+const material = createObjectTriplanarMaterial({
+  map: albedo,
+  normalMap: normal,
+  roughnessMap: roughness,
+  normalScale: new Vector2(0.65, 0.65),
+  projection: { scale: 1, offset: [0, 0, 0], sharpness: 4 },
+});
+```
+
+Projection scale is repeats per geometry-local unit; UV texture matrices/repeat
+values are replaced by these controls. Offset and scale are copied at creation.
+Sharpness ranges from 1 to 16; scale must be finite, positive and at most 10,000.
+Color uses the texture's color space; roughness uses its green channel. Tangent
+normal maps, including packed RG and negative normal-Y scale, blend as surface
+slopes before perturbing the local normal. Neutral maps preserve base normals.
+
+Scope is opaque, rigid geometry. Mesh and non-sheared instanced transforms follow
+Three's normal-matrix conventions. Skinning, active morphs, displacement, bump maps,
+object-space normal maps and video albedo are rejected. Transparent, alpha-test,
+alpha-hash and alpha-to-coverage surfaces are rejected because they need matching
+shadow coverage shaders. Other StandardMaterial channels retain their normal Three
+behavior. The helper is for WebGLRenderer; it is not a WebGPU/TSL implementation.
+
+The material borrows textures and does not alter or dispose them. Use
+`cloneRenderMaterial` to retain shader hooks when cloning. Dispose material and
+owned textures separately. Standard lighting, shadows and geometry stay intact.
+With color, normal and roughness present, the shader uses nine texture samples
+instead of three UV samples, with no extra draw or render pass. Hardware cost is
+scene-dependent; the qualification uses software rendering, not a hardware FPS claim.
