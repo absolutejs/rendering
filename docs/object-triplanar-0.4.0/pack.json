@@ -1,0 +1,71 @@
+[
+  {
+    "id": "@absolutejs/rendering@0.4.0",
+    "name": "@absolutejs/rendering",
+    "version": "0.4.0",
+    "size": 10199,
+    "unpackedSize": 31330,
+    "shasum": "72c416f92b7bec5d716afa8377bb31beb9f4723b",
+    "integrity": "sha512-pHxgdjvXL3p36L17/7iJl/Q5EnrWKhpmaplhRMHg099HuTPV0rOFY/rsLQnz6RyPNWizCrL5+FV/BfmQE9ZdBA==",
+    "filename": "absolutejs-rendering-0.4.0.tgz",
+    "files": [
+      {
+        "path": "LICENSE",
+        "size": 3435,
+        "mode": 420
+      },
+      {
+        "path": "README.md",
+        "size": 7900,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.d.ts",
+        "size": 1316,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.js",
+        "size": 3424,
+        "mode": 420
+      },
+      {
+        "path": "dist/objectTriplanar.d.ts",
+        "size": 1128,
+        "mode": 420
+      },
+      {
+        "path": "dist/objectTriplanar.js",
+        "size": 6539,
+        "mode": 420
+      },
+      {
+        "path": "dist/renderTargetScope.d.ts",
+        "size": 1490,
+        "mode": 420
+      },
+      {
+        "path": "dist/renderTargetScope.js",
+        "size": 2339,
+        "mode": 420
+      },
+      {
+        "path": "dist/spring.d.ts",
+        "size": 776,
+        "mode": 420
+      },
+      {
+        "path": "dist/spring.js",
+        "size": 783,
+        "mode": 420
+      },
+      {
+        "path": "package.json",
+        "size": 2200,
+        "mode": 420
+      }
+    ],
+    "entryCount": 11,
+    "bundled": []
+  }
+]

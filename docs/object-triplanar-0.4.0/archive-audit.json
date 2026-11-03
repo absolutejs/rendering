@@ -1,0 +1,20 @@
+{
+  "auditScope": "release",
+  "name": "@absolutejs/rendering",
+  "version": "0.4.0",
+  "shasum": "72c416f92b7bec5d716afa8377bb31beb9f4723b",
+  "integrity": "sha512-pHxgdjvXL3p36L17/7iJl/Q5EnrWKhpmaplhRMHg099HuTPV0rOFY/rsLQnz6RyPNWizCrL5+FV/BfmQE9ZdBA==",
+  "tarballSha256": "265a7b5f2985492828835ecd8caf4225afec9a0f5f667573fadbcefa80a950a0",
+  "distributionFiles": {
+    "index.d.ts": "a77508bf0a22cb20121cfc034749acc768e453196ab5745f78569db44c003aa5",
+    "index.js": "c181fa18467dd94b46709ad4a683e377a1685031bbda40cc5aa2f913fd9f2d5b",
+    "objectTriplanar.d.ts": "b40aa67d39fb83661da248fc3141627dae4e6858aa4fcfa71e3430d72eea5ef5",
+    "objectTriplanar.js": "3155bc70e1f68f1012e8d6a8b99a35aa265b549eba6c0ffdbb74a7a390349c8c",
+    "renderTargetScope.d.ts": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa",
+    "renderTargetScope.js": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb",
+    "spring.d.ts": "4ee9c54aa8c20e689a89f59e5c4e4cdaf915ffa381449e09d260bfc44c6b3505",
+    "spring.js": "1a15f09c946a87964e348ef0e24163b10328cb2a06792d9010c5886db03e5311"
+  },
+  "independentFilesMatched": 8,
+  "unchangedSpringAndCaptureFiles": 4
+}
