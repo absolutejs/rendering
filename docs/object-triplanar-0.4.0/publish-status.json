@@ -1,0 +1,8 @@
+{
+  "package": "@absolutejs/rendering",
+  "version": "0.4.0",
+  "acceptedByNpm": true,
+  "message": "Your package is being processed and may take a few minutes to become available.",
+  "releaseCommit": "2da1d3b9361cbeef3ca43c6ea1322bdc4f18ccd5",
+  "nextStep": "Verify registry metadata and downloaded bytes. Never republish an accepted version."
+}
