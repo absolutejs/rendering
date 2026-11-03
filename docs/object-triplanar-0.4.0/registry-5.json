@@ -1,0 +1,27 @@
+{
+  "package": "@absolutejs/rendering",
+  "version": "0.4.0",
+  "checkedAt": "2026-11-03T09:03:26.695Z",
+  "registryStatus": 200,
+  "dist": {
+    "shasum": "72c416f92b7bec5d716afa8377bb31beb9f4723b",
+    "tarball": "https://registry.npmjs.org/@absolutejs/rendering/-/rendering-0.4.0.tgz",
+    "fileCount": 11,
+    "integrity": "sha512-pHxgdjvXL3p36L17/7iJl/Q5EnrWKhpmaplhRMHg099HuTPV0rOFY/rsLQnz6RyPNWizCrL5+FV/BfmQE9ZdBA==",
+    "signatures": [
+      {
+        "sig": "MEUCIQDd4Kv5dgy+nMeegYH2BGtq/7lqbaqTPbu1raeY2flXsQIgVYEdiEq+nMjzqH8v0yUKuLHCdZFUSGvY0TJonSba8Oc=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "sig": "MEQCIFO1NrmZry0QW529sSI+M3Qwx6A3Cc10UcTMP5J4x/xLAiA6JAfEHbtBlJga/tUdwNw3/v0gCHN27nn/oIZZ4H3/ug==",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "unpackedSize": 31330
+  },
+  "archiveSha256": "265a7b5f2985492828835ecd8caf4225afec9a0f5f667573fadbcefa80a950a0",
+  "archiveBytes": 10199,
+  "registryMatchesAuditedArchive": true,
+  "downloadedArchiveVerified": true
+}
