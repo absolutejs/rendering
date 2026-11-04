@@ -1,0 +1,222 @@
+{
+  "device": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "rows": [
+    {
+      "mode": "standard",
+      "lighting": "front",
+      "rgb": [
+        35,
+        64,
+        10
+      ]
+    },
+    {
+      "mode": "standard",
+      "lighting": "back",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": "standard",
+      "lighting": "dark",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": "standard",
+      "lighting": "blocked",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": "standard",
+      "lighting": "sky-front",
+      "rgb": [
+        17,
+        32,
+        4
+      ]
+    },
+    {
+      "mode": "standard",
+      "lighting": "sky-back",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": "zero",
+      "lighting": "front",
+      "rgb": [
+        35,
+        64,
+        10
+      ]
+    },
+    {
+      "mode": "zero",
+      "lighting": "back",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": "zero",
+      "lighting": "dark",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": "zero",
+      "lighting": "blocked",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": "zero",
+      "lighting": "sky-front",
+      "rgb": [
+        17,
+        32,
+        4
+      ]
+    },
+    {
+      "mode": "zero",
+      "lighting": "sky-back",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": "leaf",
+      "lighting": "front",
+      "rgb": [
+        24,
+        42,
+        7
+      ]
+    },
+    {
+      "mode": "leaf",
+      "lighting": "back",
+      "rgb": [
+        12,
+        23,
+        3
+      ]
+    },
+    {
+      "mode": "leaf",
+      "lighting": "dark",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": "leaf",
+      "lighting": "blocked",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": "leaf",
+      "lighting": "sky-front",
+      "rgb": [
+        11,
+        21,
+        3
+      ]
+    },
+    {
+      "mode": "leaf",
+      "lighting": "sky-back",
+      "rgb": [
+        6,
+        11,
+        1
+      ]
+    },
+    {
+      "mode": "clone",
+      "lighting": "front",
+      "rgb": [
+        24,
+        42,
+        7
+      ]
+    },
+    {
+      "mode": "clone",
+      "lighting": "back",
+      "rgb": [
+        12,
+        23,
+        3
+      ]
+    },
+    {
+      "mode": "clone",
+      "lighting": "dark",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": "clone",
+      "lighting": "blocked",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": "clone",
+      "lighting": "sky-front",
+      "rgb": [
+        11,
+        21,
+        3
+      ]
+    },
+    {
+      "mode": "clone",
+      "lighting": "sky-back",
+      "rgb": [
+        6,
+        11,
+        1
+      ]
+    }
+  ],
+  "errors": []
+}

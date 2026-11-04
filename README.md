@@ -137,9 +137,24 @@ scene-dependent; the qualification uses software rendering, not a hardware FPS c
 `createThinFoliageMaterial({ leafTransmission: 0.35 })` creates a standard
 material with approximate thin-leaf backlighting. Transmission is a bounded
 fraction (0–1) of direct diffuse; zero retains standard lighting. The shader
-uses Three's shadowed incident light, preserving PBR specular, indirect lighting,
-fog and tone mapping. Area lights retain standard lighting. This is a lightweight
+uses Three's shadowed incident light, preserving PBR specular,
+fog and tone mapping. Area lights retain standard lighting; hemisphere lights and PMREM diffuse illumination transmit from the reverse side. This is a lightweight
 leaf approximation, not volumetric subsurface scattering or a complete grass
 renderer. Distribution, blade shape, wind and terrain integration remain the
 caller's responsibility. Compose custom shader hooks after the factory hook;
 use `cloneRenderMaterial` to preserve them when cloning.
+
+
+`withLeafLighting(fragmentShader, transmission)` and
+`withLeafTransmissionField(fragmentShader, identifier)` apply the same canonical
+thin-sheet model to an existing standard-material shader. The field form expects
+a declared scalar clamped to [0,1]. These helpers preserve the existing Three
+specular paths, including environment multiple-scattering compensation. Compose
+vertex deformation independently and include transmission policy in cache keys.
+An environment-lit leaf uses an additional reverse-normal irradiance lookup;
+this is not a free shader operation. No extra passes or geometry are added.
+
+Version 0.6 replaces the factory's view-dependent direct-scattering factor with
+the same thin-sheet diffuse weighting used by the lower-level hooks. Existing
+material colour/transmission settings remain valid, but direct backlighting can
+change. This release also adds sky transmission missing from 0.5.

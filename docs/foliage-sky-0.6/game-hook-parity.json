@@ -1,0 +1,34 @@
+[
+  {
+    "transmission": 0,
+    "identical": true
+  },
+  {
+    "transmission": 0.18,
+    "identical": true
+  },
+  {
+    "transmission": 0.32,
+    "identical": true
+  },
+  {
+    "transmission": 0.35,
+    "identical": true
+  },
+  {
+    "transmission": 0.6,
+    "identical": true
+  },
+  {
+    "transmission": 1,
+    "identical": true
+  },
+  {
+    "identifier": "treeLeafTransmission",
+    "identical": true
+  },
+  {
+    "identifier": "grassTransmission",
+    "identical": true
+  }
+]

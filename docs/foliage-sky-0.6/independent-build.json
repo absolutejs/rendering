@@ -1,0 +1,50 @@
+[
+  {
+    "path": "index.d.ts",
+    "sha256": "a96111384a11031d320d299341aeb47ff94888ab32ec8df44e0d2c4015a69a09"
+  },
+  {
+    "path": "index.js",
+    "sha256": "8301f8156a263dc7598a6b78bffff9201b7ab03004be28f410c18bb18ad555af"
+  },
+  {
+    "path": "leafLighting.d.ts",
+    "sha256": "c00192b26f03a0565f8e6b8f7217a11f1e0592ee5635924761b53469cf192956"
+  },
+  {
+    "path": "leafLighting.js",
+    "sha256": "7b80af67d334970eaabc761534c34ab32f4d8e3b0c2a4008c129580bcdf31321"
+  },
+  {
+    "path": "objectTriplanar.d.ts",
+    "sha256": "b40aa67d39fb83661da248fc3141627dae4e6858aa4fcfa71e3430d72eea5ef5"
+  },
+  {
+    "path": "objectTriplanar.js",
+    "sha256": "3155bc70e1f68f1012e8d6a8b99a35aa265b549eba6c0ffdbb74a7a390349c8c"
+  },
+  {
+    "path": "renderTargetScope.d.ts",
+    "sha256": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa"
+  },
+  {
+    "path": "renderTargetScope.js",
+    "sha256": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb"
+  },
+  {
+    "path": "spring.d.ts",
+    "sha256": "4ee9c54aa8c20e689a89f59e5c4e4cdaf915ffa381449e09d260bfc44c6b3505"
+  },
+  {
+    "path": "spring.js",
+    "sha256": "1a15f09c946a87964e348ef0e24163b10328cb2a06792d9010c5886db03e5311"
+  },
+  {
+    "path": "thinFoliage.d.ts",
+    "sha256": "ae96f8c2bddb0de29f04ea89602ab920d186b4486ae6ca04069a4d804acd4813"
+  },
+  {
+    "path": "thinFoliage.js",
+    "sha256": "c01b7da7314002bfeebbb2e83c32a91403dfce7ed688ab5eb78852f7f74c058b"
+  }
+]

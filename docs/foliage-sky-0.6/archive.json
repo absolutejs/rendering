@@ -1,0 +1,91 @@
+[
+  {
+    "id": "@absolutejs/rendering@0.6.0",
+    "name": "@absolutejs/rendering",
+    "version": "0.6.0",
+    "size": 13170,
+    "unpackedSize": 40476,
+    "shasum": "ac9976f463b9476c725ec82520590f7f8bfcc36c",
+    "integrity": "sha512-M7yGFndbq/0+JQ4kyLF0sdIEbxMMUfqLOgMcZu3Ikmv/QUGc8lsPDQ+qdTXtUU1LCUFj7ZJArfcizuKpNU6s3g==",
+    "filename": "absolutejs-rendering-0.6.0.tgz",
+    "files": [
+      {
+        "path": "LICENSE",
+        "size": 3435,
+        "mode": 420
+      },
+      {
+        "path": "README.md",
+        "size": 9576,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.d.ts",
+        "size": 1549,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.js",
+        "size": 3586,
+        "mode": 420
+      },
+      {
+        "path": "dist/leafLighting.d.ts",
+        "size": 1726,
+        "mode": 420
+      },
+      {
+        "path": "dist/leafLighting.js",
+        "size": 3201,
+        "mode": 420
+      },
+      {
+        "path": "dist/objectTriplanar.d.ts",
+        "size": 1128,
+        "mode": 420
+      },
+      {
+        "path": "dist/objectTriplanar.js",
+        "size": 6539,
+        "mode": 420
+      },
+      {
+        "path": "dist/renderTargetScope.d.ts",
+        "size": 1490,
+        "mode": 420
+      },
+      {
+        "path": "dist/renderTargetScope.js",
+        "size": 2339,
+        "mode": 420
+      },
+      {
+        "path": "dist/spring.d.ts",
+        "size": 776,
+        "mode": 420
+      },
+      {
+        "path": "dist/spring.js",
+        "size": 783,
+        "mode": 420
+      },
+      {
+        "path": "dist/thinFoliage.d.ts",
+        "size": 733,
+        "mode": 420
+      },
+      {
+        "path": "dist/thinFoliage.js",
+        "size": 1275,
+        "mode": 420
+      },
+      {
+        "path": "package.json",
+        "size": 2340,
+        "mode": 420
+      }
+    ],
+    "entryCount": 15,
+    "bundled": []
+  }
+]

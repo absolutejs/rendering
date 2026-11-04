@@ -98,5 +98,11 @@ export type {
   ObjectTriplanarMaterialParameters,
 } from "./objectTriplanar.js";
 
-export { createThinFoliageMaterial } from './thinFoliage.js';
-export type { ThinFoliageMaterialParameters } from './thinFoliage.js';
+export { createThinFoliageMaterial } from "./thinFoliage.js";
+export type { ThinFoliageMaterialParameters } from "./thinFoliage.js";
+
+export {
+  withLeafLighting,
+  withLeafTransmissionField,
+  leafLightingGLSL,
+} from "./leafLighting.js";
