@@ -14,5 +14,5 @@ clones must match their source; unlit and fully shadowed leaf pixels must remain
 black; backlight must become visible. A 64-square sequential SwiftShader fixture
 checks real shader compilation and these controls. No GPU performance claim.
 
-Release candidate 0.5.0: 20 package tests pass; all 16 browser lighting/clone controls pass against built ESM. Two clean TypeScript outputs match all 10 distribution files. Exact archive distribution bytes match those outputs. Not yet published or adopted by Hello World. Game adoption must compose its wind
+Release candidate 0.5.0: 20 package tests pass; all 16 browser lighting/clone controls pass against built ESM. Two clean TypeScript outputs match all 10 distribution files. Exact archive distribution bytes match those outputs. Published as 0.5.0; registry archive matches the tested release exactly (registry.json). Completed local archives removed. Hello World adoption is undergoing composed-shader checks. Game adoption must compose its wind
 hook and LOD clones, then verify representative landscape views and performance.
