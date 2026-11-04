@@ -131,3 +131,15 @@ owned textures separately. Standard lighting, shadows and geometry stay intact.
 With color, normal and roughness present, the shader uses nine texture samples
 instead of three UV samples, with no extra draw or render pass. Hardware cost is
 scene-dependent; the qualification uses software rendering, not a hardware FPS claim.
+
+### Thin foliage
+
+`createThinFoliageMaterial({ leafTransmission: 0.35 })` creates a standard
+material with approximate thin-leaf backlighting. Transmission is a bounded
+fraction (0–1) of direct diffuse; zero retains standard lighting. The shader
+uses Three's shadowed incident light, preserving PBR specular, indirect lighting,
+fog and tone mapping. Area lights retain standard lighting. This is a lightweight
+leaf approximation, not volumetric subsurface scattering or a complete grass
+renderer. Distribution, blade shape, wind and terrain integration remain the
+caller's responsibility. Compose custom shader hooks after the factory hook;
+use `cloneRenderMaterial` to preserve them when cloning.

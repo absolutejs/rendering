@@ -1,0 +1,42 @@
+[
+  {
+    "path": "index.d.ts",
+    "sha256": "222ba33f6b1dd6dbf1498711dd83d2135812d6b0a931d00405b93b54d48c9ad3"
+  },
+  {
+    "path": "index.js",
+    "sha256": "9cccc342818136f7dd26422e73a8feb70b3d71bfb9a3dff5d33982d20202f17e"
+  },
+  {
+    "path": "objectTriplanar.d.ts",
+    "sha256": "b40aa67d39fb83661da248fc3141627dae4e6858aa4fcfa71e3430d72eea5ef5"
+  },
+  {
+    "path": "objectTriplanar.js",
+    "sha256": "3155bc70e1f68f1012e8d6a8b99a35aa265b549eba6c0ffdbb74a7a390349c8c"
+  },
+  {
+    "path": "renderTargetScope.d.ts",
+    "sha256": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa"
+  },
+  {
+    "path": "renderTargetScope.js",
+    "sha256": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb"
+  },
+  {
+    "path": "spring.d.ts",
+    "sha256": "4ee9c54aa8c20e689a89f59e5c4e4cdaf915ffa381449e09d260bfc44c6b3505"
+  },
+  {
+    "path": "spring.js",
+    "sha256": "1a15f09c946a87964e348ef0e24163b10328cb2a06792d9010c5886db03e5311"
+  },
+  {
+    "path": "thinFoliage.d.ts",
+    "sha256": "faa3782135f0aabcf1bfcbc05a87c114967008365c32ed8fb19e76d366768576"
+  },
+  {
+    "path": "thinFoliage.js",
+    "sha256": "35dd93e89e613bfb6e2ed38eaf9b09dadcc434117621ec8e2ac2a2c2acc713d0"
+  }
+]

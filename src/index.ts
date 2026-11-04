@@ -97,3 +97,6 @@ export type {
   ObjectTriplanarProjection,
   ObjectTriplanarMaterialParameters,
 } from "./objectTriplanar.js";
+
+export { createThinFoliageMaterial } from './thinFoliage.js';
+export type { ThinFoliageMaterialParameters } from './thinFoliage.js';
