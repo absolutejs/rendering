@@ -28,3 +28,7 @@ After publication: replace the game's generic shader functions with imports
 from this package; retain its asset-specific configureLeafLighting wrapper.
 Run tree environment, grass wind/LOD, actual-game and type checks. Delete the
 single release archive after exact registry verification.
+
+Published 0.6.0 registry bytes match the qualified archive exactly; see
+registry.json. Both completed tarballs were removed. Game adoption now uses the
+published dependency and is qualifying the asset-specific grass setting.
