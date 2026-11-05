@@ -35,8 +35,8 @@ Browser runs are sequential, bounded SwiftShader only. These are correctness
 checks, not native GPU frame-time measurements. No new captures are retained.
 The peer qualification checkout is disposable and removed after recording exact
 build hashes. The new exact archive remains while release/adoption checks are active.
-The old 0.9.0 archive remains temporarily as the game experiments' active baseline;
-remove it after those consumers move to this candidate. No npm login/publish is
+The superseded 0.9.0 archive and consumer are removed after the game prototype
+retained all 2,688 controls and 72 images exactly using the canonical 0.10.0 API. No npm login/publish is
 attempted while the user is away.
 
 ## Reproduce

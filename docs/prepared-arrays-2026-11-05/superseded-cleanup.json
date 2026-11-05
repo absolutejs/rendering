@@ -1,0 +1,135 @@
+{
+  "reason": "Canonical 0.10.0 game prototype matches every prior row and image; 0.9.0 archive is no longer an active qualification input. Historical source and manifests remain in git.",
+  "removed": [
+    {
+      "path": ".qualification/view-0.9.0/absolutejs-rendering-0.9.0.tgz",
+      "bytes": 21209,
+      "sha256": "1b3ae3f09e8e6dcda886bad28f06a6ad4f4de7c216c488f801d8c35c880880c1"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/README.md",
+      "bytes": 13436,
+      "sha256": "336179d5272cb6e03b9bc3ddace831d24d8480453847652b949059b33226ab3e"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/package.json",
+      "bytes": 2405,
+      "sha256": "9503b15bdd2af5de1fe1e8aec7b2d5a2cf84fe867ba578153b43a2d540c4e5bb"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/LICENSE",
+      "bytes": 3435,
+      "sha256": "55f5d27c3dcfd0e3899b3c22f97bf16a68841b9769223949cbf83d8071e9fd95"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/index.d.ts",
+      "bytes": 2023,
+      "sha256": "ce6eeebc887b5880bc7a86eca9a99d97183751459336c51a737704f3765a939b"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/leafLighting.d.ts",
+      "bytes": 1726,
+      "sha256": "c00192b26f03a0565f8e6b8f7217a11f1e0592ee5635924761b53469cf192956"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/viewCamera.d.ts",
+      "bytes": 957,
+      "sha256": "854aa380fafe65c18f8b90da2aaea03fb7d8f4529ccb88e3b984df9446c3d1c8"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/alphaColor.js",
+      "bytes": 4426,
+      "sha256": "d1c590a8f874002ec27f7c48e795a3af1915decfd9e3a2deaad53c2d6c18f065"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/index.js",
+      "bytes": 3949,
+      "sha256": "a5e55ffe9035860c30c7e19033811c642ff78544577cebddf6f214f711c04849"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/thinFoliage.d.ts",
+      "bytes": 733,
+      "sha256": "ae96f8c2bddb0de29f04ea89602ab920d186b4486ae6ca04069a4d804acd4813"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/associatedColorMap.js",
+      "bytes": 1691,
+      "sha256": "839bb9c9874bf90e4b19159e40ca55a642abc6cf7e08cd61a868c982ea637681"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/preparedMipTexture.js",
+      "bytes": 3260,
+      "sha256": "c101584e6f31247e749b5162abf154b64eb04cc9eee209ef15ee603c669018ce"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/objectTriplanar.d.ts",
+      "bytes": 1128,
+      "sha256": "b40aa67d39fb83661da248fc3141627dae4e6858aa4fcfa71e3430d72eea5ef5"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/thinFoliage.js",
+      "bytes": 1275,
+      "sha256": "c01b7da7314002bfeebbb2e83c32a91403dfce7ed688ab5eb78852f7f74c058b"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/alphaCoverage.d.ts",
+      "bytes": 694,
+      "sha256": "7bceb9dc9492e35504842e9c5e50a0f3c7b158c0748a26e6dd05a9b60067fd48"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/alphaCoverage.js",
+      "bytes": 2738,
+      "sha256": "0c4435f18336fda102ccee2ad909ed91da75d82c741e298e635dc8b4622f6a58"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/objectTriplanar.js",
+      "bytes": 6539,
+      "sha256": "3155bc70e1f68f1012e8d6a8b99a35aa265b549eba6c0ffdbb74a7a390349c8c"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/spring.js",
+      "bytes": 783,
+      "sha256": "1a15f09c946a87964e348ef0e24163b10328cb2a06792d9010c5886db03e5311"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/spring.d.ts",
+      "bytes": 776,
+      "sha256": "4ee9c54aa8c20e689a89f59e5c4e4cdaf915ffa381449e09d260bfc44c6b3505"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/renderTargetScope.d.ts",
+      "bytes": 1490,
+      "sha256": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/renderTargetScope.js",
+      "bytes": 2339,
+      "sha256": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/preparedMipTexture.d.ts",
+      "bytes": 638,
+      "sha256": "52539b395e0854a79aa3d6ec9e52835f4bfb49f46563d04b159a6ee3aee8e3c6"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/alphaColor.d.ts",
+      "bytes": 1194,
+      "sha256": "2388b3a0aac6957b2d2d736b88bf7931bfc06dde73f327800f5046f7c6192cec"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/leafLighting.js",
+      "bytes": 3201,
+      "sha256": "7b80af67d334970eaabc761534c34ab32f4d8e3b0c2a4008c129580bcdf31321"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/associatedColorMap.d.ts",
+      "bytes": 519,
+      "sha256": "2c1924bbaf9d6b869337534fcb986f60e3054e3ea6011d6d85a0317100b33c61"
+    },
+    {
+      "path": ".qualification/view-0.9.0/consumer/package/dist/viewCamera.js",
+      "bytes": 3165,
+      "sha256": "684750aa94012d2fe5e5c76dd1f9954ae7804b846386958b5bb449fe371ca29f"
+    }
+  ]
+}

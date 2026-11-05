@@ -15,5 +15,14 @@
   "independentBuildFiles": 24,
   "browserReadbacksPerPeerAndSource": 100,
   "disposalCyclesPerBrowser": 4,
-  "publication": "Queued until user returns; supersedes unpublished 0.9.0. Game prototype adoption still pending."
+  "publication": "Queued until user returns; supersedes unpublished 0.9.0. Canonical API adopted and verified in isolated game prototype.",
+  "gameQualification": {
+    "commit": "34a525b8",
+    "scope": "isolated prototype only; runtime remains published 0.6.0",
+    "exactCoverageRows": 2688,
+    "exactImages": 72,
+    "activeSamplersPerVariant": 4,
+    "cpuTests": 3,
+    "cpuAssertions": 149
+  }
 }
