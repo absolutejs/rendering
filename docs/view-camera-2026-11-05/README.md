@@ -1,8 +1,8 @@
 # Primary view ownership candidate
 
-Experimental additive rendering-package API on work/view-camera. The previously
-qualified 0.8.0 archive remains unchanged; this work is not published or installed
-in the game. Do not infer a release from package.json while this branch develops.
+Qualified additive rendering-package API in the consolidated unpublished 0.9.0
+candidate. It supersedes the earlier 0.8.0 archive, which has been removed after
+qualification. The game has not adopted the candidate; publication remains queued.
 
 createViewCameraState owns stable position, direction and orthographic uniform
 objects. It reads camera world transforms, including parents, and rejects array,
