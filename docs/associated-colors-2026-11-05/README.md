@@ -27,3 +27,20 @@ This is a fixture correction, not a runtime transparency-policy change.
 Pending: more filtering/coverage/precision controls, actual asset byte comparisons,
 Three peer-version compatibility, exact-archive consumer and reproducible builds.
 No hardware FPS or complete forest-quality acceptance is claimed.
+
+## Follow-up qualification
+
+36 tests now pass on both Three 0.186.1 and 0.187.0. Exhaustive 65,536
+one-dimensional byte-alpha pairs protect half-tie rounding. The real 256x512 pine
+texture initially exposed normalized-alpha floating-point rounding drift; summing
+alpha in byte units fixes it. Both complete 699,052-byte control and corrected
+chains now match the prior game candidate exactly, including all alpha bytes.
+
+Eight GPU reads per Three version cover four hidden colors with bilinear sampling
+and an explicitly selected prepared mip. Shader-sample replacement is counted to
+prevent accidentally testing the base level twice. No GL/page errors occur;
+textures and geometries return to zero. The exact archive passes Node ESM loading,
+these eight color reads, nine existing prepared-mip reads and three disposal cycles.
+Independent builds match all 20 shipped JS/declaration files. Local npm pack first
+hit a read-only default cache; using the repository cache succeeded without auth.
+The exact archive identity is in archive.json. No release was published.

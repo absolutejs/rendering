@@ -185,3 +185,22 @@ addresses alpha-test thinning. Texture-space coverage is not a guarantee of
 projected plant fidelity: filtering, UV distribution, geometric simplification
 and MSAA all matter. Validate actual source views with independent white-RGB
 coverage readbacks; resolved alpha can be multiplied by coverage again.
+
+### Associated foliage color (0.8 candidate)
+
+`downsampleAlphaColor({ width, height, data })` reduces straight RGBA8 in linear
+light using alpha-weighted color. It includes odd edge texels and returns owned
+straight-color bytes. Build each next level from this result, before any coverage
+correction. `associateAlphaColor(bytes)` produces owned, linear-light-associated
+RGB encoded in sRGB (or choose `{ colorSpace: 'linear' }`). Alpha is unchanged.
+These offline helpers default to 262,144 input pixels and reject limits above
+1,048,576 pixels.
+
+After coverage correction, associate each stored level, upload with the matching
+texture color space, and call `configureAssociatedColorMap(ownedMaterial)` on a
+mapped Three basic/standard/physical material. The hook divides filtered RGB by
+filtered alpha before lighting; it does not change alpha testing or blending.
+Do not use `premultiplyAlpha` upload conversion on already-associated bytes. Do
+not apply the hook to ordinary straight-color textures. A material cloned with
+preserved shader hooks already contains the conversion and must not reinstall it.
+RGBA8 quantization remains; near-zero alpha is not a lossless color encoding.

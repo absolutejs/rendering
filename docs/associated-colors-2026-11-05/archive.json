@@ -1,0 +1,16 @@
+{
+  "package": "@absolutejs/rendering",
+  "version": "0.8.0",
+  "status": "unpublished; additional real-asset validation in progress",
+  "archive": ".qualification/associated-0.8.0/absolutejs-rendering-0.8.0.tgz",
+  "bytes": 19653,
+  "sha256": "6eade5396cd9e419442491ff3e16d04c67a8f0733658d83b86edf45a8af5a259",
+  "sha512": "53977ec46ebe86d9a488268b5fe14c5a802cc8bf4ae8e5542cfeab719d494d48f098434644d292e079442e050d3c74319a45faf7e4ad84d17d58b6ef154084b5",
+  "independentBuildFiles": 20,
+  "tests": 36,
+  "peerRuntimeControls": [
+    "0.186.1",
+    "0.187.0"
+  ],
+  "confirmation": "queued until user returns"
+}

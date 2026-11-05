@@ -1,0 +1,85 @@
+{
+  "matchingFiles": 20,
+  "files": [
+    {
+      "file": "alphaColor.d.ts",
+      "sha256": "2388b3a0aac6957b2d2d736b88bf7931bfc06dde73f327800f5046f7c6192cec"
+    },
+    {
+      "file": "alphaColor.js",
+      "sha256": "d1c590a8f874002ec27f7c48e795a3af1915decfd9e3a2deaad53c2d6c18f065"
+    },
+    {
+      "file": "alphaCoverage.d.ts",
+      "sha256": "7bceb9dc9492e35504842e9c5e50a0f3c7b158c0748a26e6dd05a9b60067fd48"
+    },
+    {
+      "file": "alphaCoverage.js",
+      "sha256": "0c4435f18336fda102ccee2ad909ed91da75d82c741e298e635dc8b4622f6a58"
+    },
+    {
+      "file": "associatedColorMap.d.ts",
+      "sha256": "2c1924bbaf9d6b869337534fcb986f60e3054e3ea6011d6d85a0317100b33c61"
+    },
+    {
+      "file": "associatedColorMap.js",
+      "sha256": "839bb9c9874bf90e4b19159e40ca55a642abc6cf7e08cd61a868c982ea637681"
+    },
+    {
+      "file": "index.d.ts",
+      "sha256": "c32afce2e55201219c2c89789a8a84f2db481edd72f6be7918388e8b7b3de1f7"
+    },
+    {
+      "file": "index.js",
+      "sha256": "51e2262029907e9a9eb7a199ec1875d713bba98ec8911ef2b70a3859258e164f"
+    },
+    {
+      "file": "leafLighting.d.ts",
+      "sha256": "c00192b26f03a0565f8e6b8f7217a11f1e0592ee5635924761b53469cf192956"
+    },
+    {
+      "file": "leafLighting.js",
+      "sha256": "7b80af67d334970eaabc761534c34ab32f4d8e3b0c2a4008c129580bcdf31321"
+    },
+    {
+      "file": "objectTriplanar.d.ts",
+      "sha256": "b40aa67d39fb83661da248fc3141627dae4e6858aa4fcfa71e3430d72eea5ef5"
+    },
+    {
+      "file": "objectTriplanar.js",
+      "sha256": "3155bc70e1f68f1012e8d6a8b99a35aa265b549eba6c0ffdbb74a7a390349c8c"
+    },
+    {
+      "file": "preparedMipTexture.d.ts",
+      "sha256": "52539b395e0854a79aa3d6ec9e52835f4bfb49f46563d04b159a6ee3aee8e3c6"
+    },
+    {
+      "file": "preparedMipTexture.js",
+      "sha256": "c101584e6f31247e749b5162abf154b64eb04cc9eee209ef15ee603c669018ce"
+    },
+    {
+      "file": "renderTargetScope.d.ts",
+      "sha256": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa"
+    },
+    {
+      "file": "renderTargetScope.js",
+      "sha256": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb"
+    },
+    {
+      "file": "spring.d.ts",
+      "sha256": "4ee9c54aa8c20e689a89f59e5c4e4cdaf915ffa381449e09d260bfc44c6b3505"
+    },
+    {
+      "file": "spring.js",
+      "sha256": "1a15f09c946a87964e348ef0e24163b10328cb2a06792d9010c5886db03e5311"
+    },
+    {
+      "file": "thinFoliage.d.ts",
+      "sha256": "ae96f8c2bddb0de29f04ea89602ab920d186b4486ae6ca04069a4d804acd4813"
+    },
+    {
+      "file": "thinFoliage.js",
+      "sha256": "c01b7da7314002bfeebbb2e83c32a91403dfce7ed688ab5eb78852f7f74c058b"
+    }
+  ]
+}
