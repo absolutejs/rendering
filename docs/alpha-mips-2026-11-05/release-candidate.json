@@ -1,7 +1,7 @@
 {
   "package": "@absolutejs/rendering",
   "version": "0.7.0",
-  "state": "qualified candidate; unpublished",
+  "state": "superseded by qualified 0.8.0 candidate; unpublished",
   "archive": ".qualification/alpha-0.7.0/absolutejs-rendering-0.7.0.tgz",
   "bytes": 16387,
   "sha256": "8f4387c31386bb02ba99a423f1a64ebd4508720b3f8678c0db65bf6fce921ffa",
@@ -30,5 +30,6 @@
   "esmConsumer": "passes",
   "independentBuildFiles": 16,
   "npmConfirmation": "queued for user return; no publish attempt made",
-  "archiveBrowser": "Nine exact mip reads; three full disposal cycles; borrowed source unchanged"
+  "archiveBrowser": "Nine exact mip reads; three full disposal cycles; borrowed source unchanged",
+  "archiveRetention": "Removed superseded local archive after 0.8.0 qualification; original checksum retained"
 }

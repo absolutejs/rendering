@@ -44,3 +44,10 @@ these eight color reads, nine existing prepared-mip reads and three disposal cyc
 Independent builds match all 20 shipped JS/declaration files. Local npm pack first
 hit a read-only default cache; using the repository cache succeeded without auth.
 The exact archive identity is in archive.json. No release was published.
+
+Actual game qualification now passes: eight pine-0 angular rows exactly match the
+prior candidate, with existing lighting/coverage hooks composed, unchanged idle
+counts and zero retained scene geometries. Game evidence is committed at 9a81f42b.
+0.8.0 supersedes the queued 0.7.0 release, so only one eventual npm confirmation is
+needed. The old archive and independent/peer build copies are removed. One active
+0.8.0 archive and its extracted consumer remain for ongoing isolated tree tests.

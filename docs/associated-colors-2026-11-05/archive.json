@@ -1,7 +1,7 @@
 {
   "package": "@absolutejs/rendering",
   "version": "0.8.0",
-  "status": "unpublished; additional real-asset validation in progress",
+  "status": "qualified candidate; unpublished",
   "archive": ".qualification/associated-0.8.0/absolutejs-rendering-0.8.0.tgz",
   "bytes": 19653,
   "sha256": "6eade5396cd9e419442491ff3e16d04c67a8f0733658d83b86edf45a8af5a259",
@@ -12,5 +12,7 @@
     "0.186.1",
     "0.187.0"
   ],
-  "confirmation": "queued until user returns"
+  "confirmation": "queued until user returns",
+  "gameQualification": "Exact two-chain byte match and eight actual pine angular rows; game commit 9a81f42b",
+  "supersedes": "Queued 0.7.0 candidate; only 0.8.0 needs eventual publication"
 }
