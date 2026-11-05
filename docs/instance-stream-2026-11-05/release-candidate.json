@@ -1,0 +1,27 @@
+{
+  "package": "@absolutejs/rendering",
+  "version": "0.11.0",
+  "state": "qualified candidate; unpublished",
+  "sourceCommit": "d6569779c4514720644f9529e1d7d5c9c2ed6966",
+  "archive": ".qualification/streams-0.11.0/absolutejs-rendering-0.11.0.tgz",
+  "bytes": 22269,
+  "sha256": "e896a245803351391e1ed1a4268be4a276f3d4e75444da8ecad540da08dd4286",
+  "sha512": "3395f49f8246eca9f3aa3df7f2d116449d292b70bca76f6027606ee562033eb60532823c6187e9e04827e1051a83152d8369526b0785a3bfdc608bdd8ff63a69",
+  "testsPerPeer": 48,
+  "assertionsPerPeer": 319,
+  "independentBuildFiles": 26,
+  "unchangedPriorNonIndexFiles": 22,
+  "streamBrowserControlsPerPeerAndSource": 6,
+  "archiveArrayReadbacks": 100,
+  "archiveArrayDisposalCycles": 4,
+  "nodeEsmConsumer": "stream and array pass",
+  "removedDisposablePeerFiles": 3866,
+  "publication": "Queued for user return after game adoption; supersedes unpublished 0.10.0. No npm authentication attempted.",
+  "gameQualification": {
+    "scope": "isolated real-plant scene only; production remains published 0.6.0",
+    "matchingImages": 60,
+    "matchingSceneRows": 20,
+    "stationaryChangedComponents": 0,
+    "stationaryChangedChannels": 0
+  }
+}

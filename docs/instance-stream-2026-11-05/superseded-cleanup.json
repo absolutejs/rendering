@@ -1,0 +1,7 @@
+{
+  "removedArchive": ".qualification/arrays-0.10.0/absolutejs-rendering-0.10.0.tgz",
+  "sha256": "6a00aff3d3bf695d7509e1241837d51a035a2cd94a475b272434ccce6d5d2cd6",
+  "bytes": 22886,
+  "reason": "Superseded by qualified 0.11.0; isolated game retains 60 scene images and 20 rows exactly. Old source and qualification records remain in Git.",
+  "removedConsumerFiles": 27
+}

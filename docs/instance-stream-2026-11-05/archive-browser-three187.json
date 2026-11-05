@@ -1,0 +1,238 @@
+{
+  "identity": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "rows": [
+    {
+      "label": "initial",
+      "uploads": [],
+      "pixels": [
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        },
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        },
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        }
+      ],
+      "version": 1,
+      "pendingRanges": [],
+      "glError": 0
+    },
+    {
+      "label": "unchanged",
+      "uploads": [],
+      "pixels": [
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        },
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        },
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        }
+      ],
+      "version": 1,
+      "pendingRanges": [],
+      "glError": 0
+    },
+    {
+      "label": "coalesced",
+      "uploads": [
+        {
+          "offset": 0,
+          "bytes": 12
+        }
+      ],
+      "pixels": [
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        },
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        },
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        }
+      ],
+      "version": 3,
+      "pendingRanges": [],
+      "glError": 0
+    },
+    {
+      "label": "partial",
+      "uploads": [
+        {
+          "offset": 4,
+          "bytes": 4
+        }
+      ],
+      "pixels": [
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        },
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        },
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        }
+      ],
+      "version": 4,
+      "pendingRanges": [],
+      "glError": 0
+    },
+    {
+      "label": "shrink",
+      "uploads": [],
+      "pixels": [
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        },
+        {
+          "pixel": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "visible": false
+        },
+        {
+          "pixel": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "visible": false
+        }
+      ],
+      "version": 4,
+      "pendingRanges": [],
+      "glError": 0
+    },
+    {
+      "label": "restore",
+      "uploads": [],
+      "pixels": [
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        },
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        },
+        {
+          "pixel": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "visible": true
+        }
+      ],
+      "version": 4,
+      "pendingRanges": [],
+      "glError": 0
+    }
+  ],
+  "resources": {
+    "geometries": 0,
+    "textures": 0
+  },
+  "programs": 0,
+  "errors": [],
+  "scope": "Persistent instance storage, exact partial GPU upload bytes, pending-write coalescing and draw-count changes on bounded SwiftShader. No hardware timing claim."
+}
