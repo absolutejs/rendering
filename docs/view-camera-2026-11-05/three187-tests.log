@@ -1,0 +1,66 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+.qualification/view-0.9.0/three187/tests/object-triplanar.test.ts:
+(pass) projection validates bounded finite inputs before creating a material [0.33ms]
+(pass) mapping borrows textures and isolates projection inputs and cloned uniforms [0.80ms]
+(pass) shader integration rejects drift instead of silently leaving a UV channel active [0.10ms]
+(pass) rigid scope rejects skinning and active morphs while permitting static meshes [0.20ms]
+(pass) opaque scope rejects coverage that would require matching custom shadow shaders [0.13ms]
+(pass) unsupported post-construction map changes reject before drawing [0.08ms]
+
+.qualification/view-0.9.0/three187/tests/view-camera.test.ts:
+(pass) view state reads parented camera world transforms without replacing uniform objects [1.19ms]
+(pass) render/shadow hooks use primary camera, compose prior hooks and restore owned callbacks [0.26ms]
+(pass) disposing view ownership preserves a later callback owner [0.05ms]
+
+.qualification/view-0.9.0/three187/tests/render-target-scope.test.ts:
+(pass) offscreen scopes restore attachment and clipping after thrown work [0.20ms]
+(pass) synchronous reads submit from a neutral target and rebind the multisample attachment [0.22ms]
+(pass) nested scopes restore their immediate owner before the outer scope unwinds [0.11ms]
+(pass) async read restores immediately and never overwrites intervening work on resolution [0.21ms]
+(pass) async submission failures, rejections and wrong buffers do not leak state [0.24ms]
+
+.qualification/view-0.9.0/three187/tests/coverage.test.ts:
+(pass) destination selection distinguishes canvas, multisampled targets and reflection targets without repeated context queries [0.10ms]
+(pass) coverage switches before draw, preserves prior callback context and invalidates only changed program variants [0.15ms]
+(pass) rebind updates preference without callback chains and disposal respects subsequent owners [0.05ms]
+(pass) clones retain shader hooks, borrow textures and own destination policy independently even after offscreen draws [0.25ms]
+(pass) unbound clone preserves authored render callback without installing a sampling policy [0.06ms]
+(pass) context loss is not cached as permanent lack of sampling [0.03ms]
+
+.qualification/view-0.9.0/three187/tests/prepared-mips.test.ts:
+(pass) owned mip texture preserves sampler/UV state and borrows immutable bytes without altering source [0.44ms]
+(pass) rejects incomplete, malformed, oversized and non-2D mip inputs before allocation [0.47ms]
+(pass) odd dimensions halve with flooring and borrowed backing allocations obey the budget [0.11ms]
+(pass) shared backing buffers are counted once and separate oversized allocations cannot evade the budget [0.08ms]
+
+.qualification/view-0.9.0/three187/tests/alpha-color.test.ts:
+(pass) association preserves alpha and source ownership and ignores transparent RGB [0.36ms]
+(pass) hidden RGB cannot contaminate downsampled visible color [0.15ms]
+(pass) sRGB reduction averages linear light and fractional alpha weights color [0.02ms]
+(pass) odd edge footprints participate and conserve area-weighted alpha [0.19ms]
+(pass) terminal mip is owned and bounded contracts reject malformed input [0.17ms]
+(pass) material hook composes once without changing coverage or blend state [0.58ms]
+(pass) byte alpha half-ties round identically to exact box averages [21.36ms]
+
+.qualification/view-0.9.0/three187/tests/thinFoliage.test.ts:
+(pass) thin foliage validates transmission and preserves clone shader ownership [0.83ms]
+(pass) thin foliage retains standard lighting and requires a supported shader [0.66ms]
+(pass) leaf hooks reject unsupported shader shapes and untrusted field expressions [0.34ms]
+
+.qualification/view-0.9.0/three187/tests/spring.test.ts:
+(node:9) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+(pass) Three spring hosts do not install a demand scheduler [0.07ms]
+
+.qualification/view-0.9.0/three187/tests/alpha-coverage.test.ts:
+(pass) bilinear coverage includes edge clamps and handles one-dimensional images [0.14ms]
+(pass) bounded quantized rescaling improves a faded mip without changing its input [0.43ms]
+(pass) unrepresentable tails remain explicit instead of flooding the last mip [0.16ms]
+(pass) rejects non-byte input and invalid coverage targets [0.09ms]
+
+ 39 pass
+ 0 fail
+ 233 expect() calls
+Ran 39 tests across 9 files. [154.00ms]

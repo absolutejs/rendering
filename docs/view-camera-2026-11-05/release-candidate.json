@@ -1,0 +1,27 @@
+{
+  "package": "@absolutejs/rendering",
+  "version": "0.9.0",
+  "state": "qualified candidate; unpublished",
+  "archive": ".qualification/view-0.9.0/absolutejs-rendering-0.9.0.tgz",
+  "bytes": 21209,
+  "sha256": "1b3ae3f09e8e6dcda886bad28f06a6ad4f4de7c216c488f801d8c35c880880c1",
+  "sha512": "c635f84a5b475b6b38732034c2171f406bdb58c09f11f147b3d71a3e1753abfa7c0c5693e5ee36af4ec65d63d7f9ea1338262cc93e37883b003cc9d475b4b4a4",
+  "independentBuildFiles": 22,
+  "tests": 39,
+  "peerRuntimeAndTypes": [
+    "three 0.186.1 / types 0.186.0",
+    "three 0.187.0 / types 0.187.0"
+  ],
+  "archiveChecks": [
+    "Node ESM exports",
+    "three actual shadow-camera GPU readbacks",
+    "eight associated-color reads",
+    "nine prepared mip reads and three disposal cycles"
+  ],
+  "gameChecks": [
+    "16 packed pine shadow ownership cases",
+    "16 exact retained angular/diagonal/wind comparisons",
+    "two exact three-instance GPU versus CPU reference comparisons"
+  ],
+  "publication": "Queued until user returns; supersedes unpublished 0.7.0 and 0.8.0 candidates"
+}

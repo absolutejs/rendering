@@ -6,6 +6,18 @@ const { chromium } = require("playwright"),
     entrypoints: ["scripts/view-camera-entry.ts"],
     target: "browser",
     minify: true,
+    plugins: process.env.VIEW_MODULE
+      ? [
+          {
+            name: "exact-view-module",
+            setup(builder) {
+              builder.onResolve({ filter: /^\.\.\/src\/index$/ }, () => ({
+                path: require("node:path").resolve(process.env.VIEW_MODULE),
+              }));
+            },
+          },
+        ]
+      : [],
   });
   assert(build.success);
   const browser = await chromium.launch({

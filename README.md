@@ -186,7 +186,7 @@ projected plant fidelity: filtering, UV distribution, geometric simplification
 and MSAA all matter. Validate actual source views with independent white-RGB
 coverage readbacks; resolved alpha can be multiplied by coverage again.
 
-### Associated foliage color (0.8 candidate)
+### Associated foliage color
 
 `downsampleAlphaColor({ width, height, data })` reduces straight RGBA8 in linear
 light using alpha-weighted color. It includes odd edge texels and returns owned
@@ -204,3 +204,18 @@ Do not use `premultiplyAlpha` upload conversion on already-associated bytes. Do
 not apply the hook to ordinary straight-color textures. A material cloned with
 preserved shader hooks already contains the conversion and must not reinstall it.
 RGBA8 quantization remains; near-zero alpha is not a lossless color encoding.
+
+### Primary-camera uniforms across render passes
+
+`createViewCameraState()` returns stable `position`, `direction`, and
+`orthographic` uniforms plus `update(camera)`. Direction points along camera-local
++Z, toward the camera from the view; it is the opposite of Three's forward look
+direction. Parented perspective and orthographic cameras are supported. Array/XR
+camera roots and invalid transforms reject explicitly.
+
+`bindViewCamera(ownedRenderObject, state)` updates that state from Three's primary
+camera in both beauty and shadow callbacks, preserving existing callback receivers
+and arguments. The returned cleanup restores only callbacks it still owns.
+Repeated binding of the same state is idempotent; another state or a partially
+replaced binding requires cleanup first. Use the shared uniforms in your own
+shader hooks. This adds no frame scheduler and does not mutate the light camera.
