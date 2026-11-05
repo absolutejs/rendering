@@ -122,3 +122,7 @@ export {
   bindViewCamera,
   type ViewCameraState,
 } from "./viewCamera.js";
+export {
+  createPreparedMipArrayTexture,
+  type PreparedMipArrayOptions,
+} from "./preparedMipArrayTexture.js";

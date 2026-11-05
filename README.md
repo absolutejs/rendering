@@ -219,3 +219,24 @@ and arguments. The returned cleanup restores only callbacks it still owns.
 Repeated binding of the same state is idempotent; another state or a partially
 replaced binding requires cleanup first. Use the shared uniforms in your own
 shader hooks. This adds no frame scheduler and does not mutate the light camera.
+
+### Prepared RGBA8 texture arrays
+
+`createPreparedMipArrayTexture(layers, { colorSpace, maximumBytes })` copies
+matching complete mip chains into an owned array texture. Each layer is an array
+of `{ width, height, data: Uint8Array }` levels, starting at full size and ending
+at 1×1. Odd dimensions halve with flooring. Inputs are validated before packed
+buffers are allocated; copied bytes have no shared ownership with the inputs.
+
+The default combined mip budget is 16 MiB, with a 64 MiB hard limit. The API accepts
+1–256 layers and dimensions up to 16,384; these are validation bounds, not promises
+about the device. Check renderer texture-size and array-layer capabilities before
+uploading. Dispose the returned texture when its owner releases it.
+
+Color space defaults to `NoColorSpace` for data; specify `SRGBColorSpace` for color.
+The texture uses linear filtering and the supplied mip levels, with no automatic
+mip generation. It does not filter across layers. The supported Three uploader
+uses `CompressedArrayTexture`'s explicit RGBA branch for these uncompressed bytes;
+the class name does not imply compression. Both supported Three releases are
+covered by browser mip/layer/sRGB and disposal checks. This API supplies storage;
+view selection, shader lighting and world streaming remain caller responsibilities.

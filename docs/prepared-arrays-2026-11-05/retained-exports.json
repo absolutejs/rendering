@@ -1,0 +1,33 @@
+{
+  "unchangedFiles": [
+    "leafLighting.d.ts",
+    "viewCamera.d.ts",
+    "alphaColor.js",
+    "thinFoliage.d.ts",
+    "associatedColorMap.js",
+    "preparedMipTexture.js",
+    "objectTriplanar.d.ts",
+    "thinFoliage.js",
+    "alphaCoverage.d.ts",
+    "alphaCoverage.js",
+    "objectTriplanar.js",
+    "spring.js",
+    "spring.d.ts",
+    "renderTargetScope.d.ts",
+    "renderTargetScope.js",
+    "preparedMipTexture.d.ts",
+    "alphaColor.d.ts",
+    "leafLighting.js",
+    "associatedColorMap.d.ts",
+    "viewCamera.js"
+  ],
+  "sourceVersion": "0.9.0",
+  "added": [
+    "preparedMipArrayTexture.js",
+    "preparedMipArrayTexture.d.ts"
+  ],
+  "changedExportLists": [
+    "index.js",
+    "index.d.ts"
+  ]
+}

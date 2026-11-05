@@ -1,0 +1,1936 @@
+{
+  "identity": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "rows": [
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 0,
+      "level": 0,
+      "pixel": [
+        30,
+        200,
+        50,
+        60
+      ],
+      "expected": [
+        30,
+        200,
+        50,
+        60
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 0,
+      "level": 0.5,
+      "pixel": [
+        40,
+        183,
+        75,
+        75
+      ],
+      "expected": [
+        40,
+        183,
+        75,
+        75
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 0,
+      "level": 1,
+      "pixel": [
+        50,
+        165,
+        100,
+        90
+      ],
+      "expected": [
+        50,
+        165,
+        100,
+        90
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 0,
+      "level": 1.5,
+      "pixel": [
+        60,
+        148,
+        125,
+        105
+      ],
+      "expected": [
+        60,
+        147,
+        125,
+        105
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 0,
+      "level": 2,
+      "pixel": [
+        70,
+        130,
+        150,
+        120
+      ],
+      "expected": [
+        70,
+        130,
+        150,
+        120
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1,
+      "level": 0,
+      "pixel": [
+        70,
+        180,
+        50,
+        100
+      ],
+      "expected": [
+        70,
+        180,
+        50,
+        100
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1,
+      "level": 0.5,
+      "pixel": [
+        80,
+        163,
+        75,
+        115
+      ],
+      "expected": [
+        80,
+        163,
+        75,
+        115
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1,
+      "level": 1,
+      "pixel": [
+        90,
+        145,
+        100,
+        130
+      ],
+      "expected": [
+        90,
+        145,
+        100,
+        130
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1,
+      "level": 1.5,
+      "pixel": [
+        100,
+        128,
+        125,
+        145
+      ],
+      "expected": [
+        100,
+        128,
+        125,
+        145
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1,
+      "level": 2,
+      "pixel": [
+        110,
+        110,
+        150,
+        160
+      ],
+      "expected": [
+        110,
+        110,
+        150,
+        160
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 2,
+      "level": 0,
+      "pixel": [
+        110,
+        160,
+        50,
+        140
+      ],
+      "expected": [
+        110,
+        160,
+        50,
+        140
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 2,
+      "level": 0.5,
+      "pixel": [
+        120,
+        143,
+        75,
+        155
+      ],
+      "expected": [
+        120,
+        143,
+        75,
+        155
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 2,
+      "level": 1,
+      "pixel": [
+        130,
+        125,
+        100,
+        170
+      ],
+      "expected": [
+        130,
+        125,
+        100,
+        170
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 2,
+      "level": 1.5,
+      "pixel": [
+        140,
+        108,
+        125,
+        185
+      ],
+      "expected": [
+        140,
+        108,
+        125,
+        185
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 2,
+      "level": 2,
+      "pixel": [
+        150,
+        90,
+        150,
+        200
+      ],
+      "expected": [
+        150,
+        90,
+        150,
+        200
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1.49,
+      "level": 0,
+      "pixel": [
+        70,
+        180,
+        50,
+        100
+      ],
+      "expected": [
+        70,
+        180,
+        50,
+        100
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1.49,
+      "level": 0.5,
+      "pixel": [
+        80,
+        163,
+        75,
+        115
+      ],
+      "expected": [
+        80,
+        163,
+        75,
+        115
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1.49,
+      "level": 1,
+      "pixel": [
+        90,
+        145,
+        100,
+        130
+      ],
+      "expected": [
+        90,
+        145,
+        100,
+        130
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1.49,
+      "level": 1.5,
+      "pixel": [
+        100,
+        128,
+        125,
+        145
+      ],
+      "expected": [
+        100,
+        128,
+        125,
+        145
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1.49,
+      "level": 2,
+      "pixel": [
+        110,
+        110,
+        150,
+        160
+      ],
+      "expected": [
+        110,
+        110,
+        150,
+        160
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1.51,
+      "level": 0,
+      "pixel": [
+        110,
+        160,
+        50,
+        140
+      ],
+      "expected": [
+        110,
+        160,
+        50,
+        140
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1.51,
+      "level": 0.5,
+      "pixel": [
+        120,
+        143,
+        75,
+        155
+      ],
+      "expected": [
+        120,
+        143,
+        75,
+        155
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1.51,
+      "level": 1,
+      "pixel": [
+        130,
+        125,
+        100,
+        170
+      ],
+      "expected": [
+        130,
+        125,
+        100,
+        170
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1.51,
+      "level": 1.5,
+      "pixel": [
+        140,
+        108,
+        125,
+        185
+      ],
+      "expected": [
+        140,
+        108,
+        125,
+        185
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "layer": 1.51,
+      "level": 2,
+      "pixel": [
+        150,
+        90,
+        150,
+        200
+      ],
+      "expected": [
+        150,
+        90,
+        150,
+        200
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 0,
+      "disposedTextures": 0,
+      "programs": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 0,
+      "level": 0,
+      "pixel": [
+        30,
+        200,
+        50,
+        60
+      ],
+      "expected": [
+        30,
+        200,
+        50,
+        60
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 0,
+      "level": 0.5,
+      "pixel": [
+        40,
+        183,
+        75,
+        75
+      ],
+      "expected": [
+        40,
+        183,
+        75,
+        75
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 0,
+      "level": 1,
+      "pixel": [
+        50,
+        165,
+        100,
+        90
+      ],
+      "expected": [
+        50,
+        165,
+        100,
+        90
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 0,
+      "level": 1.5,
+      "pixel": [
+        60,
+        148,
+        125,
+        105
+      ],
+      "expected": [
+        60,
+        147,
+        125,
+        105
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 0,
+      "level": 2,
+      "pixel": [
+        70,
+        130,
+        150,
+        120
+      ],
+      "expected": [
+        70,
+        130,
+        150,
+        120
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1,
+      "level": 0,
+      "pixel": [
+        70,
+        180,
+        50,
+        100
+      ],
+      "expected": [
+        70,
+        180,
+        50,
+        100
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1,
+      "level": 0.5,
+      "pixel": [
+        80,
+        163,
+        75,
+        115
+      ],
+      "expected": [
+        80,
+        163,
+        75,
+        115
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1,
+      "level": 1,
+      "pixel": [
+        90,
+        145,
+        100,
+        130
+      ],
+      "expected": [
+        90,
+        145,
+        100,
+        130
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1,
+      "level": 1.5,
+      "pixel": [
+        100,
+        128,
+        125,
+        145
+      ],
+      "expected": [
+        100,
+        128,
+        125,
+        145
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1,
+      "level": 2,
+      "pixel": [
+        110,
+        110,
+        150,
+        160
+      ],
+      "expected": [
+        110,
+        110,
+        150,
+        160
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 2,
+      "level": 0,
+      "pixel": [
+        110,
+        160,
+        50,
+        140
+      ],
+      "expected": [
+        110,
+        160,
+        50,
+        140
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 2,
+      "level": 0.5,
+      "pixel": [
+        120,
+        143,
+        75,
+        155
+      ],
+      "expected": [
+        120,
+        143,
+        75,
+        155
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 2,
+      "level": 1,
+      "pixel": [
+        130,
+        125,
+        100,
+        170
+      ],
+      "expected": [
+        130,
+        125,
+        100,
+        170
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 2,
+      "level": 1.5,
+      "pixel": [
+        140,
+        108,
+        125,
+        185
+      ],
+      "expected": [
+        140,
+        108,
+        125,
+        185
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 2,
+      "level": 2,
+      "pixel": [
+        150,
+        90,
+        150,
+        200
+      ],
+      "expected": [
+        150,
+        90,
+        150,
+        200
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1.49,
+      "level": 0,
+      "pixel": [
+        70,
+        180,
+        50,
+        100
+      ],
+      "expected": [
+        70,
+        180,
+        50,
+        100
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1.49,
+      "level": 0.5,
+      "pixel": [
+        80,
+        163,
+        75,
+        115
+      ],
+      "expected": [
+        80,
+        163,
+        75,
+        115
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1.49,
+      "level": 1,
+      "pixel": [
+        90,
+        145,
+        100,
+        130
+      ],
+      "expected": [
+        90,
+        145,
+        100,
+        130
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1.49,
+      "level": 1.5,
+      "pixel": [
+        100,
+        128,
+        125,
+        145
+      ],
+      "expected": [
+        100,
+        128,
+        125,
+        145
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1.49,
+      "level": 2,
+      "pixel": [
+        110,
+        110,
+        150,
+        160
+      ],
+      "expected": [
+        110,
+        110,
+        150,
+        160
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1.51,
+      "level": 0,
+      "pixel": [
+        110,
+        160,
+        50,
+        140
+      ],
+      "expected": [
+        110,
+        160,
+        50,
+        140
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1.51,
+      "level": 0.5,
+      "pixel": [
+        120,
+        143,
+        75,
+        155
+      ],
+      "expected": [
+        120,
+        143,
+        75,
+        155
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1.51,
+      "level": 1,
+      "pixel": [
+        130,
+        125,
+        100,
+        170
+      ],
+      "expected": [
+        130,
+        125,
+        100,
+        170
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1.51,
+      "level": 1.5,
+      "pixel": [
+        140,
+        108,
+        125,
+        185
+      ],
+      "expected": [
+        140,
+        108,
+        125,
+        185
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "layer": 1.51,
+      "level": 2,
+      "pixel": [
+        150,
+        90,
+        150,
+        200
+      ],
+      "expected": [
+        150,
+        90,
+        150,
+        200
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "",
+      "cycle": 1,
+      "disposedTextures": 0,
+      "programs": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 0,
+      "level": 0,
+      "pixel": [
+        3,
+        147,
+        8,
+        60
+      ],
+      "expected": [
+        3,
+        147,
+        8,
+        60
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 0,
+      "level": 0.5,
+      "pixel": [
+        6,
+        122,
+        20,
+        75
+      ],
+      "expected": [
+        6,
+        122,
+        20,
+        75
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 0,
+      "level": 1,
+      "pixel": [
+        8,
+        96,
+        32,
+        90
+      ],
+      "expected": [
+        8,
+        96,
+        32,
+        90
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 0,
+      "level": 1.5,
+      "pixel": [
+        12,
+        76,
+        55,
+        105
+      ],
+      "expected": [
+        12,
+        76,
+        55,
+        105
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 0,
+      "level": 2,
+      "pixel": [
+        16,
+        57,
+        78,
+        120
+      ],
+      "expected": [
+        16,
+        57,
+        78,
+        120
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1,
+      "level": 0,
+      "pixel": [
+        16,
+        116,
+        8,
+        100
+      ],
+      "expected": [
+        16,
+        116,
+        8,
+        100
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1,
+      "level": 0.5,
+      "pixel": [
+        21,
+        94,
+        20,
+        115
+      ],
+      "expected": [
+        21,
+        94,
+        20,
+        115
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1,
+      "level": 1,
+      "pixel": [
+        26,
+        72,
+        32,
+        130
+      ],
+      "expected": [
+        26,
+        72,
+        32,
+        130
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1,
+      "level": 1.5,
+      "pixel": [
+        33,
+        56,
+        55,
+        145
+      ],
+      "expected": [
+        33,
+        56,
+        55,
+        145
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1,
+      "level": 2,
+      "pixel": [
+        40,
+        40,
+        78,
+        160
+      ],
+      "expected": [
+        40,
+        40,
+        78,
+        160
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 2,
+      "level": 0,
+      "pixel": [
+        40,
+        90,
+        8,
+        140
+      ],
+      "expected": [
+        40,
+        90,
+        8,
+        140
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 2,
+      "level": 0.5,
+      "pixel": [
+        48,
+        71,
+        20,
+        155
+      ],
+      "expected": [
+        48,
+        71,
+        20,
+        155
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 2,
+      "level": 1,
+      "pixel": [
+        57,
+        52,
+        32,
+        170
+      ],
+      "expected": [
+        57,
+        52,
+        32,
+        170
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 2,
+      "level": 1.5,
+      "pixel": [
+        67,
+        39,
+        55,
+        185
+      ],
+      "expected": [
+        67,
+        39,
+        55,
+        185
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 2,
+      "level": 2,
+      "pixel": [
+        78,
+        26,
+        78,
+        200
+      ],
+      "expected": [
+        78,
+        26,
+        78,
+        200
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1.49,
+      "level": 0,
+      "pixel": [
+        16,
+        116,
+        8,
+        100
+      ],
+      "expected": [
+        16,
+        116,
+        8,
+        100
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1.49,
+      "level": 0.5,
+      "pixel": [
+        21,
+        94,
+        20,
+        115
+      ],
+      "expected": [
+        21,
+        94,
+        20,
+        115
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1.49,
+      "level": 1,
+      "pixel": [
+        26,
+        72,
+        32,
+        130
+      ],
+      "expected": [
+        26,
+        72,
+        32,
+        130
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1.49,
+      "level": 1.5,
+      "pixel": [
+        33,
+        56,
+        55,
+        145
+      ],
+      "expected": [
+        33,
+        56,
+        55,
+        145
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1.49,
+      "level": 2,
+      "pixel": [
+        40,
+        40,
+        78,
+        160
+      ],
+      "expected": [
+        40,
+        40,
+        78,
+        160
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1.51,
+      "level": 0,
+      "pixel": [
+        40,
+        90,
+        8,
+        140
+      ],
+      "expected": [
+        40,
+        90,
+        8,
+        140
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1.51,
+      "level": 0.5,
+      "pixel": [
+        48,
+        71,
+        20,
+        155
+      ],
+      "expected": [
+        48,
+        71,
+        20,
+        155
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1.51,
+      "level": 1,
+      "pixel": [
+        57,
+        52,
+        32,
+        170
+      ],
+      "expected": [
+        57,
+        52,
+        32,
+        170
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1.51,
+      "level": 1.5,
+      "pixel": [
+        67,
+        39,
+        55,
+        185
+      ],
+      "expected": [
+        67,
+        39,
+        55,
+        185
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "layer": 1.51,
+      "level": 2,
+      "pixel": [
+        78,
+        26,
+        78,
+        200
+      ],
+      "expected": [
+        78,
+        26,
+        78,
+        200
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 0,
+      "disposedTextures": 0,
+      "programs": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 0,
+      "level": 0,
+      "pixel": [
+        3,
+        147,
+        8,
+        60
+      ],
+      "expected": [
+        3,
+        147,
+        8,
+        60
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 0,
+      "level": 0.5,
+      "pixel": [
+        6,
+        122,
+        20,
+        75
+      ],
+      "expected": [
+        6,
+        122,
+        20,
+        75
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 0,
+      "level": 1,
+      "pixel": [
+        8,
+        96,
+        32,
+        90
+      ],
+      "expected": [
+        8,
+        96,
+        32,
+        90
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 0,
+      "level": 1.5,
+      "pixel": [
+        12,
+        76,
+        55,
+        105
+      ],
+      "expected": [
+        12,
+        76,
+        55,
+        105
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 0,
+      "level": 2,
+      "pixel": [
+        16,
+        57,
+        78,
+        120
+      ],
+      "expected": [
+        16,
+        57,
+        78,
+        120
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1,
+      "level": 0,
+      "pixel": [
+        16,
+        116,
+        8,
+        100
+      ],
+      "expected": [
+        16,
+        116,
+        8,
+        100
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1,
+      "level": 0.5,
+      "pixel": [
+        21,
+        94,
+        20,
+        115
+      ],
+      "expected": [
+        21,
+        94,
+        20,
+        115
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1,
+      "level": 1,
+      "pixel": [
+        26,
+        72,
+        32,
+        130
+      ],
+      "expected": [
+        26,
+        72,
+        32,
+        130
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1,
+      "level": 1.5,
+      "pixel": [
+        33,
+        56,
+        55,
+        145
+      ],
+      "expected": [
+        33,
+        56,
+        55,
+        145
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1,
+      "level": 2,
+      "pixel": [
+        40,
+        40,
+        78,
+        160
+      ],
+      "expected": [
+        40,
+        40,
+        78,
+        160
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 2,
+      "level": 0,
+      "pixel": [
+        40,
+        90,
+        8,
+        140
+      ],
+      "expected": [
+        40,
+        90,
+        8,
+        140
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 2,
+      "level": 0.5,
+      "pixel": [
+        48,
+        71,
+        20,
+        155
+      ],
+      "expected": [
+        48,
+        71,
+        20,
+        155
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 2,
+      "level": 1,
+      "pixel": [
+        57,
+        52,
+        32,
+        170
+      ],
+      "expected": [
+        57,
+        52,
+        32,
+        170
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 2,
+      "level": 1.5,
+      "pixel": [
+        67,
+        39,
+        55,
+        185
+      ],
+      "expected": [
+        67,
+        39,
+        55,
+        185
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 2,
+      "level": 2,
+      "pixel": [
+        78,
+        26,
+        78,
+        200
+      ],
+      "expected": [
+        78,
+        26,
+        78,
+        200
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1.49,
+      "level": 0,
+      "pixel": [
+        16,
+        116,
+        8,
+        100
+      ],
+      "expected": [
+        16,
+        116,
+        8,
+        100
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1.49,
+      "level": 0.5,
+      "pixel": [
+        21,
+        94,
+        20,
+        115
+      ],
+      "expected": [
+        21,
+        94,
+        20,
+        115
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1.49,
+      "level": 1,
+      "pixel": [
+        26,
+        72,
+        32,
+        130
+      ],
+      "expected": [
+        26,
+        72,
+        32,
+        130
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1.49,
+      "level": 1.5,
+      "pixel": [
+        33,
+        56,
+        55,
+        145
+      ],
+      "expected": [
+        33,
+        56,
+        55,
+        145
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1.49,
+      "level": 2,
+      "pixel": [
+        40,
+        40,
+        78,
+        160
+      ],
+      "expected": [
+        40,
+        40,
+        78,
+        160
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1.51,
+      "level": 0,
+      "pixel": [
+        40,
+        90,
+        8,
+        140
+      ],
+      "expected": [
+        40,
+        90,
+        8,
+        140
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1.51,
+      "level": 0.5,
+      "pixel": [
+        48,
+        71,
+        20,
+        155
+      ],
+      "expected": [
+        48,
+        71,
+        20,
+        155
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1.51,
+      "level": 1,
+      "pixel": [
+        57,
+        52,
+        32,
+        170
+      ],
+      "expected": [
+        57,
+        52,
+        32,
+        170
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1.51,
+      "level": 1.5,
+      "pixel": [
+        67,
+        39,
+        55,
+        185
+      ],
+      "expected": [
+        67,
+        39,
+        55,
+        185
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "layer": 1.51,
+      "level": 2,
+      "pixel": [
+        78,
+        26,
+        78,
+        200
+      ],
+      "expected": [
+        78,
+        26,
+        78,
+        200
+      ],
+      "glError": 0
+    },
+    {
+      "colorSpace": "srgb",
+      "cycle": 1,
+      "disposedTextures": 0,
+      "programs": 0
+    }
+  ],
+  "unchanged": true,
+  "resources": {
+    "geometries": 0,
+    "textures": 0
+  },
+  "errors": [],
+  "scope": "Explicit array layer/mip selection, fractional LOD, sRGB decode and disposal on 4px SwiftShader; no hardware timing claim."
+}
