@@ -110,3 +110,6 @@ export {
 export { alphaCoverage, scaleAlphaCoverage } from "./alphaCoverage.js";
 export { createPreparedMipTexture } from "./preparedMipTexture.js";
 export type { PreparedMipLevel } from "./preparedMipTexture.js";
+
+export { associateAlphaColor, downsampleAlphaColor, type AlphaColorOptions } from './alphaColor';
+export { configureAssociatedColorMap } from './associatedColorMap';

@@ -1,0 +1,61 @@
+{
+  "rows": [
+    {
+      "hidden": [
+        0,
+        255,
+        0
+      ],
+      "pixel": [
+        255,
+        0,
+        0,
+        128
+      ]
+    },
+    {
+      "hidden": [
+        0,
+        0,
+        255
+      ],
+      "pixel": [
+        255,
+        0,
+        0,
+        128
+      ]
+    },
+    {
+      "hidden": [
+        255,
+        255,
+        255
+      ],
+      "pixel": [
+        255,
+        0,
+        0,
+        128
+      ]
+    },
+    {
+      "hidden": [
+        0,
+        0,
+        0
+      ],
+      "pixel": [
+        255,
+        0,
+        0,
+        128
+      ]
+    }
+  ],
+  "textures": 0,
+  "geometries": 0,
+  "glError": 0,
+  "errors": [],
+  "scope": "4px SwiftShader bilinear filtering through actual MeshBasicMaterial; no hardware performance claim."
+}
