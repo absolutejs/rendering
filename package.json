@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/rendering",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Three.js material ownership, destination coverage, rigid-object triplanar mapping and isolated React Spring hosts.",
   "type": "module",
   "main": "./dist/index.js",
@@ -42,7 +42,8 @@
     "test:foliage:browser": "bun scripts/verify-foliage.cjs",
     "test:foliage:environment": "bun scripts/verify-foliage-environment.cjs",
     "test:mips:browser": "bun scripts/verify-prepared-mips.cjs",
-    "test:arrays:browser": "bun scripts/verify-prepared-arrays.cjs"
+    "test:arrays:browser": "bun scripts/verify-prepared-arrays.cjs",
+    "test:instances:browser": "bun scripts/verify-instance-stream.cjs"
   },
   "peerDependencies": {
     "three": ">=0.186.0 <0.188.0",

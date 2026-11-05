@@ -240,3 +240,21 @@ uses `CompressedArrayTexture`'s explicit RGBA branch for these uncompressed byte
 the class name does not imply compression. Both supported Three releases are
 covered by browser mip/layer/sRGB and disposal checks. This API supplies storage;
 view selection, shader lighting and world streaming remain caller responsibilities.
+
+### Persistent instance attributes (0.11.0 candidate)
+
+`createInstanceAttributeStream(capacity, itemSize, maximumBytes?)` owns a fixed
+`InstancedBufferAttribute` with dynamic usage. `update(Float32Array, count)` copies
+only the consumed prefix, returns changed scalar components, and coalesces dirty
+ranges until Three acknowledges an upload. Unchanged prefixes request no upload.
+Use `stream.count` to update the mesh/geometry draw count, including count changes
+that do not alter attribute values. Capacity cannot grow; replace the resource
+explicitly when its budget changes. Default budget is 4 MiB, hard limit 64 MiB.
+
+Attach the owned attribute to the owning geometry. Do not externally mutate its
+array, upload callback, update ranges, version or usage; this would bypass dirty
+tracking. Input may not alias owned storage or use concurrent shared memory.
+Invalid prefixes reject atomically. Geometry/mesh disposal owns GPU lifetime;
+release your stream reference with that owner. No frame callback or global
+renderer modification is installed. Instance matrices use item size 16; ordinary
+custom attributes use their shader component count.

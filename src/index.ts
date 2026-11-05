@@ -126,3 +126,7 @@ export {
   createPreparedMipArrayTexture,
   type PreparedMipArrayOptions,
 } from "./preparedMipArrayTexture.js";
+export {
+  createInstanceAttributeStream,
+  type InstanceAttributeStream,
+} from "./instanceAttributeStream.js";
