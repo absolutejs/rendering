@@ -40,7 +40,8 @@
     "test:spring:browser": "bun scripts/verify-spring.cjs",
     "test:triplanar:browser": "bun scripts/verify-triplanar.cjs",
     "test:foliage:browser": "bun scripts/verify-foliage.cjs",
-    "test:foliage:environment": "bun scripts/verify-foliage-environment.cjs"
+    "test:foliage:environment": "bun scripts/verify-foliage-environment.cjs",
+    "test:mips:browser": "bun scripts/verify-prepared-mips.cjs"
   },
   "peerDependencies": {
     "three": ">=0.186.0 <0.187.0",

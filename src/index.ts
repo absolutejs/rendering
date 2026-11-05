@@ -106,3 +106,7 @@ export {
   withLeafTransmissionField,
   leafLightingGLSL,
 } from "./leafLighting.js";
+
+export { alphaCoverage, scaleAlphaCoverage } from "./alphaCoverage.js";
+export { createPreparedMipTexture } from "./preparedMipTexture.js";
+export type { PreparedMipLevel } from "./preparedMipTexture.js";

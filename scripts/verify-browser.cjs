@@ -26,6 +26,7 @@ const {
 			)
 	});
 	let browser;
+	const watchdog = setTimeout(() => void browser?.close(), 60000);
 	const errors = [];
 	try {
 		browser = await chromium.launch({
@@ -71,6 +72,7 @@ const {
 			throw Error('Unexpected destination comparison result');
 		console.log(JSON.stringify({passed:result.passed,draws:result.rows.length,stablePrograms:result.stablePrograms,disposed:result.disposed}));
 	} finally {
+		clearTimeout(watchdog);
 		await browser?.close();
 		server.stop(true);
 	}

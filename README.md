@@ -158,3 +158,30 @@ Version 0.6 replaces the factory's view-dependent direct-scattering factor with
 the same thin-sheet diffuse weighting used by the lower-level hooks. Existing
 material colour/transmission settings remain valid, but direct backlighting can
 change. This release also adds sky transmission missing from 0.5.
+
+### Prepared alpha-coverage mipmaps
+
+`alphaCoverage(alpha, width, height, cutoff)` estimates bilinear alpha-test
+coverage with a fixed 4×4 sampling grid per texel, including clamped borders.
+`scaleAlphaCoverage(alpha, width, height, cutoff, target)` returns new alpha bytes,
+coverage measurements and a scale selected by at most twelve bisection steps
+within [0, 4]. Inputs are limited to 262,144 texels. These are offline or worker
+setup tools, not per-frame work. Quantization and constant mip tails can prevent
+matching the target; the result explicitly reports the residual and retains the
+original if no candidate improves it. Input bytes are unchanged.
+
+`createPreparedMipTexture(source, levels, maximumBytes?)` creates an owned Three
+RGBA8 2D texture over a complete, precomputed chain. It preserves source color
+space, sampler and UV settings while giving the result its own texture source
+and level descriptors. Data bytes are borrowed and must remain immutable for the
+texture's lifetime; dispose the returned texture when its owner releases it.
+The default bound is 16 MiB, configurable up to 64 MiB, including borrowed backing
+buffers. This validates layout, not hashes, transport or ecological correctness.
+Asset identity verification belongs before this call. No GPU upload or renderer
+mutation occurs until the caller prepares/renders the returned texture.
+
+The [coverage-preserving mip technique](https://www.ludicon.com/castano/blog/articles/computing-alpha-mipmaps/)
+addresses alpha-test thinning. Texture-space coverage is not a guarantee of
+projected plant fidelity: filtering, UV distribution, geometric simplification
+and MSAA all matter. Validate actual source views with independent white-RGB
+coverage readbacks; resolved alpha can be multiplied by coverage again.
