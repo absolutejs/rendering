@@ -1,0 +1,8 @@
+{
+  "three": "0.187.0",
+  "typesThree": "0.187.0",
+  "packageTests": 29,
+  "packageTestsFailed": 0,
+  "sourceCommit": "1eb8817",
+  "nativeGPU": false
+}

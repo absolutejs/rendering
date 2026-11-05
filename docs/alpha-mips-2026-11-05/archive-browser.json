@@ -1,0 +1,121 @@
+{
+  "rows": [
+    {
+      "cycle": 0,
+      "level": 0,
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "textures": 1
+    },
+    {
+      "cycle": 0,
+      "level": 1,
+      "pixel": [
+        0,
+        255,
+        0,
+        255
+      ],
+      "textures": 1
+    },
+    {
+      "cycle": 0,
+      "level": 2,
+      "pixel": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "textures": 1
+    },
+    {
+      "cycle": 0,
+      "disposedTextures": 0
+    },
+    {
+      "cycle": 1,
+      "level": 0,
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "textures": 1
+    },
+    {
+      "cycle": 1,
+      "level": 1,
+      "pixel": [
+        0,
+        255,
+        0,
+        255
+      ],
+      "textures": 1
+    },
+    {
+      "cycle": 1,
+      "level": 2,
+      "pixel": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "textures": 1
+    },
+    {
+      "cycle": 1,
+      "disposedTextures": 0
+    },
+    {
+      "cycle": 2,
+      "level": 0,
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "textures": 1
+    },
+    {
+      "cycle": 2,
+      "level": 1,
+      "pixel": [
+        0,
+        255,
+        0,
+        255
+      ],
+      "textures": 1
+    },
+    {
+      "cycle": 2,
+      "level": 2,
+      "pixel": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "textures": 1
+    },
+    {
+      "cycle": 2,
+      "disposedTextures": 0
+    }
+  ],
+  "unchanged": true,
+  "sourceUnchanged": true,
+  "glError": 0,
+  "errors": [],
+  "scope": "Three explicit mip sampling and disposal on a 4px SwiftShader canvas; no hardware timing claim.",
+  "moduleUnderTest": ".qualification/alpha-0.7.0/consumer/package/dist/index.js"
+}

@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/rendering",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Three.js material ownership, destination coverage, rigid-object triplanar mapping and isolated React Spring hosts.",
   "type": "module",
   "main": "./dist/index.js",
@@ -44,7 +44,7 @@
     "test:mips:browser": "bun scripts/verify-prepared-mips.cjs"
   },
   "peerDependencies": {
-    "three": ">=0.186.0 <0.187.0",
+    "three": ">=0.186.0 <0.188.0",
     "react": ">=19.3.0 <20",
     "@react-three/fiber": ">=9.8.2 <10",
     "@react-spring/animated": ">=10.1.2 <11",

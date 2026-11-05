@@ -1,0 +1,86 @@
+{
+  "matched": true,
+  "files": [
+    {
+      "path": "alphaCoverage.d.ts",
+      "bytes": 694,
+      "sha256": "7bceb9dc9492e35504842e9c5e50a0f3c7b158c0748a26e6dd05a9b60067fd48"
+    },
+    {
+      "path": "alphaCoverage.js",
+      "bytes": 2738,
+      "sha256": "0c4435f18336fda102ccee2ad909ed91da75d82c741e298e635dc8b4622f6a58"
+    },
+    {
+      "path": "index.d.ts",
+      "bytes": 1754,
+      "sha256": "503be5a1e0ab9e462706494176faf02ce5f0ba5114dad18c4c42d9ca29c94639"
+    },
+    {
+      "path": "index.js",
+      "bytes": 3726,
+      "sha256": "b81c75a7122102adffb3ebc06fa5824207f21461c4b035c46552c30dcbdbfe67"
+    },
+    {
+      "path": "leafLighting.d.ts",
+      "bytes": 1726,
+      "sha256": "c00192b26f03a0565f8e6b8f7217a11f1e0592ee5635924761b53469cf192956"
+    },
+    {
+      "path": "leafLighting.js",
+      "bytes": 3201,
+      "sha256": "7b80af67d334970eaabc761534c34ab32f4d8e3b0c2a4008c129580bcdf31321"
+    },
+    {
+      "path": "objectTriplanar.d.ts",
+      "bytes": 1128,
+      "sha256": "b40aa67d39fb83661da248fc3141627dae4e6858aa4fcfa71e3430d72eea5ef5"
+    },
+    {
+      "path": "objectTriplanar.js",
+      "bytes": 6539,
+      "sha256": "3155bc70e1f68f1012e8d6a8b99a35aa265b549eba6c0ffdbb74a7a390349c8c"
+    },
+    {
+      "path": "preparedMipTexture.d.ts",
+      "bytes": 638,
+      "sha256": "52539b395e0854a79aa3d6ec9e52835f4bfb49f46563d04b159a6ee3aee8e3c6"
+    },
+    {
+      "path": "preparedMipTexture.js",
+      "bytes": 3260,
+      "sha256": "c101584e6f31247e749b5162abf154b64eb04cc9eee209ef15ee603c669018ce"
+    },
+    {
+      "path": "renderTargetScope.d.ts",
+      "bytes": 1490,
+      "sha256": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa"
+    },
+    {
+      "path": "renderTargetScope.js",
+      "bytes": 2339,
+      "sha256": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb"
+    },
+    {
+      "path": "spring.d.ts",
+      "bytes": 776,
+      "sha256": "4ee9c54aa8c20e689a89f59e5c4e4cdaf915ffa381449e09d260bfc44c6b3505"
+    },
+    {
+      "path": "spring.js",
+      "bytes": 783,
+      "sha256": "1a15f09c946a87964e348ef0e24163b10328cb2a06792d9010c5886db03e5311"
+    },
+    {
+      "path": "thinFoliage.d.ts",
+      "bytes": 733,
+      "sha256": "ae96f8c2bddb0de29f04ea89602ab920d186b4486ae6ca04069a4d804acd4813"
+    },
+    {
+      "path": "thinFoliage.js",
+      "bytes": 1275,
+      "sha256": "c01b7da7314002bfeebbb2e83c32a91403dfce7ed688ab5eb78852f7f74c058b"
+    }
+  ],
+  "toolchain": "BVM Bun 1.4.4+absolute.1; TypeScript 5.9.3; Three 0.186.1 dev pin"
+}

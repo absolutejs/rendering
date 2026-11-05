@@ -1,0 +1,130 @@
+{
+  "rows": [
+    {
+      "candidate": false,
+      "before": {
+        "frames": 1,
+        "callbackValue": 0,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 0,
+        "opacity": 1,
+        "canvas": true
+      },
+      "afterWeb": {
+        "frames": 14,
+        "callbackValue": 0,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 0,
+        "opacity": 0,
+        "canvas": true
+      },
+      "afterThree": {
+        "frames": 27,
+        "callbackValue": 0,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 1,
+        "opacity": 0,
+        "canvas": true
+      },
+      "withoutCanvas": {
+        "frames": 62,
+        "callbackValue": 1,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": null,
+        "opacity": 0.0825,
+        "canvas": false,
+        "complete": false
+      },
+      "paused": {
+        "frames": 30,
+        "callbackValue": 0.05583333333333333,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 1,
+        "opacity": 0,
+        "canvas": true
+      },
+      "stillPaused": {
+        "frames": 30,
+        "callbackValue": 0.05583333333333333,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 1,
+        "opacity": 0,
+        "canvas": true
+      },
+      "resumed": {
+        "frames": 62,
+        "callbackValue": 1,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 1,
+        "opacity": 0,
+        "canvas": true
+      },
+      "webFrames": 13,
+      "threeFrames": 13
+    },
+    {
+      "candidate": true,
+      "before": {
+        "frames": 1,
+        "callbackValue": 0,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 0,
+        "opacity": 1,
+        "canvas": true
+      },
+      "afterWeb": {
+        "frames": 1,
+        "callbackValue": 0,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 0,
+        "opacity": 0,
+        "canvas": true
+      },
+      "afterThree": {
+        "frames": 7,
+        "callbackValue": 0,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 1,
+        "opacity": 0,
+        "canvas": true
+      },
+      "withoutCanvas": {
+        "frames": 26,
+        "callbackValue": 1,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": null,
+        "opacity": 1,
+        "canvas": false,
+        "complete": true
+      },
+      "paused": {
+        "frames": 9,
+        "callbackValue": 0.05566666667660077,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 1,
+        "opacity": 0,
+        "canvas": true
+      },
+      "stillPaused": {
+        "frames": 9,
+        "callbackValue": 0.05566666667660077,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 1,
+        "opacity": 0,
+        "canvas": true
+      },
+      "resumed": {
+        "frames": 26,
+        "callbackValue": 1,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "x": 1,
+        "opacity": 0,
+        "canvas": true
+      },
+      "webFrames": 0,
+      "threeFrames": 6
+    }
+  ],
+  "errors": [],
+  "scope": "Isolated mixed DOM/Three spring scheduler contract on a 32px software canvas. Candidate imports the built package spring entry; includes callback clock pause/resume. No FPS claim."
+}

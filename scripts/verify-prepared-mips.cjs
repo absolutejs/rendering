@@ -4,6 +4,18 @@ const { chromium } = require("playwright"),
 (async () => {
   const build = await Bun.build({
     entrypoints: ["scripts/prepared-mips-entry.ts"],
+    plugins: process.env.MIPS_MODULE
+      ? [
+          {
+            name: "exact-archive-module",
+            setup(builder) {
+              builder.onResolve({ filter: /^\.\.\/src\/index$/ }, () => ({
+                path: require("node:path").resolve(process.env.MIPS_MODULE),
+              }));
+            },
+          },
+        ]
+      : [],
     target: "browser",
     minify: true,
   });
