@@ -1,7 +1,7 @@
 {
   "package": "@absolutejs/rendering",
   "version": "0.9.0",
-  "state": "qualified candidate; unpublished",
+  "state": "superseded by qualified unpublished 0.10.0; retained temporarily for active game qualification baseline",
   "archive": ".qualification/view-0.9.0/absolutejs-rendering-0.9.0.tgz",
   "bytes": 21209,
   "sha256": "1b3ae3f09e8e6dcda886bad28f06a6ad4f4de7c216c488f801d8c35c880880c1",

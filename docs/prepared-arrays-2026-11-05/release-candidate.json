@@ -1,0 +1,19 @@
+{
+  "package": "@absolutejs/rendering",
+  "version": "0.10.0",
+  "state": "qualified candidate; unpublished",
+  "sourceCommit": "dd8c5d91da463d1e1280ea48864cd1b8640e6006",
+  "archive": ".qualification/arrays-0.10.0/absolutejs-rendering-0.10.0.tgz",
+  "bytes": 22886,
+  "sha256": "6a00aff3d3bf695d7509e1241837d51a035a2cd94a475b272434ccce6d5d2cd6",
+  "sha512": "c86fbd08ac95a714dd5cbe5db41bf597f8e4cf9ca012e0f2e26442d742db743c90bbc12cebc5107e0d958ab641dc185c327c7c528cd4afc2fd511c4b14816157",
+  "testsPerPeer": 42,
+  "peerPairs": [
+    "three 0.186.1/types 0.186.0",
+    "three 0.187.0/types 0.187.0"
+  ],
+  "independentBuildFiles": 24,
+  "browserReadbacksPerPeerAndSource": 100,
+  "disposalCyclesPerBrowser": 4,
+  "publication": "Queued until user returns; supersedes unpublished 0.9.0. Game prototype adoption still pending."
+}
