@@ -70,3 +70,37 @@ ${diffuse}
       leafLightingGLSL,
   );
 }
+
+/** Compose AFTER a leaf lighting hook. The caller declares a GLSL function
+ * `float name(vec3 viewSpaceNormal)` before the physical lighting chunk. It owns
+ * world-normal transforms, position/height sampling, revisions and the material
+ * cache key. Evaluates front/back visibility BEFORE their transmitted diffuse
+ * mixture; leaves direct lighting, emissive and specular compensation untouched.
+ * This affects environment diffuse only, not ambient/hemi lights or full GI. */
+export function withLeafEnvironmentVisibility(
+  shader: string,
+  identifier: string,
+) {
+  if (
+    !/^[A-Za-z_][A-Za-z0-9_]*$/.test(identifier) ||
+    identifier.startsWith("gl_")
+  )
+    throw Error("Invalid leaf environment visibility function");
+  const marker =
+    "vec3 leafIrradiance = mix(irradiance, getIBLIrradiance(-geometryNormal), LEAF_TRANSMISSION);";
+  if (
+    shader.split(marker).length !== 2 ||
+    shader.includes("ABS_LEAF_ENV_VISIBILITY")
+  )
+    throw Error(
+      "Leaf environment visibility requires one unmodified leaf lighting hook",
+    );
+  return shader.replace(
+    marker,
+    `// ABS_LEAF_ENV_VISIBILITY
+vec3 leafIrradiance = mix(
+ irradiance * clamp(${identifier}(geometryNormal), 0., 1.),
+ getIBLIrradiance(-geometryNormal) * clamp(${identifier}(-geometryNormal), 0., 1.),
+ LEAF_TRANSMISSION);`,
+  );
+}

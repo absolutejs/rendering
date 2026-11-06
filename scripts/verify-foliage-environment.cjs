@@ -3,6 +3,18 @@ const { chromium } = require("playwright");
   const build = await Bun.build({
     entrypoints: ["artifacts/thin-foliage/environment.ts"],
     target: "browser",
+    plugins: process.env.FOLIAGE_THREE
+      ? [
+          {
+            name: "qualified-three",
+            setup(build) {
+              build.onResolve({ filter: /^three$/ }, () => ({
+                path: process.env.FOLIAGE_THREE,
+              }));
+            },
+          },
+        ]
+      : [],
   });
   if (!build.success) throw Error(build.logs.join("\n"));
   const browser = await chromium.launch({
@@ -37,10 +49,20 @@ const { chromium } = require("playwright");
     );
     if (errors.length) throw Error(errors.join("\n"));
     await Bun.write(
-      "docs/foliage-sky-0.6/environment.json",
+      process.env.FOLIAGE_ENV_REPORT || "docs/foliage-sky-0.6/environment.json",
       JSON.stringify({ identity, ...result, errors }, null, 2),
     );
-    console.log(result);
+    console.log({
+      controls: result.visibilityRows.length,
+      maxDirectEmissiveError: result.maxDirectEmissiveError,
+      maxDiffuseError: Math.max(
+        ...result.visibilityRows.map((r) => r.maxError),
+      ),
+      maxSpecularError: Math.max(
+        ...result.visibilityRows.map((r) => r.maxSpecularError),
+      ),
+      errors,
+    });
   } finally {
     clearTimeout(timer);
     await browser.close();

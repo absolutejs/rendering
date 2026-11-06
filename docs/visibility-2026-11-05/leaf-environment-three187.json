@@ -1,0 +1,396 @@
+{
+  "identity": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "rows": [
+    {
+      "transmission": 0,
+      "fieldHook": false,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0,
+      "fieldHook": true,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.18,
+      "fieldHook": false,
+      "maxError": 3.680586813104014e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.18,
+      "fieldHook": true,
+      "maxError": 3.680586813104014e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.32,
+      "fieldHook": false,
+      "maxError": 7.86781311212792e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.32,
+      "fieldHook": true,
+      "maxError": 7.86781311212792e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.6,
+      "fieldHook": false,
+      "maxError": 1.6298145055770874e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.6,
+      "fieldHook": true,
+      "maxError": 1.6298145055770874e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 1,
+      "fieldHook": false,
+      "maxError": 1.257285475730896e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 1,
+      "fieldHook": true,
+      "maxError": 1.257285475730896e-8,
+      "maxSpecularError": 0
+    }
+  ],
+  "visibilityRows": [
+    {
+      "transmission": 0,
+      "visibility": [
+        1,
+        1
+      ],
+      "fieldHook": false,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0,
+      "visibility": [
+        1,
+        1
+      ],
+      "fieldHook": true,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0,
+      "visibility": [
+        0,
+        0
+      ],
+      "fieldHook": false,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0,
+      "visibility": [
+        0,
+        0
+      ],
+      "fieldHook": true,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0,
+      "visibility": [
+        0.2,
+        0.8
+      ],
+      "fieldHook": false,
+      "maxError": 1.192092893842478e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0,
+      "visibility": [
+        0.2,
+        0.8
+      ],
+      "fieldHook": true,
+      "maxError": 1.192092893842478e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0,
+      "visibility": [
+        -1,
+        2
+      ],
+      "fieldHook": false,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0,
+      "visibility": [
+        -1,
+        2
+      ],
+      "fieldHook": true,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.28,
+      "visibility": [
+        1,
+        1
+      ],
+      "fieldHook": false,
+      "maxError": 8.37445259804781e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.28,
+      "visibility": [
+        1,
+        1
+      ],
+      "fieldHook": true,
+      "maxError": 8.37445259804781e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.28,
+      "visibility": [
+        0,
+        0
+      ],
+      "fieldHook": false,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.28,
+      "visibility": [
+        0,
+        0
+      ],
+      "fieldHook": true,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.28,
+      "visibility": [
+        0.2,
+        0.8
+      ],
+      "fieldHook": false,
+      "maxError": 7.4207782696511515e-9,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.28,
+      "visibility": [
+        0.2,
+        0.8
+      ],
+      "fieldHook": true,
+      "maxError": 7.4207782696511515e-9,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.28,
+      "visibility": [
+        -1,
+        2
+      ],
+      "fieldHook": false,
+      "maxError": 1.5459954733065828e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.28,
+      "visibility": [
+        -1,
+        2
+      ],
+      "fieldHook": true,
+      "maxError": 1.5459954733065828e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.5,
+      "visibility": [
+        1,
+        1
+      ],
+      "fieldHook": false,
+      "maxError": 3.608874976634979e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.5,
+      "visibility": [
+        1,
+        1
+      ],
+      "fieldHook": true,
+      "maxError": 3.608874976634979e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.5,
+      "visibility": [
+        0,
+        0
+      ],
+      "fieldHook": false,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.5,
+      "visibility": [
+        0,
+        0
+      ],
+      "fieldHook": true,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.5,
+      "visibility": [
+        0.2,
+        0.8
+      ],
+      "fieldHook": false,
+      "maxError": 2.100132406868127e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.5,
+      "visibility": [
+        0.2,
+        0.8
+      ],
+      "fieldHook": true,
+      "maxError": 2.100132406868127e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.5,
+      "visibility": [
+        -1,
+        2
+      ],
+      "fieldHook": false,
+      "maxError": 9.080395102500916e-9,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 0.5,
+      "visibility": [
+        -1,
+        2
+      ],
+      "fieldHook": true,
+      "maxError": 9.080395102500916e-9,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 1,
+      "visibility": [
+        1,
+        1
+      ],
+      "fieldHook": false,
+      "maxError": 1.257285475730896e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 1,
+      "visibility": [
+        1,
+        1
+      ],
+      "fieldHook": true,
+      "maxError": 1.257285475730896e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 1,
+      "visibility": [
+        0,
+        0
+      ],
+      "fieldHook": false,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 1,
+      "visibility": [
+        0,
+        0
+      ],
+      "fieldHook": true,
+      "maxError": 0,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 1,
+      "visibility": [
+        0.2,
+        0.8
+      ],
+      "fieldHook": false,
+      "maxError": 2.7474015951156616e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 1,
+      "visibility": [
+        0.2,
+        0.8
+      ],
+      "fieldHook": true,
+      "maxError": 2.7474015951156616e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 1,
+      "visibility": [
+        -1,
+        2
+      ],
+      "fieldHook": false,
+      "maxError": 1.257285475730896e-8,
+      "maxSpecularError": 0
+    },
+    {
+      "transmission": 1,
+      "visibility": [
+        -1,
+        2
+      ],
+      "fieldHook": true,
+      "maxError": 1.257285475730896e-8,
+      "maxSpecularError": 0
+    }
+  ],
+  "maxDirectEmissiveError": 0,
+  "contrast": 0.44249303406104445,
+  "retainedRendererDFGLUT": true,
+  "final": {
+    "geometries": 0,
+    "textures": 1
+  },
+  "scope": "Actual package factory and field-hook fragments with shared leaf hook and directional PMREM. Black-material controls isolate unchanged specular response; diffuse must be the convex front/back mixture. No native timing claim.",
+  "errors": []
+}

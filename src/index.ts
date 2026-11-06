@@ -104,6 +104,7 @@ export type { ThinFoliageMaterialParameters } from "./thinFoliage.js";
 export {
   withLeafLighting,
   withLeafTransmissionField,
+  withLeafEnvironmentVisibility,
   leafLightingGLSL,
 } from "./leafLighting.js";
 

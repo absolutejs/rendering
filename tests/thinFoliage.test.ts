@@ -45,3 +45,25 @@ test("leaf hooks reject unsupported shader shapes and untrusted field expression
   expect(source).toContain("getIBLIrradiance(-geometryNormal)");
   expect(source).toContain("getLeafHemisphereLightIrradiance");
 });
+
+import { withLeafEnvironmentVisibility } from "../src/index";
+test("directional leaf environment hook requires a leaf hook and a safe function", () => {
+  const leaf = withLeafLighting(ShaderLib.standard.fragmentShader, 0.28);
+  for (const name of ["", "a+b", "gl_Position", "sample();"])
+    expect(() => withLeafEnvironmentVisibility(leaf, name)).toThrow();
+  expect(() =>
+    withLeafEnvironmentVisibility(
+      ShaderLib.standard.fragmentShader,
+      "sampleVisibility",
+    ),
+  ).toThrow();
+  const patched = withLeafEnvironmentVisibility(leaf, "sampleVisibility");
+  expect(patched).toContain("clamp(sampleVisibility(geometryNormal), 0., 1.)");
+  expect(patched).toContain("clamp(sampleVisibility(-geometryNormal), 0., 1.)");
+  expect(() =>
+    withLeafEnvironmentVisibility(patched, "sampleVisibility"),
+  ).toThrow();
+  expect(() =>
+    withLeafEnvironmentVisibility(leaf + leaf, "sampleVisibility"),
+  ).toThrow();
+});

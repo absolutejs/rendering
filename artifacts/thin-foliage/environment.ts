@@ -1,5 +1,6 @@
 import {
   WebGLRenderer,
+  DirectionalLight,
   DataTexture,
   RGBAFormat,
   Scene,
@@ -17,6 +18,7 @@ import {
 import {
   createThinFoliageMaterial,
   withLeafTransmissionField,
+  withLeafEnvironmentVisibility,
 } from "../../dist/index.js";
 const gl = new WebGLRenderer({ antialias: false });
 gl.setSize(8, 8);
@@ -56,6 +58,9 @@ const identity = ext
     const geometry = new PlaneGeometry(2, 2),
       mesh = new Mesh(geometry);
     scene.add(mesh);
+    const direct = new DirectionalLight(0xffffff, 0);
+    direct.position.set(1, 1, 3);
+    scene.add(direct);
     const target = new WebGLRenderTarget(8, 8, {
       type: FloatType,
       depthBuffer: false,
@@ -66,6 +71,8 @@ const identity = ext
       black: boolean,
       reverse: boolean,
       fieldHook = false,
+      visibility?: [number, number],
+      withoutEnvironment = false,
     ) => {
       const material = fieldHook
         ? new MeshStandardMaterial({
@@ -91,10 +98,22 @@ const identity = ext
         };
         material.customProgramCacheKey = () => `field:${transmission}`;
       }
+      scene.environment = withoutEnvironment ? null : environment.texture;
+      direct.intensity = withoutEnvironment ? 0.7 : 0;
+      if (withoutEnvironment) material.emissive.setRGB(0.02, 0.03, 0.04);
       let dfg: { value: import("three").Texture } | undefined;
       const prior = material.onBeforeCompile;
       material.onBeforeCompile = (shader, renderer) => {
         prior(shader, renderer);
+        if (visibility) {
+          shader.uniforms.testVisibility = { value: visibility };
+          shader.fragmentShader =
+            "uniform vec2 testVisibility;\nfloat testLeafVisibility(vec3 normal) { return normal.z >= 0. ? testVisibility.x : testVisibility.y; }\n" +
+            withLeafEnvironmentVisibility(
+              shader.fragmentShader,
+              "testLeafVisibility",
+            );
+        }
         dfg = shader.uniforms.dfgLUT;
       };
       mesh.material = material;
@@ -143,6 +162,58 @@ const identity = ext
         rows.push({ transmission: t, fieldHook, maxError, maxSpecularError });
       }
     }
+    const visibilityRows = [];
+    for (const t of [0, 0.28, 0.5, 1])
+      for (const visibility of [
+        [1, 1],
+        [0, 0],
+        [0.2, 0.8],
+        [-1, 2],
+      ] as [number, number][])
+        for (const fieldHook of [false, true]) {
+          const value = render(t, false, false, fieldHook, visibility),
+            black = render(t, true, false, fieldHook, visibility);
+          let maxError = 0,
+            maxSpecularError = 0;
+          for (let i = 0; i < value.length; i++)
+            if (i % 4 !== 3) {
+              const expected =
+                sa[i]! +
+                (a[i]! - sa[i]!) *
+                  (1 - t) *
+                  Math.max(0, Math.min(1, visibility[0])) +
+                (b[i]! - sb[i]!) * t * Math.max(0, Math.min(1, visibility[1]));
+              maxError = Math.max(maxError, Math.abs(value[i]! - expected));
+              maxSpecularError = Math.max(
+                maxSpecularError,
+                Math.abs(black[i]! - sa[i]!),
+              );
+            }
+          visibilityRows.push({
+            transmission: t,
+            visibility,
+            fieldHook,
+            maxError,
+            maxSpecularError,
+          });
+        }
+    if (
+      visibilityRows.some((r) => r.maxError > 2e-5 || r.maxSpecularError > 2e-5)
+    )
+      throw Error(
+        "Directional visibility mismatch: " + JSON.stringify(visibilityRows),
+      );
+    let maxDirectEmissiveError = 0;
+    for (const t of [0, 0.28, 0.5, 1]) {
+      const baseline = render(t, false, false, false, undefined, true),
+        attenuated = render(t, false, false, false, [0, 0], true);
+      for (let i = 0; i < baseline.length; i++)
+        maxDirectEmissiveError = Math.max(
+          maxDirectEmissiveError,
+          Math.abs(baseline[i]! - attenuated[i]!),
+        );
+    }
+    if (maxDirectEmissiveError !== 0) throw Error("Direct/emissive changed");
     gl.setRenderTarget(null);
     target.dispose();
     geometry.dispose();
@@ -169,6 +240,8 @@ const identity = ext
       );
     return {
       rows,
+      visibilityRows,
+      maxDirectEmissiveError,
       contrast,
       retainedRendererDFGLUT,
       final,

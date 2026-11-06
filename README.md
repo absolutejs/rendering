@@ -345,3 +345,12 @@ sky-direction integration model. The caller owns field coordinates, interpolatio
 receiver suitability, streaming and invalidation. Do not apply an upward ground
 probe indiscriminately to arbitrary leaf normals or terrain heights. No texture,
 worker or animation loop is allocated by this string transform.
+
+For directional thin-foliage environment attenuation, compose
+`withLeafEnvironmentVisibility(fragment, 'sampleLeafVisibility')` after a leaf
+lighting hook. Declare `float sampleLeafVisibility(vec3 viewSpaceNormal)` before
+the physical lighting chunk. The callback is evaluated separately for the front
+and back normals before their transmitted diffuse mixture, with results clamped
+to [0,1]. It affects environment diffuse only. The caller owns field coordinates,
+revision checks, lifetime and material program-cache identity. See
+[composition qualification](docs/visibility-2026-11-05/leaf-environment.md).
