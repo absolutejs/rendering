@@ -153,6 +153,7 @@ export function createGroundedSH9Volume(options: GroundedSH9VolumeOptions) {
   +c[6]*(.743125*n.z*n.z-.247708)+.429043*c[8]*(n.x*n.x-n.y*n.y);
  }
  vec3 absShVisibility(vec3 viewNormal){
+  if(absShWeight<=0.) return vec3(1.);
   vec3 n=inverseTransformDirection(viewNormal,viewMatrix);
   vec3 numerator=absShIrradiance(n,absShCoefficients),denominator=absShIrradiance(n,absShOpen);
   vec3 ratio=clamp(numerator/max(denominator,vec3(.000001)),0.,1.);
@@ -186,12 +187,18 @@ export function createGroundedSH9Volume(options: GroundedSH9VolumeOptions) {
   ).join("\n");
   const sample = /*glsl*/ `
  vec2 absShPoint=absShLocal.xz/vec2(${glsl(size[0]!)},${glsl(size[1]!)})+vec2(.5);
- vec2 absShUV=(clamp(absShPoint,0.,1.)*vec2(${glsl(width - 1)},${glsl(depth - 1)})+vec2(.5))/vec2(${glsl(width)},${glsl(depth)});
- float absShHeight=absShLocal.y-texture2D(absShGround,absShUV).r;
- float absShLayer=${layerExpression};
- ${Array.from({ length: 7 }, (_, i) => `vec4 absShPack${i}=texture(absShVolume,vec3(absShUV,(absShLayer+${glsl(i * layers)}+.5)/${glsl(7 * layers)}));`).join("\n")}
- ${assignments}
- absShWeight=absShStrength*(1.-smoothstep(${glsl(edge * 0.5)},.5,max(abs(absShPoint.x-.5),abs(absShPoint.y-.5))))*(1.-smoothstep(${glsl(upper[0]!)},${glsl(upper[1]!)},absShHeight))*smoothstep(${glsl(lower[0]!)},${glsl(lower[1]!)},absShHeight);
+ absShWeight=absShStrength*(1.-smoothstep(${glsl(edge * 0.5)},.5,max(abs(absShPoint.x-.5),abs(absShPoint.y-.5))));
+ if(absShWeight>0.){
+  vec2 absShUV=(clamp(absShPoint,0.,1.)*vec2(${glsl(width - 1)},${glsl(depth - 1)})+vec2(.5))/vec2(${glsl(width)},${glsl(depth)});
+  float absShHeight=absShLocal.y-texture2D(absShGround,absShUV).r;
+  absShWeight=absShWeight*(1.-smoothstep(${glsl(upper[0]!)},${glsl(upper[1]!)},absShHeight))*smoothstep(${glsl(lower[0]!)},${glsl(lower[1]!)},absShHeight);
+  if(absShWeight>0.){
+   float absShLayer=${layerExpression};
+   ${Array.from({ length: 7 }, (_, i) => `vec4 absShPack${i}=texture(absShVolume,vec3(absShUV,(absShLayer+${glsl(i * layers)}+.5)/${glsl(7 * layers)}));`).join("\n")}
+   ${assignments}
+  }
+ }
+
  `;
   return {
     upload(
@@ -334,7 +341,7 @@ export function createGroundedSH9Volume(options: GroundedSH9VolumeOptions) {
         }
       };
       const programKey = () =>
-        cacheKey + ":grounded-sh9-1:" + mode + ":" + keyLayout;
+        cacheKey + ":grounded-sh9-2:" + mode + ":" + keyLayout;
       material.onBeforeCompile = compile;
       material.customProgramCacheKey = programKey;
       material.needsUpdate = true;
