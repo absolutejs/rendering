@@ -1,0 +1,21 @@
+{
+  "revision": "187",
+  "transmissionComponents": 786,
+  "changed": 3180,
+  "restoration": 0,
+  "spans": [
+    27.191847568789413,
+    163.1510854127365
+  ],
+  "memoryBefore": {
+    "geometries": 2,
+    "textures": 6
+  },
+  "memoryAfter": {
+    "geometries": 0,
+    "textures": 1
+  },
+  "globalChunksUnchanged": true,
+  "glError": 0,
+  "errors": []
+}
