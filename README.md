@@ -382,3 +382,9 @@ stay fixed. Callers own the clock, material hook composition, immutable shape
 uniform, expanded culling bounds and shadow refresh policy. This applies to rigid
 unskinned source geometry and is not branch physics. See
 [qualification and contract](docs/rooted-bend-2026-11-06/README.md).
+
+`createCoalescedInvalidation({ minimumIntervalMs, invalidate })` shares one bounded
+immediate/trailing refresh stream for cached render products. It has no idle timer,
+coalesces intermediate requests and cancels pending work on disposal. Callbacks
+read the latest scene state; renderer submission and refresh-quality policy remain
+the caller's responsibility. See [contract and checks](docs/rooted-bend-2026-11-06/refresh.md).

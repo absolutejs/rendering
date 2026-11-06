@@ -145,3 +145,7 @@ export {
   rootedBendGLSL,
   type RootedBendOptions,
 } from "./rootedBend.js";
+export {
+  createCoalescedInvalidation,
+  type InvalidationClock,
+} from "./coalescedInvalidation.js";
