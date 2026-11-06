@@ -1,0 +1,51 @@
+{
+  "status": "source-qualified, unpublished 0.13 candidate",
+  "bun": "1.4.4+absolute.1",
+  "packageChecks": {
+    "tests": 92,
+    "failures": 0,
+    "assertions": 177008,
+    "files": 19,
+    "nodeEsmConsumer": "passed, including built requestImmediate API"
+  },
+  "newControls": [
+    "obsolete trailing callback cancellation",
+    "ordinary interval restarts after explicit refresh",
+    "immediate failure accounting",
+    "reentrant immediate requests defer without recursion",
+    "disposed immediate requests rejected"
+  ],
+  "gameEvidence": {
+    "path": "hello-world/docs/native-sapling-motion-2026-11-06/live-spring-immediate/result.json",
+    "controls": 8,
+    "pageErrors": [],
+    "renderedFrames": 37,
+    "clockRequests": 64,
+    "refreshEmissions": 15,
+    "explicitImmediateRequests": 3,
+    "crossTimelineShadowFrames": 0,
+    "pendingWorkCancelledOnUnmount": true
+  },
+  "limits": [
+    "Source-level qualification only; no new archive or npm release",
+    "Ordinary shadow-image quality and hardware frame rate remain unaccepted",
+    "Do not replace the separately qualified 0.12 archive"
+  ],
+  "removedCompletedLogs": [
+    {
+      "path": ".qualification/immediate-invalidation-check.log",
+      "bytes": 10043,
+      "sha256": "5c38b668b4fc42c46fd19b3bb930412fc55aa692b80b0540126c9a1096b4f711"
+    },
+    {
+      "path": ".qualification/immediate-invalidation-final-check.log",
+      "bytes": 10084,
+      "sha256": "b14c4851b2d80aaa443880e3778e21b4a112b3149f1224f86fff95d059c8af80"
+    },
+    {
+      "path": ".qualification/immediate-invalidation-consumer.log",
+      "bytes": 476,
+      "sha256": "0f1766a9666bbd519d1dd38fefbfc57ee8501970e05eea5fdca89071126f7cb6"
+    }
+  ]
+}

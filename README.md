@@ -385,7 +385,9 @@ unskinned source geometry and is not branch physics. See
 
 `createCoalescedInvalidation({ minimumIntervalMs, invalidate })` shares one bounded
 immediate/trailing refresh stream for cached render products. It has no idle timer,
-coalesces intermediate requests and cancels pending work on disposal. Callbacks
+coalesces intermediate requests and cancels pending work on disposal. Explicit discontinuities can call
+`requestImmediate()` to cancel trailing work and refresh now; normal animation
+requests retain their interval budget. Callbacks
 read the latest scene state; renderer submission and refresh-quality policy remain
 the caller's responsibility. See [contract and checks](docs/rooted-bend-2026-11-06/refresh.md).
 

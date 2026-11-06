@@ -35,6 +35,7 @@ export function createCoalescedInvalidation(options: {
     )
   )
     throw Error("Invalid coalesced invalidation options");
+  let emitting = false;
   let disposed = false,
     pending = false,
     last = -Infinity,
@@ -44,7 +45,8 @@ export function createCoalescedInvalidation(options: {
   let requested = 0,
     coalesced = 0,
     emitted = 0,
-    failures = 0;
+    failures = 0,
+    immediateRequests = 0;
   function time() {
     const value = clock.now();
     if (!Number.isFinite(value) || value < observed)
@@ -56,11 +58,14 @@ export function createCoalescedInvalidation(options: {
     pending = false;
     last = now;
     emitted++;
+    emitting = true;
     try {
       invalidate();
     } catch (error) {
       failures++;
       throw error;
+    } finally {
+      emitting = false;
     }
   }
   function arm(now: number) {
@@ -78,17 +83,30 @@ export function createCoalescedInvalidation(options: {
     );
     scheduled = { handle, token: current };
   }
+  function request(immediate = false) {
+    if (disposed) return false;
+    const now = time();
+    requested++;
+    if (immediate) immediateRequests++;
+    if (pending) coalesced++;
+    pending = true;
+    if (immediate && !emitting) {
+      if (scheduled) {
+        clock.cancel(scheduled.handle);
+        scheduled = null;
+        token++;
+      }
+      flush(now);
+    } else if (!emitting && !scheduled && now - last >= interval) flush(now);
+    else arm(now);
+    return true;
+  }
   return {
-    request() {
-      if (disposed) return false;
-      const now = time();
-      requested++;
-      if (pending) coalesced++;
-      pending = true;
-      if (!scheduled && now - last >= interval) flush(now);
-      else arm(now);
-      return true;
-    },
+    request: () => request(),
+    /** Explicit discontinuity (seek/source/projection change): cancel a stale
+     * trailing request and invalidate now, restarting the ordinary interval.
+     * Requests inside invalidate are deferred to avoid synchronous recursion. */
+    requestImmediate: () => request(true),
     dispose() {
       if (disposed) return;
       disposed = true;
@@ -104,6 +122,7 @@ export function createCoalescedInvalidation(options: {
       coalesced,
       emitted,
       failures,
+      immediateRequests,
       pending,
       scheduled: scheduled !== null,
       disposed,

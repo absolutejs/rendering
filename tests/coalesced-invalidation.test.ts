@@ -133,3 +133,70 @@ test("invalid construction and nonfinite clocks fail before invalidation", () =>
   expect(calls).toBe(0);
   expect(o.snapshot().requested).toBe(0);
 });
+
+test("explicit discontinuities cancel stale trailing work and restart the ordinary interval", () => {
+  const h = harness(),
+    events: number[] = [];
+  const o = createCoalescedInvalidation({
+    minimumIntervalMs: 100,
+    clock: h.clock,
+    invalidate: () => events.push(h.clock.now()),
+  });
+  o.request();
+  h.set(20);
+  o.request();
+  const stale = [...h.queue.values()][0]!.fn;
+  h.set(40);
+  o.requestImmediate();
+  expect(events).toEqual([0, 40]);
+  expect(h.queue.size).toBe(0);
+  stale();
+  expect(events).toEqual([0, 40]);
+  h.set(50);
+  o.request();
+  expect(h.queue.size).toBe(1);
+  h.advance(139);
+  expect(events).toEqual([0, 40]);
+  h.advance(140);
+  expect(events).toEqual([0, 40, 140]);
+  expect(o.snapshot().immediateRequests).toBe(1);
+  expect(o.snapshot().pending).toBe(false);
+  o.dispose();
+  expect(o.requestImmediate()).toBe(false);
+});
+test("immediate failures remain observable and nested immediate requests never recurse", () => {
+  const h = harness();
+  let calls = 0,
+    depth = 0,
+    maximumDepth = 0;
+  const o = createCoalescedInvalidation({
+    minimumIntervalMs: 100,
+    clock: h.clock,
+    invalidate: () => {
+      calls++;
+      depth++;
+      maximumDepth = Math.max(maximumDepth, depth);
+      try {
+        if (calls === 1) o.requestImmediate();
+        if (calls === 3) throw Error("forced failure");
+      } finally {
+        depth--;
+      }
+    },
+  });
+  o.requestImmediate();
+  expect(calls).toBe(1);
+  expect(h.queue.size).toBe(1);
+  h.advance(100);
+  expect(calls).toBe(2);
+  expect(maximumDepth).toBe(1);
+  h.set(101);
+  expect(() => o.requestImmediate()).toThrow("forced failure");
+  expect(o.snapshot().failures).toBe(1);
+  expect(o.snapshot().pending).toBe(false);
+  h.set(102);
+  o.requestImmediate();
+  expect(calls).toBe(4);
+  expect(h.queue.size).toBe(0);
+  expect(o.snapshot().immediateRequests).toBe(4);
+});

@@ -37,3 +37,22 @@ game experiment, not a universally recommended refresh interval.
 
 All additions remain part of the unpublished candidate. Do not replace the
 separately qualified 0.12 release archive with a current-tree build.
+
+## Explicit discontinuities
+
+`requestImmediate()` handles an explicit seek, source reset or projection change.
+It cancels any trailing request, invalidates synchronously and restarts the ordinary
+interval from that emission. It deliberately bypasses the animation rate limit;
+callers must identify discontinuities rather than using it on every motion tick.
+`immediateRequests` reports these requests separately. Reentrant requests from
+inside `invalidate` are deferred to the ordinary trailing path to prevent
+synchronous recursion. Disposal rejects both request methods and cancels stale
+callbacks; thrown invalidations remain visible in the failure counter.
+
+The actual game Spring-clock study exposed the need: a seek could display a new
+plant pose with the prior shadow phase until the ordinary timer fired. The game
+now exposes a monotonic timeline identity for reset, seek, return-to-live and its
+existing long-gap catch-up branch. This is an integration example, not a game-clock
+dependency of the package. The API does not itself render or guarantee pixel
+quality, frame scheduling, or a maximum shadow age. Source remains the unpublished
+0.13 candidate; no previously qualified 0.12 archive is replaced.

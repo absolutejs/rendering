@@ -59,3 +59,20 @@ boundsLease.release();
 assert.equal(boundedGeometry.boundingBox, null);
 boundedGeometry.dispose();
 console.log("Geometry bounds Node ESM export and lifetime passed");
+
+let invalidations = 0;
+const refresh = scoped.createCoalescedInvalidation({
+  minimumIntervalMs: 100,
+  invalidate: () => invalidations++,
+  clock: { now: () => 0, schedule: () => 0, cancel: () => {} },
+});
+refresh.request();
+refresh.request();
+assert.equal(refresh.snapshot().pending, true);
+refresh.requestImmediate();
+assert.equal(invalidations, 2);
+assert.equal(refresh.snapshot().immediateRequests, 1);
+assert.equal(refresh.snapshot().pending, false);
+refresh.dispose();
+assert.equal(refresh.requestImmediate(), false);
+console.log("Built immediate invalidation API passed");
