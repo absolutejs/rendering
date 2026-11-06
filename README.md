@@ -402,3 +402,9 @@ materials. `expandBounds(originalBox, true)` conservatively covers all phases an
 horizontal rotations; default bounds cover the current rotation. Motion bounds
 assume fixed rotation. This enables upright plant-local sway to align with a
 shared world wind without rotating the authored geometry.
+
+`leaseGeometryBounds(geometry, { x, y, z })` shares bounded symmetric deformation
+padding without compounding it between owners. Leases support `update`, `release`
+and `active`; final release or geometry disposal restores original bounds while
+owned. Source positions must remain immutable. The caller owns scene residency
+and GPU geometry lifetime. See [bounds lifetime checks](docs/geometry-bounds-2026-11-06/README.md).

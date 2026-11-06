@@ -149,3 +149,5 @@ export {
   createCoalescedInvalidation,
   type InvalidationClock,
 } from "./coalescedInvalidation.js";
+
+export { leaseGeometryBounds } from "./geometryBounds.js";

@@ -1,0 +1,31 @@
+{
+  "revision": "187",
+  "baseline": {
+    "pixels": 0,
+    "calls": 0
+  },
+  "padded": {
+    "pixels": 36,
+    "calls": 1
+  },
+  "shared": {
+    "pixels": 36,
+    "calls": 1
+  },
+  "retained": {
+    "pixels": 36,
+    "calls": 1
+  },
+  "restored": {
+    "pixels": 0,
+    "calls": 0
+  },
+  "identitiesRestored": true,
+  "endedOnDispose": true,
+  "memory": {
+    "geometries": 0,
+    "textures": 0
+  },
+  "glError": 0,
+  "errors": []
+}
