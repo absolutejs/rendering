@@ -127,3 +127,97 @@ test("motion query and CPU samples share shader phase wrapping even for extreme 
       expect(bend.sample(1.7)).toEqual(a);
     }
 });
+
+test("horizontal rotation preserves world-oriented sway, derivatives, and all-phase bounds", () => {
+  const base = createRootedBend({
+    height: 2,
+    amplitudeX: 0.12,
+    amplitudeZ: 0.03,
+  });
+  const bend = createRootedBend({
+    height: 2,
+    amplitudeX: 0.12,
+    amplitudeZ: 0.03,
+  });
+  const box = new Box3(new Vector3(-1, 0, -1), new Vector3(1, 3, 1));
+  const rotationIndependent = bend.expandBounds(box, true);
+  for (const angle of [0, 0.3, Math.PI / 2, Math.PI, -2.1, 1e12]) {
+    bend.setRotation(angle);
+    const wrapped = ((angle % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2),
+      c = Math.cos(wrapped),
+      s = Math.sin(wrapped),
+      bounds = bend.expandBounds(box);
+    for (let j = 0; j < 24; j++)
+      for (const y of [0, 0.01, 0.5, 1.9, 2, 3]) {
+        const phase = (j * Math.PI) / 12,
+          raw = base.sample(y, phase),
+          sample = bend.sample(y, phase);
+        expect(sample.x).toBeCloseTo(c * raw.x - s * raw.z, 10);
+        expect(sample.z).toBeCloseTo(s * raw.x + c * raw.z, 10);
+        const lo = bend.sample(y - 1e-6, phase),
+          hi = bend.sample(y + 1e-6, phase);
+        expect(sample.dxdy).toBeCloseTo((hi.x - lo.x) / 2e-6, 5);
+        expect(sample.dzdy).toBeCloseTo((hi.z - lo.z) / 2e-6, 5);
+        for (const x of [-1, 1])
+          for (const z of [-1, 1])
+            expect(
+              bounds.containsPoint(new Vector3(x + sample.x, y, z + sample.z)),
+            ).toBe(true);
+        expect(
+          rotationIndependent.containsPoint(
+            new Vector3(1 + sample.x, y, 1 + sample.z),
+          ),
+        ).toBe(true);
+        const next = bend.sample(y, phase + 0.6),
+          projection: [number, number, number, number] = [2, 3, -1, 0.5];
+        expect(
+          Math.hypot(
+            2 * (next.x - sample.x) + 3 * (next.z - sample.z),
+            -(next.x - sample.x) + 0.5 * (next.z - sample.z),
+          ),
+        ).toBeLessThanOrEqual(
+          bend.motionBound(phase, phase + 0.6, projection) + 1e-12,
+        );
+      }
+  }
+  bend.setRotation(0);
+  expect(bend.sample(1, 0.7)).toEqual(base.sample(1, 0.7));
+  expect(() => bend.setRotation(NaN)).toThrow();
+  expect(() =>
+    createRootedBend({
+      height: 1,
+      amplitudeX: 0,
+      amplitudeZ: 0,
+      rotation: Infinity,
+    }),
+  ).toThrow();
+});
+
+test("inverse plant yaw keeps the same world-space sway ellipse", () => {
+  const world = createRootedBend({
+    height: 2,
+    amplitudeX: 0.09,
+    amplitudeZ: 0.045,
+  });
+  for (const yaw of [0, 0.3, 1.9, 3.1, -2]) {
+    const local = createRootedBend({
+      height: 2,
+      amplitudeX: 0.09,
+      amplitudeZ: 0.045,
+      rotation: yaw,
+    });
+    for (const phase of [0, 0.7, 2, 5])
+      for (const y of [0, 0.3, 1, 2]) {
+        const a = local.sample(y, phase),
+          expected = world.sample(y, phase);
+        expect(Math.cos(yaw) * a.x + Math.sin(yaw) * a.z).toBeCloseTo(
+          expected.x,
+          12,
+        );
+        expect(-Math.sin(yaw) * a.x + Math.cos(yaw) * a.z).toBeCloseTo(
+          expected.z,
+          12,
+        );
+      }
+  }
+});

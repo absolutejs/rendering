@@ -42,7 +42,7 @@ const { chromium } = require("playwright"),
     await page.setContent("<html></html>");
     await page.addScriptTag({ content: await build.outputs[0].text() });
     const result = await page.evaluate(() => window.verifyRootedBend());
-    assert.equal(result.rows.length, 5);
+    assert.equal(result.rows.length, 20);
     assert(result.restorationExact);
     assert(result.maximumError < 0.0001);
     assert(result.changedPixels > 20);

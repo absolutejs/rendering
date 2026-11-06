@@ -394,3 +394,11 @@ constant-cost conservative displacement measurement under a fixed linear X/Z
 projection. It can express metres or orthographic shadow texels. It does **not**
 bound rasterized shadow-mask error; see the
 [motion-bound contract and counterexample](docs/rooted-bend-2026-11-06/motion-bound.md).
+
+
+The rooted bend state accepts horizontal `rotation` and `setRotation(radians)`.
+Bind its `rotation` uniform alongside `shape` and `phase` on color and depth
+materials. `expandBounds(originalBox, true)` conservatively covers all phases and
+horizontal rotations; default bounds cover the current rotation. Motion bounds
+assume fixed rotation. This enables upright plant-local sway to align with a
+shared world wind without rotating the authored geometry.

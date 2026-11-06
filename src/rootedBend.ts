@@ -1,4 +1,4 @@
-import { Box3, Vector3, Vector4 } from "three";
+import { Box3, Vector2, Vector3, Vector4 } from "three";
 
 const wrappedPhase = (value: number) => {
   const phase = value % (2 * Math.PI);
@@ -12,6 +12,8 @@ export type RootedBendOptions = {
   amplitudeZ: number;
   /** Phase change from root to crown, in radians. */
   verticalPhase?: number;
+  /** Rotation of the horizontal sway ellipse in local X/Z, radians. */
+  rotation?: number;
 };
 
 /** Analytic visual shear for rigid, unskinned local-space geometry. The root
@@ -30,10 +32,25 @@ export function createRootedBend(options: RootedBendOptions) {
   const shape = {
     value: new Vector4(height, amplitudeX, amplitudeZ, verticalPhase),
   };
+  let cosine = 1,
+    sine = 0;
+  // Encode identity as zero. Always bind this uniform: programs can be shared.
+  const rotation = { value: new Vector2(0, 0) };
+  function setRotation(value: number) {
+    if (!Number.isFinite(value)) throw Error("Invalid rooted bend rotation");
+    const angle = wrappedPhase(value);
+    cosine = Math.cos(angle);
+    sine = Math.sin(angle);
+    rotation.value.set(cosine - 1, sine);
+  }
+  setRotation(options.rotation ?? 0);
   const phase = { value: 0 };
   return {
     shape,
     phase,
+    rotation,
+    /** Rotation changes require recomputing bounds from the original box. */
+    setRotation,
     /** Set a bounded absolute phase. Call from an existing animation clock. */
     setPhase(value: number) {
       if (!Number.isFinite(value)) throw Error("Invalid rooted bend phase");
@@ -41,7 +58,7 @@ export function createRootedBend(options: RootedBendOptions) {
     },
     /** Conservative pointwise motion under a fixed linear projection of local
      * X/Z displacement. Identity gives local metres; shadow-camera rows can give
-     * texels. This does not bound changes to projection, geometry or transforms. */
+     * texels. This does not bound changes to rotation, projection, geometry or transforms. */
     motionBound(
       fromPhase: number,
       toPhase: number,
@@ -54,10 +71,10 @@ export function createRootedBend(options: RootedBendOptions) {
       )
         throw Error("Invalid rooted bend motion query");
       const [xx, xz, yx, yz] = projection;
-      const a = xx * amplitudeX,
-        b = xz * amplitudeZ,
-        c = yx * amplitudeX,
-        d = yz * amplitudeZ;
+      const a = (xx * cosine + xz * sine) * amplitudeX,
+        b = (-xx * sine + xz * cosine) * amplitudeZ,
+        c = (yx * cosine + yz * sine) * amplitudeX,
+        d = (-yx * sine + yz * cosine) * amplitudeZ;
       const scale = Math.max(
         Math.abs(a),
         Math.abs(b),
@@ -87,15 +104,26 @@ export function createRootedBend(options: RootedBendOptions) {
       return bound;
     },
     /** Conservative all-phase bounds, without mutating the source box. Apply
-     * before world/instance transforms. Recompute from the original box. */
-    expandBounds(source: Box3): Box3 {
+     * before world/instance transforms. Recompute from the original box. Set
+     * allRotations for bounds that also contain arbitrary horizontal rotations. */
+    expandBounds(source: Box3, allRotations = false): Box3 {
+      if (typeof allRotations !== "boolean")
+        throw Error("Invalid rooted bend bounds mode");
       if (source.isEmpty()) return source.clone();
       if (![...source.min, ...source.max].every(Number.isFinite))
         throw Error("Invalid rooted bend bounds");
       return source
         .clone()
         .expandByVector(
-          new Vector3(Math.abs(amplitudeX), 0, Math.abs(amplitudeZ)),
+          new Vector3(
+            allRotations
+              ? Math.max(Math.abs(amplitudeX), Math.abs(amplitudeZ))
+              : Math.hypot(cosine * amplitudeX, sine * amplitudeZ),
+            0,
+            allRotations
+              ? Math.max(Math.abs(amplitudeX), Math.abs(amplitudeZ))
+              : Math.hypot(sine * amplitudeX, cosine * amplitudeZ),
+          ),
         );
     },
     sample(y: number, angle = phase.value) {
@@ -106,7 +134,7 @@ export function createRootedBend(options: RootedBendOptions) {
       const envelope = h * h * (3 - 2 * h);
       const slope = 6 * h * (1 - h) * dh;
       const a = wrappedPhase(angle) + verticalPhase * envelope;
-      return {
+      const raw = {
         x: amplitudeX * envelope * Math.sin(a),
         z: amplitudeZ * envelope * Math.cos(a),
         dxdy:
@@ -118,6 +146,12 @@ export function createRootedBend(options: RootedBendOptions) {
           (slope * Math.cos(a) -
             envelope * Math.sin(a) * verticalPhase * slope),
       };
+      return {
+        x: cosine * raw.x - sine * raw.z,
+        z: sine * raw.x + cosine * raw.z,
+        dxdy: cosine * raw.dxdy - sine * raw.dzdy,
+        dzdy: sine * raw.dxdy + cosine * raw.dzdy,
+      };
     },
   };
 }
@@ -125,14 +159,18 @@ export function createRootedBend(options: RootedBendOptions) {
 export const rootedBendGLSL = /* glsl */ `
 uniform vec4 absRootedBendShape;
 uniform float absRootedBendPhase;
+uniform vec2 absRootedBendRotation;
 vec4 absRootedBend(float y) {
  float h=clamp(y/absRootedBendShape.x,0.,1.);
  float dh=(y>0. && y<absRootedBendShape.x)?1./absRootedBendShape.x:0.;
  float b=h*h*(3.-2.*h), db=6.*h*(1.-h)*dh;
  float a=absRootedBendPhase+absRootedBendShape.w*b;
  float s=sin(a), c=cos(a), k=absRootedBendShape.w*db;
- return vec4(absRootedBendShape.y*b*s,absRootedBendShape.z*b*c,
+ vec4 displacement=vec4(absRootedBendShape.y*b*s,absRootedBendShape.z*b*c,
    absRootedBendShape.y*(db*s+b*c*k),absRootedBendShape.z*(db*c-b*s*k));
+ vec2 r=vec2(1.+absRootedBendRotation.x,absRootedBendRotation.y);
+ mat2 basis=mat2(r.x,r.y,-r.y,r.x);
+ return vec4(basis*displacement.xy,basis*displacement.zw);
 }
 `;
 

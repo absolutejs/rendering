@@ -41,6 +41,7 @@ window.verifyRootedBend = () => {
     uniforms: {
       absRootedBendShape: bend.shape,
       absRootedBendPhase: bend.phase,
+      absRootedBendRotation: bend.rotation,
     },
     vertexShader: "void main(){gl_Position=vec4(position.xy,0.,1.);}",
     fragmentShader:
@@ -62,25 +63,29 @@ window.verifyRootedBend = () => {
   let maximumError = 0;
   let worst: unknown = null;
   const rows = [];
-  for (const phase of [0, 0.7, 2.2, 4.5, 6.28]) {
-    bend.setPhase(phase);
-    renderer.setRenderTarget(target);
-    renderer.render(scene, camera);
-    const values = new Float32Array(64 * 4);
-    renderer.readRenderTargetPixels(target, 0, 0, 64, 1, values);
-    for (let i = 0; i < 64; i++) {
-      const s = bend.sample((i / 63) * 3 - 0.5);
-      const expected = [s.x, s.z, s.dxdy, s.dzdy];
-      expected.forEach((v, j) => {
-        const error = Math.abs(v - values[i * 4 + j]!);
-        if (error > maximumError) {
-          maximumError = error;
-          worst = { i, j, phase, expected: v, actual: values[i * 4 + j] };
-        }
-      });
+  for (const rotation of [0, 0.7, Math.PI / 2, -2.1]) {
+    bend.setRotation(rotation);
+    for (const phase of [0, 0.7, 2.2, 4.5, 6.28]) {
+      bend.setPhase(phase);
+      renderer.setRenderTarget(target);
+      renderer.render(scene, camera);
+      const values = new Float32Array(64 * 4);
+      renderer.readRenderTargetPixels(target, 0, 0, 64, 1, values);
+      for (let i = 0; i < 64; i++) {
+        const s = bend.sample((i / 63) * 3 - 0.5);
+        const expected = [s.x, s.z, s.dxdy, s.dzdy];
+        expected.forEach((v, j) => {
+          const error = Math.abs(v - values[i * 4 + j]!);
+          if (error > maximumError) {
+            maximumError = error;
+            worst = { i, j, phase, expected: v, actual: values[i * 4 + j] };
+          }
+        });
+      }
+      rows.push({ phase, rotation, glError: renderer.getContext().getError() });
     }
-    rows.push({ phase, glError: renderer.getContext().getError() });
   }
+  bend.setRotation(0.7);
   renderer.setRenderTarget(null);
   scene.remove(quad);
   plane.dispose();
@@ -98,6 +103,7 @@ window.verifyRootedBend = () => {
     m.onBeforeCompile = (shader) => {
       shader.uniforms.absRootedBendShape = bend.shape;
       shader.uniforms.absRootedBendPhase = bend.phase;
+      shader.uniforms.absRootedBendRotation = bend.rotation;
       shader.vertexShader = withRootedBend(shader.vertexShader, normals);
     };
     m.customProgramCacheKey = () => `rooted-bend-${normals}`;
