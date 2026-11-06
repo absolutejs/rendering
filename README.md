@@ -311,3 +311,22 @@ reenter/dispose the same owner from a callback. Callback errors are propagated o
 after BVH traversal safely unwinds, so later queries remain valid. This is a CPU
 storage/query tradeoff: transformed bounds and vertices cost work. Use bounded
 worker jobs and cache accepted lighting results; do not trace every rendered frame.
+
+`HemisphereVisibilityProbe` in the same entry point integrates a deterministic
+upper-hemisphere ray set incrementally. Construct it with `{revision, origin,
+samples, budget}` and a scene trace callback. Call `step(maximumRays)` in a worker,
+yielding between small batches; `cancel()` releases the callback. No scheduler,
+worker pool or animation callback is installed. Defaults: 128 samples, near 0.01,
+far 64, 8,192 bounds and 4,096 triangles per ray. Samples and step calls cap at 4,096.
+The scene callback must enforce each ray's budget across all candidate objects,
+not give every tree a fresh budget. Counter violations reject before accepting
+that sample. Callback failures leave the current sample retryable.
+
+Snapshots include revision, state, processed/unresolved counts, work counters and
+an accessibility interval. `accessibility` is null until all samples are processed
+and resolved. Pending or exhausted rays contribute uncertainty, never clear sky.
+The interval bounds this finite ray set only: it is not a sampling confidence
+interval or a bound on the continuous lighting integral. The cosine weighting is
+for a horizontal upward-facing receiver under uniform sky; it does not represent
+arbitrary leaf normals, sky color, indirect bounce or transmission. Reject stale
+scene revisions before installing results. Cancelled snapshots are not installable.

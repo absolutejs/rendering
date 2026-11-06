@@ -1,6 +1,9 @@
 import { BufferGeometry, BufferAttribute, Ray, Vector3, Box3 } from "three";
-import { PreparedAlphaVisibility } from "../src/visibility";
-self.onmessage = () => {
+import {
+  PreparedAlphaVisibility,
+  HemisphereVisibilityProbe,
+} from "../src/visibility";
+self.onmessage = async () => {
   try {
     const g = new BufferGeometry();
     g.setAttribute(
@@ -63,10 +66,27 @@ self.onmessage = () => {
       recoveredError = String(error).includes("expected point failure");
     }
     const recovered = q.query(ray);
+    const makeProbe = () =>
+      new HemisphereVisibilityProbe(
+        { revision: "worker-scene:1", origin: new Vector3(), samples: 32 },
+        (ray, budget) => q.query(ray, budget),
+      );
+    const probe = makeProbe();
+    for (let i = 0; i < 8; i++) {
+      probe.step(4);
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    }
+    const single = makeProbe().step(32);
+    const cancelled = makeProbe();
+    cancelled.step(1);
+    cancelled.cancel();
     const bytes = q.ownedBytes;
     q.dispose();
     self.postMessage({
       rows,
+      probe: probe.snapshot(),
+      single,
+      cancelled: cancelled.snapshot(),
       deformed,
       recoveredError,
       recovered,

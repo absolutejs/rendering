@@ -96,6 +96,12 @@ const { chromium } = require("playwright"),
     assert.equal(result.recoveredError, true);
     assert.equal(result.recovered.status, "occluded");
     assert.equal(result.recovered.hitDistance, 2);
+    assert.deepEqual(result.probe, result.single);
+    assert.equal(result.probe.state, "complete");
+    assert.equal(result.probe.unresolved, 0);
+    assert.equal(result.cancelled.state, "cancelled");
+    assert.equal(result.cancelled.processed, 1);
+    assert.equal(result.cancelled.accessibility, null);
     assert.equal(result.releasedBytes, 0);
     assert.equal(result.originalIndex, null);
     assert.deepEqual(errors, []);

@@ -22,6 +22,45 @@
       "hitDistance": null
     }
   ],
+  "probe": {
+    "revision": "worker-scene:1",
+    "state": "complete",
+    "samples": 32,
+    "processed": 32,
+    "unresolved": 0,
+    "accessibility": 1,
+    "accessibilityLower": 1,
+    "accessibilityUpper": 1,
+    "boundsTests": 0,
+    "triangleTests": 64,
+    "alphaTests": 2
+  },
+  "single": {
+    "revision": "worker-scene:1",
+    "state": "complete",
+    "samples": 32,
+    "processed": 32,
+    "unresolved": 0,
+    "accessibility": 1,
+    "accessibilityLower": 1,
+    "accessibilityUpper": 1,
+    "boundsTests": 0,
+    "triangleTests": 64,
+    "alphaTests": 2
+  },
+  "cancelled": {
+    "revision": "worker-scene:1",
+    "state": "cancelled",
+    "samples": 32,
+    "processed": 1,
+    "unresolved": 0,
+    "accessibility": null,
+    "accessibilityLower": 0.0009765625,
+    "accessibilityUpper": 1,
+    "boundsTests": 0,
+    "triangleTests": 2,
+    "alphaTests": 0
+  },
   "deformed": {
     "status": "occluded",
     "boundsTests": 0,
@@ -42,6 +81,6 @@
   "originalIndex": null,
   "realm": "undefined",
   "errors": [],
-  "bundleBytes": 336802,
+  "bundleBytes": 340058,
   "scope": "Real browser module worker, CPU query, no WebGL context or FPS claim"
 }

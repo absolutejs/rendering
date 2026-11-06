@@ -51,3 +51,25 @@ correctness evidence, not a speed win: the deliberately allocation-heavy game
 fixture totals about 2.52 seconds shared queries versus 0.245 seconds baked queries
 on this CPU. Production scheduling, spatial candidates, overlap, wind, edits and
 local lighting-field quality remain open. No game dependency or live shader changes.
+
+## Incremental integration
+
+`HemisphereVisibilityProbe` adds bounded ray batches without a scheduling framework.
+The host can yield between steps, cancel jobs and compare the captured revision
+before accepting results. Clear, blocked, unfinished and budget-exhausted rays are
+kept distinct. Reported lower/upper values bound the chosen discrete cosine-weighted
+sample set, not the continuous hemisphere's quadrature error. No result is presented
+as complete accessibility when any ray remains unresolved.
+
+Five tests cover constant fields, a known 0.75 cosine integral, batch equivalence,
+uncertainty, cancellation, copied origin ownership, callback retry, reentrancy,
+malformed inputs and aggregate-budget counter enforcement. Package: 63 tests /
+1,240 assertions, TypeScript passes. Both supported Three worker checks run eight
+four-ray steps separated by event-loop yields, compare with one batch, and verify
+cancelled state. These test in-worker cancellation; host-message cancellation and
+a production worker protocol remain integration work.
+
+The actual-canopy fixture additionally checks 24 center probes (eight variants at
+three heights) against independently baked scene rays. All 64-ray cosine integrals
+agree. A two-bound/two-triangle whole-scene budget produces explicit uncertainty;
+every such interval encloses the qualified integral. No live game adoption.
