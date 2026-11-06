@@ -1,0 +1,895 @@
+{
+  "status": "exact-archive qualified; unpublished",
+  "version": "0.14.0",
+  "sourceCommit": "c51a41863f51cf6c97724d3691ee9410d10dbb18",
+  "bun": "1.4.4+absolute.1",
+  "archive": {
+    "path": ".qualification/scene-0.14.0/absolutejs-rendering-0.14.0.tgz",
+    "bytes": 48104,
+    "sha256": "eb3f47bebeae8f26da028c3a3156b5be78aac48ecae71f292865c1c33f5ea2b5",
+    "integrity": "sha512-PXH349IQTN6kgiLXvE33JE5Ei7L2tiWwJSAewWM7qJeSeUOvaPeYMk1K0JxpRljhJD2XjX5QbJiOWoCvjehFnw==",
+    "shasum": "dabd9a29942eb346ce653f099ad0fcb6a91b5208"
+  },
+  "independentBuild": {
+    "matchedFiles": 44,
+    "files": [
+      {
+        "path": "alphaColor.d.ts",
+        "bytes": 1194,
+        "sha256": "2388b3a0aac6957b2d2d736b88bf7931bfc06dde73f327800f5046f7c6192cec"
+      },
+      {
+        "path": "alphaColor.js",
+        "bytes": 4426,
+        "sha256": "d1c590a8f874002ec27f7c48e795a3af1915decfd9e3a2deaad53c2d6c18f065"
+      },
+      {
+        "path": "alphaCoverage.d.ts",
+        "bytes": 694,
+        "sha256": "7bceb9dc9492e35504842e9c5e50a0f3c7b158c0748a26e6dd05a9b60067fd48"
+      },
+      {
+        "path": "alphaCoverage.js",
+        "bytes": 2738,
+        "sha256": "0c4435f18336fda102ccee2ad909ed91da75d82c741e298e635dc8b4622f6a58"
+      },
+      {
+        "path": "associatedColorMap.d.ts",
+        "bytes": 519,
+        "sha256": "2c1924bbaf9d6b869337534fcb986f60e3054e3ea6011d6d85a0317100b33c61"
+      },
+      {
+        "path": "associatedColorMap.js",
+        "bytes": 1691,
+        "sha256": "839bb9c9874bf90e4b19159e40ca55a642abc6cf7e08cd61a868c982ea637681"
+      },
+      {
+        "path": "boundsIndex.d.ts",
+        "bytes": 1509,
+        "sha256": "085e56f4857b98f1a9b3a289956189247268a4c0d8ed856a8f97c825d1756957"
+      },
+      {
+        "path": "boundsIndex.js",
+        "bytes": 7248,
+        "sha256": "000be1f1884b47b27cfd92f0e80f8d53df70c7196a8197eb2181ca4843eeaa4a"
+      },
+      {
+        "path": "coalescedInvalidation.d.ts",
+        "bytes": 1334,
+        "sha256": "2fe040f4722201414ae6af523f17ced8e1e03cbedd638b24dcc972b6dbe3bbb8"
+      },
+      {
+        "path": "coalescedInvalidation.js",
+        "bytes": 3810,
+        "sha256": "04541ddaa75b7b746ff9d37185e39bfe3c24f997a0f86c4e8d1b71f54a7901aa"
+      },
+      {
+        "path": "compactFloatAttribute.d.ts",
+        "bytes": 1058,
+        "sha256": "edd5c2f4023654d3a87366b30596ba6347949b39d8051310cebf62a8dad16a7e"
+      },
+      {
+        "path": "compactFloatAttribute.js",
+        "bytes": 2805,
+        "sha256": "9fccb755217ea156cca15d07cdd6daa137d08ef29610d3cce03065f7aa4d8378"
+      },
+      {
+        "path": "geometryBounds.d.ts",
+        "bytes": 785,
+        "sha256": "c546d9360a654c528a6164b5d39d2f97ea43f091addb4a4ae2220ae0c7aa4e4e"
+      },
+      {
+        "path": "geometryBounds.js",
+        "bytes": 4645,
+        "sha256": "5b6915a38d6fcbbc1a7cf99a48046550eed321da947a94e238df40ed9bb37eaa"
+      },
+      {
+        "path": "index.d.ts",
+        "bytes": 2718,
+        "sha256": "b6e4d8d7211a627780131da840811444721626fe6b9083a1f8919c3c213485bf"
+      },
+      {
+        "path": "index.js",
+        "bytes": 4505,
+        "sha256": "dcac05c3f32df4f0a50e50f6f1aad0162b4d41a0a5f35b167d4fa35a85d3d95c"
+      },
+      {
+        "path": "indirectVisibility.d.ts",
+        "bytes": 346,
+        "sha256": "9a30311e571f2f326ce2948b7d8dbc6791b96d08e4ba9a0f83c00261eb7e8127"
+      },
+      {
+        "path": "indirectVisibility.js",
+        "bytes": 838,
+        "sha256": "0c4499451ac3c80098470c04bee7091b23538ff07db6eeac1d58b52f1869a97b"
+      },
+      {
+        "path": "instanceAttributeStream.d.ts",
+        "bytes": 1005,
+        "sha256": "70b8f9c020f99cc4b885d1ff2bd9b20d923ec036e5ddd5f1f1451e5f4f55a45e"
+      },
+      {
+        "path": "instanceAttributeStream.js",
+        "bytes": 2914,
+        "sha256": "ea6a078583f7804fff330bf691239f805099a94b1c649ac27e2ca3bfda98f4ec"
+      },
+      {
+        "path": "leafLighting.d.ts",
+        "bytes": 2347,
+        "sha256": "72f9721436d4fca77d89a8763d43af21e6494eb88f0de950b36ef0e951d32300"
+      },
+      {
+        "path": "leafLighting.js",
+        "bytes": 4520,
+        "sha256": "db2c8ff985946fb9e3aef255705bebfcdf5c85ab3147ef15cce1a4a32b5764dc"
+      },
+      {
+        "path": "objectTriplanar.d.ts",
+        "bytes": 1128,
+        "sha256": "b40aa67d39fb83661da248fc3141627dae4e6858aa4fcfa71e3430d72eea5ef5"
+      },
+      {
+        "path": "objectTriplanar.js",
+        "bytes": 6539,
+        "sha256": "3155bc70e1f68f1012e8d6a8b99a35aa265b549eba6c0ffdbb74a7a390349c8c"
+      },
+      {
+        "path": "preparedMipArrayTexture.d.ts",
+        "bytes": 1053,
+        "sha256": "81749ebe1fa894dfdced471d1a4a9a4794e1fde75745e7a5bad13fd8281031f5"
+      },
+      {
+        "path": "preparedMipArrayTexture.js",
+        "bytes": 3863,
+        "sha256": "b82edd9c591efd365d5ab2ef4571e0a5e659adb78f5e56222e454001eaba59fa"
+      },
+      {
+        "path": "preparedMipTexture.d.ts",
+        "bytes": 638,
+        "sha256": "52539b395e0854a79aa3d6ec9e52835f4bfb49f46563d04b159a6ee3aee8e3c6"
+      },
+      {
+        "path": "preparedMipTexture.js",
+        "bytes": 3260,
+        "sha256": "c101584e6f31247e749b5162abf154b64eb04cc9eee209ef15ee603c669018ce"
+      },
+      {
+        "path": "renderTargetScope.d.ts",
+        "bytes": 1490,
+        "sha256": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa"
+      },
+      {
+        "path": "renderTargetScope.js",
+        "bytes": 2339,
+        "sha256": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb"
+      },
+      {
+        "path": "rootedBend.d.ts",
+        "bytes": 2901,
+        "sha256": "0051cd13c4111f4504b73ab07b89499f3056e8fc2bd8e3dc584586e9a978ca9d"
+      },
+      {
+        "path": "rootedBend.js",
+        "bytes": 7563,
+        "sha256": "c63af3465516470a2876259fff154c30587637247e7b840178d8dc9556cf94fa"
+      },
+      {
+        "path": "scopedCascades.d.ts",
+        "bytes": 1002,
+        "sha256": "da02e6ca50a9c2d6978abd55ef2002e8960675e5598b4fb1fb25b29186a39af1"
+      },
+      {
+        "path": "scopedCascades.js",
+        "bytes": 5915,
+        "sha256": "e48a2f0a6eba5f6030dbd089e5f5ff53994aa4a62490cd527071528277e00c1d"
+      },
+      {
+        "path": "spring.d.ts",
+        "bytes": 776,
+        "sha256": "6f5ffce74afb8ae1a9b14090fe9d1d9f90773e5a25bbba0fea1d69f3cdac5a32"
+      },
+      {
+        "path": "spring.js",
+        "bytes": 783,
+        "sha256": "1a15f09c946a87964e348ef0e24163b10328cb2a06792d9010c5886db03e5311"
+      },
+      {
+        "path": "thinFoliage.d.ts",
+        "bytes": 733,
+        "sha256": "ae96f8c2bddb0de29f04ea89602ab920d186b4486ae6ca04069a4d804acd4813"
+      },
+      {
+        "path": "thinFoliage.js",
+        "bytes": 1275,
+        "sha256": "c01b7da7314002bfeebbb2e83c32a91403dfce7ed688ab5eb78852f7f74c058b"
+      },
+      {
+        "path": "viewCamera.d.ts",
+        "bytes": 957,
+        "sha256": "854aa380fafe65c18f8b90da2aaea03fb7d8f4529ccb88e3b984df9446c3d1c8"
+      },
+      {
+        "path": "viewCamera.js",
+        "bytes": 3165,
+        "sha256": "684750aa94012d2fe5e5c76dd1f9954ae7804b846386958b5bb449fe371ca29f"
+      },
+      {
+        "path": "visibility.d.ts",
+        "bytes": 2469,
+        "sha256": "2aa87ce51f876724a667b932f34b3e738e66e28e011dfc458be59f0a9522a667"
+      },
+      {
+        "path": "visibility.js",
+        "bytes": 12372,
+        "sha256": "8df35a140837f109b0452a8e69df81542c6c3b8b70bc8f2b9837bc1b28e36774"
+      },
+      {
+        "path": "visibilityProbe.d.ts",
+        "bytes": 3232,
+        "sha256": "4f8f5dff30113aca5f68020c330fcdf541b8c25bb8afecf51ec948845cffa47e"
+      },
+      {
+        "path": "visibilityProbe.js",
+        "bytes": 7377,
+        "sha256": "09bb5d985a709e3bcd35e3d1b035972e31c169e27920ff038df4a90b04fba5de"
+      }
+    ]
+  },
+  "previous013": {
+    "unchangedEmittedFiles": [
+      "alphaColor.d.ts",
+      "alphaColor.js",
+      "alphaCoverage.d.ts",
+      "alphaCoverage.js",
+      "associatedColorMap.d.ts",
+      "associatedColorMap.js",
+      "coalescedInvalidation.d.ts",
+      "coalescedInvalidation.js",
+      "compactFloatAttribute.d.ts",
+      "compactFloatAttribute.js",
+      "geometryBounds.d.ts",
+      "geometryBounds.js",
+      "index.d.ts",
+      "index.js",
+      "indirectVisibility.d.ts",
+      "indirectVisibility.js",
+      "instanceAttributeStream.d.ts",
+      "instanceAttributeStream.js",
+      "leafLighting.d.ts",
+      "leafLighting.js",
+      "objectTriplanar.d.ts",
+      "objectTriplanar.js",
+      "preparedMipArrayTexture.d.ts",
+      "preparedMipArrayTexture.js",
+      "preparedMipTexture.d.ts",
+      "preparedMipTexture.js",
+      "renderTargetScope.d.ts",
+      "renderTargetScope.js",
+      "rootedBend.d.ts",
+      "rootedBend.js",
+      "scopedCascades.d.ts",
+      "scopedCascades.js",
+      "spring.js",
+      "thinFoliage.d.ts",
+      "thinFoliage.js",
+      "viewCamera.d.ts",
+      "viewCamera.js",
+      "visibilityProbe.js"
+    ],
+    "changedEmittedFiles": [
+      "spring.d.ts",
+      "visibility.d.ts",
+      "visibility.js",
+      "visibilityProbe.d.ts"
+    ],
+    "newFiles": [
+      "boundsIndex.js",
+      "boundsIndex.d.ts"
+    ],
+    "declarationOrdering": "spring.d.ts swaps group|mesh ordering; visibilityProbe.d.ts swaps cancelled|complete ordering. Inspected differences are union ordering only.",
+    "scope": "Existing shader/animation JS is byte-identical; prior qualification remains separate evidence. Visibility JS and new bounds index have current archive tests/worker controls."
+  },
+  "archiveTests": {
+    "pass": 100,
+    "fail": 0,
+    "assertions": 177565,
+    "files": 20,
+    "mappedImports": 25
+  },
+  "nodeEsmConsumer": "passed including visibility bounds-index export",
+  "workerVersions": [
+    "0.186.1",
+    "0.187.0"
+  ],
+  "gameComparison": {
+    "queries": 51520,
+    "statusSha256": "0bfba6d1cd125335788c26fb95b17d7991d59be14f02f338aa692c556d5804ef",
+    "linearBoundsTests": 26645485,
+    "indexedBoundsTests": 7723138,
+    "lightingAndRemovalMatchPreviousLibrary": true,
+    "source": "hello-world/docs/forest-instance-index-2026-11-06/alpha-comparison.json"
+  },
+  "limits": [
+    "Publication and production adoption pending",
+    "Visibility peer now needs three-mesh-bvh >=0.9.18 <0.10; independently satisfy Drei 0.8.x",
+    "Not a live streamed lighting field or hardware FPS qualification"
+  ],
+  "removed": [
+    {
+      "path": ".qualification/scene-0.14.0/build-comparison.json",
+      "bytes": 6779,
+      "sha256": "173c9325d7db075eb217cc260258b0c570d2c8113c5e3eeeffa0a731d61db232"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/build.log",
+      "bytes": 23,
+      "sha256": "29c5ee0f6b0b20dbb259b99d01276198c3d28190090706394608d4deda6d2c0b"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/consumer.log",
+      "bytes": 254,
+      "sha256": "5b3f216fc7e50d6108d6234f1da6c7891207e50208549394fda59559260d4116"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/consumer.mjs",
+      "bytes": 3186,
+      "sha256": "a9cef22865a527b6c494dce66cadf22c9779f55a307bde23010b1e9c86b9326d"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/LICENSE",
+      "bytes": 3435,
+      "sha256": "55f5d27c3dcfd0e3899b3c22f97bf16a68841b9769223949cbf83d8071e9fd95"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/README.md",
+      "bytes": 27224,
+      "sha256": "da5375fa1e652442feb5429f9a67ab20c82832222d77ea93b417a1647bb183f8"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/alphaColor.d.ts",
+      "bytes": 1194,
+      "sha256": "2388b3a0aac6957b2d2d736b88bf7931bfc06dde73f327800f5046f7c6192cec"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/alphaColor.js",
+      "bytes": 4426,
+      "sha256": "d1c590a8f874002ec27f7c48e795a3af1915decfd9e3a2deaad53c2d6c18f065"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/alphaCoverage.d.ts",
+      "bytes": 694,
+      "sha256": "7bceb9dc9492e35504842e9c5e50a0f3c7b158c0748a26e6dd05a9b60067fd48"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/alphaCoverage.js",
+      "bytes": 2738,
+      "sha256": "0c4435f18336fda102ccee2ad909ed91da75d82c741e298e635dc8b4622f6a58"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/associatedColorMap.d.ts",
+      "bytes": 519,
+      "sha256": "2c1924bbaf9d6b869337534fcb986f60e3054e3ea6011d6d85a0317100b33c61"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/associatedColorMap.js",
+      "bytes": 1691,
+      "sha256": "839bb9c9874bf90e4b19159e40ca55a642abc6cf7e08cd61a868c982ea637681"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/boundsIndex.d.ts",
+      "bytes": 1509,
+      "sha256": "085e56f4857b98f1a9b3a289956189247268a4c0d8ed856a8f97c825d1756957"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/boundsIndex.js",
+      "bytes": 7248,
+      "sha256": "000be1f1884b47b27cfd92f0e80f8d53df70c7196a8197eb2181ca4843eeaa4a"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/coalescedInvalidation.d.ts",
+      "bytes": 1334,
+      "sha256": "2fe040f4722201414ae6af523f17ced8e1e03cbedd638b24dcc972b6dbe3bbb8"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/coalescedInvalidation.js",
+      "bytes": 3810,
+      "sha256": "04541ddaa75b7b746ff9d37185e39bfe3c24f997a0f86c4e8d1b71f54a7901aa"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/compactFloatAttribute.d.ts",
+      "bytes": 1058,
+      "sha256": "edd5c2f4023654d3a87366b30596ba6347949b39d8051310cebf62a8dad16a7e"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/compactFloatAttribute.js",
+      "bytes": 2805,
+      "sha256": "9fccb755217ea156cca15d07cdd6daa137d08ef29610d3cce03065f7aa4d8378"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/geometryBounds.d.ts",
+      "bytes": 785,
+      "sha256": "c546d9360a654c528a6164b5d39d2f97ea43f091addb4a4ae2220ae0c7aa4e4e"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/geometryBounds.js",
+      "bytes": 4645,
+      "sha256": "5b6915a38d6fcbbc1a7cf99a48046550eed321da947a94e238df40ed9bb37eaa"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/index.d.ts",
+      "bytes": 2718,
+      "sha256": "b6e4d8d7211a627780131da840811444721626fe6b9083a1f8919c3c213485bf"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/index.js",
+      "bytes": 4505,
+      "sha256": "dcac05c3f32df4f0a50e50f6f1aad0162b4d41a0a5f35b167d4fa35a85d3d95c"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/indirectVisibility.d.ts",
+      "bytes": 346,
+      "sha256": "9a30311e571f2f326ce2948b7d8dbc6791b96d08e4ba9a0f83c00261eb7e8127"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/indirectVisibility.js",
+      "bytes": 838,
+      "sha256": "0c4499451ac3c80098470c04bee7091b23538ff07db6eeac1d58b52f1869a97b"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/instanceAttributeStream.d.ts",
+      "bytes": 1005,
+      "sha256": "70b8f9c020f99cc4b885d1ff2bd9b20d923ec036e5ddd5f1f1451e5f4f55a45e"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/instanceAttributeStream.js",
+      "bytes": 2914,
+      "sha256": "ea6a078583f7804fff330bf691239f805099a94b1c649ac27e2ca3bfda98f4ec"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/leafLighting.d.ts",
+      "bytes": 2347,
+      "sha256": "72f9721436d4fca77d89a8763d43af21e6494eb88f0de950b36ef0e951d32300"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/leafLighting.js",
+      "bytes": 4520,
+      "sha256": "db2c8ff985946fb9e3aef255705bebfcdf5c85ab3147ef15cce1a4a32b5764dc"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/objectTriplanar.d.ts",
+      "bytes": 1128,
+      "sha256": "b40aa67d39fb83661da248fc3141627dae4e6858aa4fcfa71e3430d72eea5ef5"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/objectTriplanar.js",
+      "bytes": 6539,
+      "sha256": "3155bc70e1f68f1012e8d6a8b99a35aa265b549eba6c0ffdbb74a7a390349c8c"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/preparedMipArrayTexture.d.ts",
+      "bytes": 1053,
+      "sha256": "81749ebe1fa894dfdced471d1a4a9a4794e1fde75745e7a5bad13fd8281031f5"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/preparedMipArrayTexture.js",
+      "bytes": 3863,
+      "sha256": "b82edd9c591efd365d5ab2ef4571e0a5e659adb78f5e56222e454001eaba59fa"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/preparedMipTexture.d.ts",
+      "bytes": 638,
+      "sha256": "52539b395e0854a79aa3d6ec9e52835f4bfb49f46563d04b159a6ee3aee8e3c6"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/preparedMipTexture.js",
+      "bytes": 3260,
+      "sha256": "c101584e6f31247e749b5162abf154b64eb04cc9eee209ef15ee603c669018ce"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/renderTargetScope.d.ts",
+      "bytes": 1490,
+      "sha256": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/renderTargetScope.js",
+      "bytes": 2339,
+      "sha256": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/rootedBend.d.ts",
+      "bytes": 2901,
+      "sha256": "0051cd13c4111f4504b73ab07b89499f3056e8fc2bd8e3dc584586e9a978ca9d"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/rootedBend.js",
+      "bytes": 7563,
+      "sha256": "c63af3465516470a2876259fff154c30587637247e7b840178d8dc9556cf94fa"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/scopedCascades.d.ts",
+      "bytes": 1002,
+      "sha256": "da02e6ca50a9c2d6978abd55ef2002e8960675e5598b4fb1fb25b29186a39af1"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/scopedCascades.js",
+      "bytes": 5915,
+      "sha256": "e48a2f0a6eba5f6030dbd089e5f5ff53994aa4a62490cd527071528277e00c1d"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/spring.d.ts",
+      "bytes": 776,
+      "sha256": "6f5ffce74afb8ae1a9b14090fe9d1d9f90773e5a25bbba0fea1d69f3cdac5a32"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/spring.js",
+      "bytes": 783,
+      "sha256": "1a15f09c946a87964e348ef0e24163b10328cb2a06792d9010c5886db03e5311"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/thinFoliage.d.ts",
+      "bytes": 733,
+      "sha256": "ae96f8c2bddb0de29f04ea89602ab920d186b4486ae6ca04069a4d804acd4813"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/thinFoliage.js",
+      "bytes": 1275,
+      "sha256": "c01b7da7314002bfeebbb2e83c32a91403dfce7ed688ab5eb78852f7f74c058b"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/viewCamera.d.ts",
+      "bytes": 957,
+      "sha256": "854aa380fafe65c18f8b90da2aaea03fb7d8f4529ccb88e3b984df9446c3d1c8"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/viewCamera.js",
+      "bytes": 3165,
+      "sha256": "684750aa94012d2fe5e5c76dd1f9954ae7804b846386958b5bb449fe371ca29f"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/visibility.d.ts",
+      "bytes": 2469,
+      "sha256": "2aa87ce51f876724a667b932f34b3e738e66e28e011dfc458be59f0a9522a667"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/visibility.js",
+      "bytes": 12372,
+      "sha256": "8df35a140837f109b0452a8e69df81542c6c3b8b70bc8f2b9837bc1b28e36774"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/visibilityProbe.d.ts",
+      "bytes": 3232,
+      "sha256": "4f8f5dff30113aca5f68020c330fcdf541b8c25bb8afecf51ec948845cffa47e"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/dist/visibilityProbe.js",
+      "bytes": 7377,
+      "sha256": "09bb5d985a709e3bcd35e3d1b035972e31c169e27920ff038df4a90b04fba5de"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/extracted/package/package.json",
+      "bytes": 2928,
+      "sha256": "103b80f502cf55182ceef27a2c8f8f7a270452639b2efc51a5d11b945bb32adb"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/alphaColor.d.ts",
+      "bytes": 1194,
+      "sha256": "2388b3a0aac6957b2d2d736b88bf7931bfc06dde73f327800f5046f7c6192cec"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/alphaColor.js",
+      "bytes": 4426,
+      "sha256": "d1c590a8f874002ec27f7c48e795a3af1915decfd9e3a2deaad53c2d6c18f065"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/alphaCoverage.d.ts",
+      "bytes": 694,
+      "sha256": "7bceb9dc9492e35504842e9c5e50a0f3c7b158c0748a26e6dd05a9b60067fd48"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/alphaCoverage.js",
+      "bytes": 2738,
+      "sha256": "0c4435f18336fda102ccee2ad909ed91da75d82c741e298e635dc8b4622f6a58"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/associatedColorMap.d.ts",
+      "bytes": 519,
+      "sha256": "2c1924bbaf9d6b869337534fcb986f60e3054e3ea6011d6d85a0317100b33c61"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/associatedColorMap.js",
+      "bytes": 1691,
+      "sha256": "839bb9c9874bf90e4b19159e40ca55a642abc6cf7e08cd61a868c982ea637681"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/boundsIndex.d.ts",
+      "bytes": 1509,
+      "sha256": "085e56f4857b98f1a9b3a289956189247268a4c0d8ed856a8f97c825d1756957"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/boundsIndex.js",
+      "bytes": 7248,
+      "sha256": "000be1f1884b47b27cfd92f0e80f8d53df70c7196a8197eb2181ca4843eeaa4a"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/coalescedInvalidation.d.ts",
+      "bytes": 1334,
+      "sha256": "2fe040f4722201414ae6af523f17ced8e1e03cbedd638b24dcc972b6dbe3bbb8"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/coalescedInvalidation.js",
+      "bytes": 3810,
+      "sha256": "04541ddaa75b7b746ff9d37185e39bfe3c24f997a0f86c4e8d1b71f54a7901aa"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/compactFloatAttribute.d.ts",
+      "bytes": 1058,
+      "sha256": "edd5c2f4023654d3a87366b30596ba6347949b39d8051310cebf62a8dad16a7e"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/compactFloatAttribute.js",
+      "bytes": 2805,
+      "sha256": "9fccb755217ea156cca15d07cdd6daa137d08ef29610d3cce03065f7aa4d8378"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/geometryBounds.d.ts",
+      "bytes": 785,
+      "sha256": "c546d9360a654c528a6164b5d39d2f97ea43f091addb4a4ae2220ae0c7aa4e4e"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/geometryBounds.js",
+      "bytes": 4645,
+      "sha256": "5b6915a38d6fcbbc1a7cf99a48046550eed321da947a94e238df40ed9bb37eaa"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/index.d.ts",
+      "bytes": 2718,
+      "sha256": "b6e4d8d7211a627780131da840811444721626fe6b9083a1f8919c3c213485bf"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/index.js",
+      "bytes": 4505,
+      "sha256": "dcac05c3f32df4f0a50e50f6f1aad0162b4d41a0a5f35b167d4fa35a85d3d95c"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/indirectVisibility.d.ts",
+      "bytes": 346,
+      "sha256": "9a30311e571f2f326ce2948b7d8dbc6791b96d08e4ba9a0f83c00261eb7e8127"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/indirectVisibility.js",
+      "bytes": 838,
+      "sha256": "0c4499451ac3c80098470c04bee7091b23538ff07db6eeac1d58b52f1869a97b"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/instanceAttributeStream.d.ts",
+      "bytes": 1005,
+      "sha256": "70b8f9c020f99cc4b885d1ff2bd9b20d923ec036e5ddd5f1f1451e5f4f55a45e"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/instanceAttributeStream.js",
+      "bytes": 2914,
+      "sha256": "ea6a078583f7804fff330bf691239f805099a94b1c649ac27e2ca3bfda98f4ec"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/leafLighting.d.ts",
+      "bytes": 2347,
+      "sha256": "72f9721436d4fca77d89a8763d43af21e6494eb88f0de950b36ef0e951d32300"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/leafLighting.js",
+      "bytes": 4520,
+      "sha256": "db2c8ff985946fb9e3aef255705bebfcdf5c85ab3147ef15cce1a4a32b5764dc"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/objectTriplanar.d.ts",
+      "bytes": 1128,
+      "sha256": "b40aa67d39fb83661da248fc3141627dae4e6858aa4fcfa71e3430d72eea5ef5"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/objectTriplanar.js",
+      "bytes": 6539,
+      "sha256": "3155bc70e1f68f1012e8d6a8b99a35aa265b549eba6c0ffdbb74a7a390349c8c"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/preparedMipArrayTexture.d.ts",
+      "bytes": 1053,
+      "sha256": "81749ebe1fa894dfdced471d1a4a9a4794e1fde75745e7a5bad13fd8281031f5"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/preparedMipArrayTexture.js",
+      "bytes": 3863,
+      "sha256": "b82edd9c591efd365d5ab2ef4571e0a5e659adb78f5e56222e454001eaba59fa"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/preparedMipTexture.d.ts",
+      "bytes": 638,
+      "sha256": "52539b395e0854a79aa3d6ec9e52835f4bfb49f46563d04b159a6ee3aee8e3c6"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/preparedMipTexture.js",
+      "bytes": 3260,
+      "sha256": "c101584e6f31247e749b5162abf154b64eb04cc9eee209ef15ee603c669018ce"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/renderTargetScope.d.ts",
+      "bytes": 1490,
+      "sha256": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/renderTargetScope.js",
+      "bytes": 2339,
+      "sha256": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/rootedBend.d.ts",
+      "bytes": 2901,
+      "sha256": "0051cd13c4111f4504b73ab07b89499f3056e8fc2bd8e3dc584586e9a978ca9d"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/rootedBend.js",
+      "bytes": 7563,
+      "sha256": "c63af3465516470a2876259fff154c30587637247e7b840178d8dc9556cf94fa"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/scopedCascades.d.ts",
+      "bytes": 1002,
+      "sha256": "da02e6ca50a9c2d6978abd55ef2002e8960675e5598b4fb1fb25b29186a39af1"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/scopedCascades.js",
+      "bytes": 5915,
+      "sha256": "e48a2f0a6eba5f6030dbd089e5f5ff53994aa4a62490cd527071528277e00c1d"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/spring.d.ts",
+      "bytes": 776,
+      "sha256": "6f5ffce74afb8ae1a9b14090fe9d1d9f90773e5a25bbba0fea1d69f3cdac5a32"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/spring.js",
+      "bytes": 783,
+      "sha256": "1a15f09c946a87964e348ef0e24163b10328cb2a06792d9010c5886db03e5311"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/thinFoliage.d.ts",
+      "bytes": 733,
+      "sha256": "ae96f8c2bddb0de29f04ea89602ab920d186b4486ae6ca04069a4d804acd4813"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/thinFoliage.js",
+      "bytes": 1275,
+      "sha256": "c01b7da7314002bfeebbb2e83c32a91403dfce7ed688ab5eb78852f7f74c058b"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/viewCamera.d.ts",
+      "bytes": 957,
+      "sha256": "854aa380fafe65c18f8b90da2aaea03fb7d8f4529ccb88e3b984df9446c3d1c8"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/viewCamera.js",
+      "bytes": 3165,
+      "sha256": "684750aa94012d2fe5e5c76dd1f9954ae7804b846386958b5bb449fe371ca29f"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/visibility.d.ts",
+      "bytes": 2469,
+      "sha256": "2aa87ce51f876724a667b932f34b3e738e66e28e011dfc458be59f0a9522a667"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/visibility.js",
+      "bytes": 12372,
+      "sha256": "8df35a140837f109b0452a8e69df81542c6c3b8b70bc8f2b9837bc1b28e36774"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/visibilityProbe.d.ts",
+      "bytes": 3232,
+      "sha256": "4f8f5dff30113aca5f68020c330fcdf541b8c25bb8afecf51ec948845cffa47e"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent/visibilityProbe.js",
+      "bytes": 7377,
+      "sha256": "09bb5d985a709e3bcd35e3d1b035972e31c169e27920ff038df4a90b04fba5de"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/independent.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/npm-cache/_cacache/content-v2/sha512/3d/71/f7e3d2104cdea48222d7bc4df7244e448bb2f6b625b025201ec1633ba897927943af68f798324d4ad09c694658e1243d978d7e506c988e5a80af8de8459f",
+      "bytes": 48104,
+      "sha256": "eb3f47bebeae8f26da028c3a3156b5be78aac48ecae71f292865c1c33f5ea2b5"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/npm-cache/_cacache/index-v5/31/f0/89c0de227282bcf179c52b8354b9888792d6f7becf3bbdda62cf082886df",
+      "bytes": 257,
+      "sha256": "59abf62aa7d8eded4adaf1cd78f86d90a46fbfb644637bcb2c0361491e974091"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/npm-cache/_logs/2026-11-06T11_44_18_846Z-debug-0.log",
+      "bytes": 1318,
+      "sha256": "06d942f7446a0d9b2807a2be8b0f37c439deaa689052f7a85fbb6b48344bcd30"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/npm-cache/_update-notifier-last-checked",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/pack.json",
+      "bytes": 5208,
+      "sha256": "381e96c02d7182c47929d179c79029c2712c1a0402b834b0626bbb9ea16f1fd0"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/tests.log",
+      "bytes": 10975,
+      "sha256": "e26836f7056433a1ec490e2dff7e0c222c769186e4c35f2c6146bedb84131521"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/worker-r186.log",
+      "bytes": 73,
+      "sha256": "8100a6e8443bafc8b14910f9af6810b5ccabee831c58395732fc2e30fc40c666"
+    },
+    {
+      "path": ".qualification/scene-0.14.0/worker-r187.log",
+      "bytes": 73,
+      "sha256": "8100a6e8443bafc8b14910f9af6810b5ccabee831c58395732fc2e30fc40c666"
+    },
+    {
+      "path": ".qualification/scene-query/browser-r186.log",
+      "bytes": 73,
+      "sha256": "8100a6e8443bafc8b14910f9af6810b5ccabee831c58395732fc2e30fc40c666"
+    },
+    {
+      "path": ".qualification/scene-query/browser-r187.log",
+      "bytes": 73,
+      "sha256": "8100a6e8443bafc8b14910f9af6810b5ccabee831c58395732fc2e30fc40c666"
+    },
+    {
+      "path": ".qualification/scene-query/build.log",
+      "bytes": 23,
+      "sha256": "29c5ee0f6b0b20dbb259b99d01276198c3d28190090706394608d4deda6d2c0b"
+    },
+    {
+      "path": ".qualification/scene-query/consumer.log",
+      "bytes": 254,
+      "sha256": "5b3f216fc7e50d6108d6234f1da6c7891207e50208549394fda59559260d4116"
+    },
+    {
+      "path": ".qualification/scene-query/dependency-check.log",
+      "bytes": 11133,
+      "sha256": "a7cafffeb09fbe53a32909ba7ac1a6cb0846dfc575446ae84e8d35890cf3e05a"
+    },
+    {
+      "path": ".qualification/scene-query/final-format.log",
+      "bytes": 158,
+      "sha256": "13c26a12e87cf5656e5f0ff3470a2125808d681491672fcb062a03b19e5205a6"
+    },
+    {
+      "path": ".qualification/scene-query/format.log",
+      "bytes": 60,
+      "sha256": "031eeb6718092e9ec6710c21d512e7c0dd9db8c0b94d8cd7812d8523d1105ead"
+    },
+    {
+      "path": ".qualification/scene-query/index-check.log",
+      "bytes": 10563,
+      "sha256": "864261a4eb7f6bc1f155c516555db4ff182951e63dc83406cff723d84a85b378"
+    },
+    {
+      "path": ".qualification/scene-query/index-final-check.log",
+      "bytes": 10560,
+      "sha256": "0af14112477bee8b6ae09e52d4e3638ab01c6856ac80856e34e7c8ae311e0d74"
+    },
+    {
+      "path": ".qualification/scene-query/test-format.log",
+      "bytes": 32,
+      "sha256": "733538bf5de2e88cdef0401915f2967675853adf33c3ed941f7874bdb95edd84"
+    }
+  ],
+  "supersededArchive": {
+    "path": "../rendering-alpha-mips/.qualification/motion-0.13.0/absolutejs-rendering-0.13.0.tgz",
+    "bytes": 44881,
+    "sha256": "55363ff2a33f47869337660ffb82f324c69c4867e74f8de4370e8c7d8f9f59cf",
+    "reason": "0.14.0 exact archive is qualified; retain only latest queued release"
+  }
+}

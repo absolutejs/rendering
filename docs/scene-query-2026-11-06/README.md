@@ -41,6 +41,15 @@ publish a live lighting field, provide worker residency/streaming, or establish
 hardware performance. Production adoption must resolve the new optional peer
 explicitly; Drei's own 0.8.x dependency must remain independently satisfied.
 
-The qualified 0.13 archive is a distinct immutable artifact until the new release
-has its own exact-archive qualification. No authentication prompt should be opened
-while the user is away. Do not patch installed dependencies or relabel old archives.
+The exact 0.14.0 archive is now qualified: 44 emitted files match independent
+builds and the extracted archive; 100 archive tests, built Node ESM consumers and
+module-worker checks on both supported Three versions pass. Only visibility JS
+changes among pre-existing runtime modules; shader/animation JS remains identical
+to qualified 0.13.0. Two additional declaration differences are union-member
+ordering, recorded separately from implementation changes.
+
+`archive-qualification.json` records the 48,104-byte candidate, checksum,
+source commit, file manifest and hashes of completed logs/builds. The superseded
+0.13 archive has been removed with its identity preserved; retain only this latest
+pending archive. Publication is queued without an expiring authentication prompt.
+No installed dependency is patched and production adoption remains pending.

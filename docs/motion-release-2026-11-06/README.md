@@ -1,5 +1,9 @@
 # Rendering 0.13.0 archive qualification
 
+Publication queue update: 0.14.0 now supersedes this candidate. Its exact archive
+is qualified in `../scene-query-2026-11-06/`; the 0.13 archive was removed after
+recording its checksum. The observations below describe the original qualification.
+
 The unpublished candidate combines the previously qualified visibility work with
 compact float attributes, rooted visual deformation, conservative bounds leases,
 and bounded invalidation with explicit discontinuity refresh. It does not enable
