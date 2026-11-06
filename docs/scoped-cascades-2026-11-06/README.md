@@ -83,10 +83,15 @@ incorrectly darkens 289 lit samples, all outside the main view. In this region
 atlas-view depth is behind the main camera and CSM's direct-light selection
 excludes every cascade. The shader experiment is rejected as a remedy.
 
-All six standard/steep controls pass their ray-based assertions and restoration
+All eight standard/steep controls pass their ray-based assertions and restoration
 checks with zero browser/GL errors. Focused strict TypeScript checking covers both
 browser fixtures. No production shader changes follow from this study. These
 controls do not establish universal cached-atlas coverage for arbitrary moving
 cameras, terrain, water clipping, or caster arrangements. Retain the original
 selector while investigating coverage and refresh policies; do not replace it
 merely because reflected and main-view depths differ.
+
+The steep control was also repeated with the custom 16 m split on both versions.
+It produces the same 289 incorrectly darkened lit samples with atlas-view
+selection, while the original selector and independently refitted maps retain
+correct classification of all 3,860 stable receiver samples.

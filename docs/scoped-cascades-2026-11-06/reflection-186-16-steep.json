@@ -1,0 +1,49 @@
+{
+  "revision": "186",
+  "firstSplit": 16,
+  "scenario": "steep",
+  "coverage": {
+    "renderView": {
+      "tested": 3860,
+      "shadowed": 103,
+      "lit": 3757,
+      "missing": 0,
+      "falseShadow": 0,
+      "outsideMainFalseShadow": 0,
+      "absoluteError": 2.568627450980392,
+      "outsideMainTested": 1486,
+      "outsideMainMissing": 0
+    },
+    "atlasView": {
+      "tested": 3860,
+      "shadowed": 103,
+      "lit": 3757,
+      "missing": 0,
+      "falseShadow": 289,
+      "outsideMainFalseShadow": 289,
+      "absoluteError": 294.921568627451,
+      "outsideMainTested": 1486,
+      "outsideMainMissing": 0
+    },
+    "refittedView": {
+      "tested": 3860,
+      "shadowed": 103,
+      "lit": 3757,
+      "missing": 0,
+      "falseShadow": 0,
+      "outsideMainFalseShadow": 0,
+      "absoluteError": 2.568627450980392,
+      "outsideMainTested": 1486,
+      "outsideMainMissing": 0
+    }
+  },
+  "rejectedBoundary": 683,
+  "changedPixels": 2921,
+  "maxDifference": 51,
+  "restorationDifferences": 0,
+  "width": 192,
+  "height": 192,
+  "glError": 0,
+  "scope": "Same cached main-view CSM maps and reflected render camera; compare render-view versus atlas-view depth selection only. Ray-box ground truth tests visible wall interiors with a 2-pixel stable neighborhood; refitted-view map is an additional reference, not ground truth.",
+  "errors": []
+}
