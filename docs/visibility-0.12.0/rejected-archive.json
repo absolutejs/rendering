@@ -1,0 +1,14 @@
+{
+  "package": "@absolutejs/rendering",
+  "version": "0.12.0",
+  "state": "rejected: Node ESM extensionless visibilityProbe import",
+  "sourceCommit": "d12e8de88c15afd8e7c2fa58ab9dd796e6b72bd8",
+  "archive": ".qualification/visibility-0.12.0/absolutejs-rendering-0.12.0.tgz",
+  "bytes": 34597,
+  "sha256": "55de2ed76b8f835bbb14c1bef579e6e7a5240c8441f00439f324c4b7efae90c3",
+  "sha512": "93e4faf4283350a1806120d3ece8ac7ead21c34e0cfe439a59e7cb6e42416328c21686d733b8fe753a7b9cc1298511a873609e33537179a8d5c4036dd131117a",
+  "independentBuildFiles": 32,
+  "tests": 68,
+  "assertions": 1292,
+  "archiveRemoved": true
+}
