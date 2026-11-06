@@ -138,3 +138,10 @@ export {
   createCompactFloatAttribute,
   type CompactAttributeEncoding,
 } from "./compactFloatAttribute.js";
+
+export {
+  createRootedBend,
+  withRootedBend,
+  rootedBendGLSL,
+  type RootedBendOptions,
+} from "./rootedBend.js";

@@ -373,3 +373,12 @@ which attributes may lose precision remain the caller's responsibility. The help
 does not automatically quantize positions or change topology. Half-float arrays hold
 encoded bits: CPU users must use typed attribute accessors or decode explicitly.
 See `docs/compact-attributes-2026-11-05/README.md` for limits and qualification scope.
+
+### Rooted visual bending (unpublished candidate)
+
+`createRootedBend` and `withRootedBend` provide a bounded local-space visual shear,
+matching color/depth positions and analytic normal/tangent transforms. Root points
+stay fixed. Callers own the clock, material hook composition, immutable shape
+uniform, expanded culling bounds and shadow refresh policy. This applies to rigid
+unskinned source geometry and is not branch physics. See
+[qualification and contract](docs/rooted-bend-2026-11-06/README.md).
