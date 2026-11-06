@@ -22,11 +22,26 @@
       "hitDistance": null
     }
   ],
+  "deformed": {
+    "status": "occluded",
+    "boundsTests": 0,
+    "triangleTests": 2,
+    "alphaTests": 2,
+    "hitDistance": 2
+  },
+  "recoveredError": true,
+  "recovered": {
+    "status": "occluded",
+    "boundsTests": 0,
+    "triangleTests": 2,
+    "alphaTests": 2,
+    "hitDistance": 2
+  },
   "bytes": 298,
   "releasedBytes": 0,
   "originalIndex": null,
   "realm": "undefined",
   "errors": [],
-  "bundleBytes": 337177,
+  "bundleBytes": 338637,
   "scope": "Real browser module worker, CPU query, no WebGL context or FPS claim"
 }

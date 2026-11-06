@@ -174,3 +174,111 @@ test("floating indices and nonlocal extreme ray coordinates reject explicitly", 
   ).toThrow();
   q.dispose();
 });
+
+test("deformed queries share storage and match explicitly rebuilt geometry", () => {
+  const g = planes(
+    Array.from({ length: 48 }, (_, i) => ({
+      x: (i % 8) * 4,
+      z: 1 + Math.floor(i / 8) * 3,
+      u: i % 3 === 0 ? 0.75 : 0.25,
+    })),
+  );
+  const baked = g.clone(),
+    position = baked.getAttribute("position");
+  for (let i = 0; i < position.count; i++)
+    position.setXYZ(
+      i,
+      position.getX(i) + 10,
+      position.getY(i) * 2,
+      position.getZ(i) + position.getX(i) ** 2 * 0.05,
+    );
+  const shared = new PreparedAlphaVisibility(g, alpha()),
+    reference = new PreparedAlphaVisibility(baked, alpha()),
+    bytes = shared.ownedBytes;
+  const deformation = {
+    point(source: Readonly<Vector3>, target: Vector3) {
+      target.set(source.x + 10, source.y * 2, source.z + source.x ** 2 * 0.05);
+    },
+    bounds(
+      source: Readonly<import("three").Box3>,
+      target: import("three").Box3,
+    ) {
+      const squareMin =
+        source.min.x <= 0 && source.max.x >= 0
+          ? 0
+          : Math.min(source.min.x ** 2, source.max.x ** 2);
+      const squareMax = Math.max(source.min.x ** 2, source.max.x ** 2);
+      target.min.set(
+        source.min.x + 10,
+        source.min.y * 2,
+        source.min.z + squareMin * 0.05,
+      );
+      target.max.set(
+        source.max.x + 10,
+        source.max.y * 2,
+        source.max.z + squareMax * 0.05,
+      );
+    },
+  };
+  for (let x = 9; x <= 40; x += 0.2)
+    for (const y of [-0.5, 0.5]) {
+      const r = ray(x, y),
+        a = shared.query(r, { far: 100 }, deformation),
+        b = reference.query(r, { far: 100 });
+      expect(a.status).toBe(b.status);
+    }
+  expect(shared.ownedBytes).toBe(bytes);
+  expect(shared.query(ray()).status).toBe("occluded");
+  shared.dispose();
+  reference.dispose();
+});
+
+test("deformation failures unwind BVH scratch and do not poison later owners or permit reentrancy", () => {
+  const source = planes(
+      Array.from({ length: 32 }, (_, i) => ({ z: i + 1, u: 0.75 })),
+    ),
+    q = new PreparedAlphaVisibility(source, alpha()),
+    other = new PreparedAlphaVisibility(source, alpha());
+  const normal = {
+    bounds: (s: Readonly<import("three").Box3>, t: import("three").Box3) => {
+      t.copy(s);
+    },
+    point: (s: Readonly<Vector3>, t: Vector3) => {
+      t.copy(s);
+    },
+  };
+  for (const deformation of [
+    {
+      ...normal,
+      bounds: () => {
+        throw Error("bounds failure");
+      },
+    },
+    {
+      ...normal,
+      point: () => {
+        throw Error("point failure");
+      },
+    },
+    { ...normal, bounds: () => {} },
+    { ...normal, point: () => {} },
+    {
+      ...normal,
+      point: () => {
+        q.query(ray());
+      },
+    },
+    {
+      ...normal,
+      point: () => {
+        q.dispose();
+      },
+    },
+  ]) {
+    expect(() => q.query(ray(), {}, deformation)).toThrow();
+    expect(q.query(ray()).status).toBe("occluded");
+    expect(other.query(ray()).status).toBe("occluded");
+  }
+  q.dispose();
+  other.dispose();
+});

@@ -295,5 +295,19 @@ in the supplied UVs/bytes. Sampling is bilinear at the base texture level with
 explicit clamp or repeat wrapping. This is hard-cutout geometry visibility, not
 mipmapped/A2C raster equivalence, translucent transmission or a complete ambient
 occlusion system. Separate alpha maps with different UV sets, material graphs,
-wind, per-instance deformations and scene overlap require caller-side treatment.
+wind and scene overlap require caller-side treatment.
 Geometry and ray origins must be finite local coordinates within ±1,000,000.
+
+An optional third query argument supplies synchronous `point(source, target)` and
+`bounds(source, target)` deformation callbacks. This shares one source BVH across
+static variants without storing a rebuilt mesh per instance. Both callbacks must
+write in the ray's coordinate frame. Bounds must conservatively enclose the entire
+transformed source box, including interior extrema of nonlinear deformation;
+transforming only box corners is not generally sufficient. Finite output checks
+cannot prove this caller contract. Distances are in that output frame.
+
+Inputs and targets are temporary scratch objects; do not retain references or
+reenter/dispose the same owner from a callback. Callback errors are propagated only
+after BVH traversal safely unwinds, so later queries remain valid. This is a CPU
+storage/query tradeoff: transformed bounds and vertices cost work. Use bounded
+worker jobs and cache accepted lighting results; do not trace every rendered frame.

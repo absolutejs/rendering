@@ -1,4 +1,4 @@
-import { BufferGeometry, BufferAttribute, Ray, Vector3 } from "three";
+import { BufferGeometry, BufferAttribute, Ray, Vector3, Box3 } from "three";
 import { PreparedAlphaVisibility } from "../src/visibility";
 self.onmessage = () => {
   try {
@@ -32,10 +32,44 @@ self.onmessage = () => {
       q.query(ray, { far: 1.5 }),
       q.query(ray, { maxTriangleTests: 1 }),
     ];
+    const offset = new Vector3(3, 4, 5);
+    const deformed = q.query(
+      new Ray(offset.clone(), new Vector3(0, 0, 1)),
+      {},
+      {
+        point(source: Readonly<Vector3>, target: Vector3) {
+          target.copy(source).add(offset);
+        },
+        bounds(source: Readonly<Box3>, target: Box3) {
+          target.copy(source).translate(offset);
+        },
+      },
+    );
+    let recoveredError = false;
+    try {
+      q.query(
+        ray,
+        {},
+        {
+          point() {
+            throw Error("expected point failure");
+          },
+          bounds(source, target) {
+            target.copy(source);
+          },
+        },
+      );
+    } catch (error) {
+      recoveredError = String(error).includes("expected point failure");
+    }
+    const recovered = q.query(ray);
     const bytes = q.ownedBytes;
     q.dispose();
     self.postMessage({
       rows,
+      deformed,
+      recoveredError,
+      recovered,
       bytes,
       releasedBytes: q.ownedBytes,
       originalIndex: g.index,

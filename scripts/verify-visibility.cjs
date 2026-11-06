@@ -91,6 +91,11 @@ const { chromium } = require("playwright"),
       ["occluded", "clear", "budget-exhausted"],
     );
     assert.equal(result.rows[0].hitDistance, 2);
+    assert.equal(result.deformed.status, "occluded");
+    assert.equal(result.deformed.hitDistance, 2);
+    assert.equal(result.recoveredError, true);
+    assert.equal(result.recovered.status, "occluded");
+    assert.equal(result.recovered.hitDistance, 2);
     assert.equal(result.releasedBytes, 0);
     assert.equal(result.originalIndex, null);
     assert.deepEqual(errors, []);

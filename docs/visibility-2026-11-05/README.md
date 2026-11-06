@@ -27,3 +27,27 @@ dependency is patched. Package 0.12.0 remains an unpublished candidate: archive
 consumer checks, independent build comparison and scene/deformation qualification
 are still required. Do not publish it merely because these focused tests pass.
 The preceding qualified 0.11.0 archive remains intact pending release planning.
+
+## Shared deformation extension
+
+The source BVH now accepts conservative transformed boxes and transformed triangle
+vertices. UV interpolation uses the transformed triangle with original UV/index
+ownership. Two additional regression tests cover nonlinear deformation versus
+rebuilt geometry and callback failure recovery, including same-owner reentrancy
+and disposal. The package passes 58 tests / 1,062 assertions and builds cleanly.
+Both Three browser-worker controls now cover translated queries and recovery after
+a point callback throws. Their reports replace the previous worker-only receipts.
+
+The underlying BVH shapecast uses shared scratch stacks without exception cleanup;
+callbacks therefore capture failures, finish unwinding traversal, then rethrow.
+Allowing a callback exception to escape directly would corrupt later traversal.
+
+The game qualified 32 actual-canopy/phenotype combinations: 36,864 shared queries
+agree with baked geometry and 256 selected rays agree with independent triangle
+scans. Includes extreme scale, width, crown and lean, arbitrary yaw and translation.
+Game interval bounds include nonlinear interior extrema. Shared owners retain
+13,205,184 bytes across eight sources irrespective of variant count. This is
+correctness evidence, not a speed win: the deliberately allocation-heavy game
+fixture totals about 2.52 seconds shared queries versus 0.245 seconds baked queries
+on this CPU. Production scheduling, spatial candidates, overlap, wind, edits and
+local lighting-field quality remain open. No game dependency or live shader changes.

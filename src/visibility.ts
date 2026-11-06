@@ -1,4 +1,11 @@
-import { BufferAttribute, BufferGeometry, Ray, Vector3 } from "three";
+import {
+  BufferAttribute,
+  BufferGeometry,
+  Ray,
+  Vector3,
+  Box3,
+  Triangle,
+} from "three";
 import { MeshBVH } from "three-mesh-bvh";
 
 export type VisibilityAlpha = {
@@ -9,6 +16,13 @@ export type VisibilityAlpha = {
   cutoff?: number;
   wrapS?: "clamp" | "repeat";
   wrapT?: "clamp" | "repeat";
+};
+/** Synchronous callbacks in the ray's coordinate frame. Bounds MUST enclose the
+ * entire transformed source box, including interior extrema. Inputs are scratch
+ * copies; write targets without retaining references. No reentrant owner use. */
+export type VisibilityDeformation = {
+  bounds(source: Readonly<Box3>, target: Box3): void;
+  point(source: Readonly<Vector3>, target: Vector3): void;
 };
 export type VisibilityBudget = {
   near?: number;
@@ -44,6 +58,11 @@ export class PreparedAlphaVisibility {
   private readonly nearPoint = new Vector3();
   private readonly hit = new Vector3();
   private readonly bary = new Vector3();
+  private readonly sourceBounds = new Box3();
+  private readonly deformedBounds = new Box3();
+  private readonly sourcePoint = new Vector3();
+  private readonly deformedTriangle = new Triangle();
+  private querying = false;
 
   constructor(source: BufferGeometry, alpha?: VisibilityAlpha) {
     const position = source?.getAttribute("position");
@@ -153,7 +172,32 @@ export class PreparedAlphaVisibility {
     return this.bytes;
   }
 
-  query(input: Ray, budget: VisibilityBudget = {}): VisibilityResult {
+  query(
+    input: Ray,
+    budget: VisibilityBudget = {},
+    deformation?: VisibilityDeformation,
+  ): VisibilityResult {
+    if (this.querying) throw Error("Reentrant visibility query");
+    if (
+      deformation !== undefined &&
+      (!deformation ||
+        typeof deformation.bounds !== "function" ||
+        typeof deformation.point !== "function")
+    )
+      throw Error("Invalid visibility deformation");
+    this.querying = true;
+    try {
+      return this.runQuery(input, budget, deformation);
+    } finally {
+      this.querying = false;
+    }
+  }
+
+  private runQuery(
+    input: Ray,
+    budget: VisibilityBudget,
+    deformation?: VisibilityDeformation,
+  ): VisibilityResult {
     if (!this.bvh || !this.geometry) throw Error("Visibility query disposed");
     const near = budget.near ?? 0,
       far = budget.far ?? 256;
@@ -190,6 +234,7 @@ export class PreparedAlphaVisibility {
     this.ray.direction.normalize();
     this.ray.at(near, this.nearPoint);
     let exhausted = false;
+    let failure: { error: unknown } | undefined;
     const result: VisibilityResult = {
       status: "clear",
       boundsTests: 0,
@@ -201,27 +246,72 @@ export class PreparedAlphaVisibility {
       uv = this.geometry.getAttribute("uv");
     this.bvh.shapecast({
       intersectsBounds: (box) => {
-        if (exhausted || result.boundsTests >= maxBounds) {
+        if (failure || exhausted || result.boundsTests >= maxBounds) {
           exhausted = true;
           return false;
         }
         result.boundsTests++;
-        if (box.containsPoint(this.nearPoint)) return true;
-        const p = this.ray.intersectBox(box, this.hit);
+        let activeBox = box;
+        if (deformation) {
+          try {
+            this.sourceBounds.copy(box);
+            this.deformedBounds.makeEmpty();
+            deformation.bounds(this.sourceBounds, this.deformedBounds);
+            const b = this.deformedBounds;
+            if (
+              b.isEmpty() ||
+              ![...b.min.toArray(), ...b.max.toArray()].every(
+                (v) => Number.isFinite(v) && Math.abs(v) <= 1e6,
+              )
+            )
+              throw Error("Invalid deformed visibility bounds");
+            activeBox = b;
+          } catch (error) {
+            failure = { error };
+            return false;
+          }
+        }
+        if (activeBox.containsPoint(this.nearPoint)) return true;
+        const p = this.ray.intersectBox(activeBox, this.hit);
         if (!p) return false;
         const distance = p.distanceTo(this.ray.origin);
         return distance >= near && distance <= far;
       },
       intersectsTriangle: (triangle, triangleIndex) => {
-        if (exhausted || result.triangleTests >= maxTriangles) {
+        if (failure || exhausted || result.triangleTests >= maxTriangles) {
           exhausted = true;
           return true;
         }
         result.triangleTests++;
+        let activeTriangle: Triangle = triangle;
+        if (deformation) {
+          try {
+            const out = this.deformedTriangle;
+            for (const [source, target] of [
+              [triangle.a, out.a],
+              [triangle.b, out.b],
+              [triangle.c, out.c],
+            ] as const) {
+              this.sourcePoint.copy(source);
+              target.set(NaN, NaN, NaN);
+              deformation.point(this.sourcePoint, target);
+              if (
+                !target
+                  .toArray()
+                  .every((v) => Number.isFinite(v) && Math.abs(v) <= 1e6)
+              )
+                throw Error("Invalid deformed visibility vertex");
+            }
+            activeTriangle = out;
+          } catch (error) {
+            failure = { error };
+            return true;
+          }
+        }
         const p = this.ray.intersectTriangle(
-          triangle.a,
-          triangle.b,
-          triangle.c,
+          activeTriangle.a,
+          activeTriangle.b,
+          activeTriangle.c,
           false,
           this.hit,
         );
@@ -230,7 +320,7 @@ export class PreparedAlphaVisibility {
         if (distance < near || distance > far) return false;
         if (this.alpha) {
           result.alphaTests++;
-          triangle.getBarycoord(p, this.bary);
+          activeTriangle.getBarycoord(p, this.bary);
           let u = 0,
             v = 0;
           for (let k = 0; k < 3; k++) {
@@ -246,6 +336,8 @@ export class PreparedAlphaVisibility {
         return true;
       },
     });
+    // Do not throw from BVH callbacks: let its shared scratch stack unwind first.
+    if (failure) throw failure.error;
     if (result.status !== "occluded" && exhausted)
       result.status = "budget-exhausted";
     return result;
@@ -273,6 +365,7 @@ export class PreparedAlphaVisibility {
   }
 
   dispose() {
+    if (this.querying) throw Error("Cannot dispose an active visibility query");
     this.geometry?.dispose();
     this.geometry = null;
     this.bvh = null;
