@@ -1,0 +1,173 @@
+{
+  "gameCommit": "79340c8173c3b27ae4ac8714771f470f451d2779",
+  "recipe": "hello-world/artifacts/forest-sky-review/verify-terrain-visibility.cjs",
+  "scope": "Isolated actual terrain material; source qualification only, no live adoption. Direct output unchanged, ambient field verified using received shader coordinates. Full rejected-reference evidence and cleanup in game docs.",
+  "runs": [
+    {
+      "identity": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "threeRevision": "187",
+      "fieldTextureBytes": 400,
+      "hookSha256": "182abb395e800458c70d608f0d84cfb7adeec50a00c70a7bcaf8fede2fd65a51",
+      "materialSha256": "e941a4ef037762e534fc7ea40a1e315a6eb5ff65534ae0f4c5d980e97cb6a0df",
+      "fieldSha256": "faa3bff0c0baa2bdfbe08822ddf514c200147e7d09c9a2f3c1cc97281c052ddd",
+      "vertices": 4504,
+      "triangles": 8480,
+      "rows": [
+        {
+          "kind": "direct",
+          "fieldError": 0,
+          "worstField": null,
+          "maxDifference": 0,
+          "meanDifference": 0,
+          "positiveChannels": 49152,
+          "centerBefore": [
+            0.11164218932390213,
+            0.11117014288902283,
+            0.04983329027891159
+          ],
+          "centerAfter": [
+            0.11164218932390213,
+            0.11117014288902283,
+            0.04983329027891159
+          ]
+        },
+        {
+          "kind": "ambient",
+          "fieldError": 2.7007508773824185e-07,
+          "worstField": {
+            "ix": 17,
+            "iy": 78,
+            "c": 0,
+            "before": 0.056637004017829895,
+            "after": 0.0345332995057106,
+            "actual": 0.609730336280485,
+            "expected": 0.6135234059905585,
+            "shader": [
+              0.7390318512916565,
+              5.734831809997559,
+              0.6097303628921509,
+              1
+            ]
+          },
+          "maxDifference": 0.07945005595684052,
+          "meanDifference": 0.015178506044686438,
+          "positiveChannels": 49152,
+          "centerBefore": [
+            0.05118700861930847,
+            0.050927117466926575,
+            0.017157385125756264
+          ],
+          "centerAfter": [
+            0.017961280420422554,
+            0.017870085313916206,
+            0.006020445376634598
+          ],
+          "idealPixelError": 0.0037930697100735378,
+          "hookRatioError": 5.841136552220405e-08
+        },
+        {
+          "kind": "combined",
+          "fieldError": 0,
+          "worstField": null,
+          "maxDifference": 0.07945005595684052,
+          "meanDifference": 0.015178506038864725,
+          "positiveChannels": 49152,
+          "centerBefore": [
+            0.1628292053937912,
+            0.1620972603559494,
+            0.0669906735420227
+          ],
+          "centerAfter": [
+            0.12960347533226013,
+            0.12904022634029388,
+            0.05585373938083649
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "identity": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "threeRevision": "186",
+      "fieldTextureBytes": 400,
+      "hookSha256": "182abb395e800458c70d608f0d84cfb7adeec50a00c70a7bcaf8fede2fd65a51",
+      "materialSha256": "e941a4ef037762e534fc7ea40a1e315a6eb5ff65534ae0f4c5d980e97cb6a0df",
+      "fieldSha256": "faa3bff0c0baa2bdfbe08822ddf514c200147e7d09c9a2f3c1cc97281c052ddd",
+      "vertices": 4504,
+      "triangles": 8480,
+      "rows": [
+        {
+          "kind": "direct",
+          "fieldError": 0,
+          "worstField": null,
+          "maxDifference": 0,
+          "meanDifference": 0,
+          "positiveChannels": 49152,
+          "centerBefore": [
+            0.11164218932390213,
+            0.11117014288902283,
+            0.04983329027891159
+          ],
+          "centerAfter": [
+            0.11164218932390213,
+            0.11117014288902283,
+            0.04983329027891159
+          ]
+        },
+        {
+          "kind": "ambient",
+          "fieldError": 2.7007508773824185e-07,
+          "worstField": {
+            "ix": 17,
+            "iy": 78,
+            "c": 0,
+            "before": 0.056637004017829895,
+            "after": 0.0345332995057106,
+            "actual": 0.609730336280485,
+            "expected": 0.6135234059905585,
+            "shader": [
+              0.7390318512916565,
+              5.734831809997559,
+              0.6097303628921509,
+              1
+            ]
+          },
+          "maxDifference": 0.07945005595684052,
+          "meanDifference": 0.015178506044686438,
+          "positiveChannels": 49152,
+          "centerBefore": [
+            0.05118700861930847,
+            0.050927117466926575,
+            0.017157385125756264
+          ],
+          "centerAfter": [
+            0.017961280420422554,
+            0.017870085313916206,
+            0.006020445376634598
+          ],
+          "idealPixelError": 0.0037930697100735378,
+          "hookRatioError": 5.841136552220405e-08
+        },
+        {
+          "kind": "combined",
+          "fieldError": 0,
+          "worstField": null,
+          "maxDifference": 0.07945005595684052,
+          "meanDifference": 0.015178506038864725,
+          "positiveChannels": 49152,
+          "centerBefore": [
+            0.1628292053937912,
+            0.1620972603559494,
+            0.0669906735420227
+          ],
+          "centerAfter": [
+            0.12960347533226013,
+            0.12904022634029388,
+            0.05585373938083649
+          ]
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

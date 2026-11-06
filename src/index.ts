@@ -130,3 +130,5 @@ export {
   createInstanceAttributeStream,
   type InstanceAttributeStream,
 } from "./instanceAttributeStream.js";
+
+export { withIndirectDiffuseVisibility } from "./indirectVisibility.js";

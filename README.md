@@ -330,3 +330,18 @@ interval or a bound on the continuous lighting integral. The cosine weighting is
 for a horizontal upward-facing receiver under uniform sky; it does not represent
 arbitrary leaf normals, sky color, indirect bounce or transmission. Reject stale
 scene revisions before installing results. Cancelled snapshots are not installable.
+
+### Indirect diffuse visibility field
+
+`withIndirectDiffuseVisibility(fragmentShader, identifier)` inserts a clamped
+scalar multiplier after Three's AO stage. Declare the field in shader scope before
+that point; the helper accepts a GLSL identifier, not arbitrary code. It rejects a
+missing/duplicated hook or repeat installation. Compose it with the existing
+material shader hook and include the modification in the program cache key.
+
+Only accumulated indirect diffuse is attenuated. Direct lighting, emission and
+indirect specular remain unchanged; this is not a full GI, specular-occlusion or
+sky-direction integration model. The caller owns field coordinates, interpolation,
+receiver suitability, streaming and invalidation. Do not apply an upward ground
+probe indiscriminately to arbitrary leaf normals or terrain heights. No texture,
+worker or animation loop is allocated by this string transform.

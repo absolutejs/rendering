@@ -73,3 +73,15 @@ The actual-canopy fixture additionally checks 24 center probes (eight variants a
 three heights) against independently baked scene rays. All 64-ray cosine integrals
 agree. A two-bound/two-triangle whole-scene budget produces explicit uncertainty;
 every such interval encloses the qualified integral. No live game adoption.
+
+## Indirect diffuse material hook
+
+The base entry point adds `withIndirectDiffuseVisibility`; it does not pull in the
+optional BVH entry. Two tests verify exact shader composition, idempotency rejection
+and invalid input/marker handling. Package build passes; 65 tests / 1,250 assertions.
+The game separately exercises its actual terrain material on both supported Three
+versions using an isolated source import. Direct-light output is exactly unchanged;
+field sampling and ambient multiplication match their independent numerical controls.
+See indirect-terrain.json and the game's forest-sky visibility records. Display and
+ideal-pixel-reference failures are preserved in that game record rather than hidden.
+No production adoption or package archive qualification is claimed.
