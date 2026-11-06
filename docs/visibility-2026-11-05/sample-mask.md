@@ -34,3 +34,9 @@ and integrates three colored skies with zero extra geometry queries and exact RG
 agreement with the captured rays. Retained masks total 3,456 bytes. This is source
 qualification for the unpublished 0.12.0 candidate, not production field adoption.
 No package archive or screenshots were created in this pass.
+
+The direction helper's target type is structural (`set(x,y,z): self`) rather than
+requiring this package's full Three Vector3 declaration. A game source fixture
+exposed incompatible unrelated Vector3 methods across installed Three typings;
+the helper only needs `set`. Both package tests and the game fixture's full type
+check pass with the narrower contract. Runtime arithmetic is unchanged.

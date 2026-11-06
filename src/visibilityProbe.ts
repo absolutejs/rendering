@@ -15,11 +15,9 @@ export type VisibilityProbeInput = {
 
 /** Deterministic equal-solid-angle sample direction used by exported probe masks.
  * Kept public so sky reweighting need not retain or retrace scene geometry. */
-export function hemisphereVisibilityDirection(
-  index: number,
-  samples: number,
-  target: Vector3,
-): Vector3 {
+export function hemisphereVisibilityDirection<
+  T extends { set(x: number, y: number, z: number): T },
+>(index: number, samples: number, target: T): T {
   if (
     !Number.isSafeInteger(samples) ||
     samples < 1 ||
