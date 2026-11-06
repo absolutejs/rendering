@@ -3,18 +3,24 @@ const { chromium } = require("playwright");
   const build = await Bun.build({
     entrypoints: ["artifacts/thin-foliage/environment.ts"],
     target: "browser",
-    plugins: process.env.FOLIAGE_THREE
-      ? [
-          {
-            name: "qualified-three",
-            setup(build) {
-              build.onResolve({ filter: /^three$/ }, () => ({
-                path: process.env.FOLIAGE_THREE,
-              }));
-            },
-          },
-        ]
-      : [],
+    plugins: [
+      {
+        name: "qualified-foliage-inputs",
+        setup(build) {
+          if (process.env.FOLIAGE_THREE)
+            build.onResolve({ filter: /^three$/ }, () => ({
+              path: require("node:path").resolve(process.env.FOLIAGE_THREE),
+            }));
+          if (process.env.FOLIAGE_MODULE)
+            build.onResolve(
+              { filter: /^\.\.\/\.\.\/dist\/index\.js$/ },
+              () => ({
+                path: require("node:path").resolve(process.env.FOLIAGE_MODULE),
+              }),
+            );
+        },
+      },
+    ],
   });
   if (!build.success) throw Error(build.logs.join("\n"));
   const browser = await chromium.launch({

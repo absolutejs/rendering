@@ -1,5 +1,5 @@
 import { Ray, Vector3 } from "three";
-import type { VisibilityBudget, VisibilityResult } from "./visibility";
+import type { VisibilityBudget, VisibilityResult } from "./visibility.js";
 
 export type VisibilityTrace = (
   ray: Ray,

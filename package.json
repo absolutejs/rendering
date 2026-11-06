@@ -40,7 +40,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "bun test ./tests",
-    "check:package": "bun run build && bun run test",
+    "check:package": "bun run build && bun run test && node scripts/check-consumer.mjs",
     "test:browser": "bun scripts/verify-browser.cjs",
     "test:spring:browser": "bun scripts/verify-spring.cjs",
     "test:triplanar:browser": "bun scripts/verify-triplanar.cjs",
