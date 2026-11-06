@@ -1,0 +1,127 @@
+{
+  "identity": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "rows": [
+    {
+      "names": [
+        "normal"
+      ],
+      "audits": [
+        {
+          "name": "normal",
+          "encoding": "snorm16",
+          "itemSize": 3,
+          "count": 4,
+          "components": 12,
+          "inputBytes": 48,
+          "outputBytes": 24,
+          "maximumAbsoluteError": 0.000015064094866068523,
+          "rmsError": 0.00000948746849094407,
+          "errorLimit": 0.00003051850947599719
+        }
+      ],
+      "maximumError": 0.0000015497207641601562,
+      "rmsError": 2.9218409048824247e-7,
+      "glError": 0
+    },
+    {
+      "names": [
+        "uv"
+      ],
+      "audits": [
+        {
+          "name": "uv",
+          "encoding": "float16",
+          "itemSize": 2,
+          "count": 4,
+          "components": 8,
+          "inputBytes": 32,
+          "outputBytes": 16,
+          "maximumAbsoluteError": 0.0017249584197998047,
+          "rmsError": 0.0006978594410417946,
+          "errorLimit": 0.002
+        }
+      ],
+      "maximumError": 0.00007987022399902344,
+      "rmsError": 0.000014898018109333825,
+      "glError": 0
+    },
+    {
+      "names": [
+        "testColor"
+      ],
+      "audits": [
+        {
+          "name": "testColor",
+          "encoding": "float16",
+          "itemSize": 4,
+          "count": 4,
+          "components": 16,
+          "inputBytes": 64,
+          "outputBytes": 32,
+          "maximumAbsoluteError": 0.0006219148635864258,
+          "rmsError": 0.0002800297052831874,
+          "errorLimit": 0.002
+        }
+      ],
+      "maximumError": 0.0005977153778076172,
+      "rmsError": 0.0002541041181542465,
+      "glError": 0
+    },
+    {
+      "names": [
+        "normal",
+        "uv",
+        "testColor"
+      ],
+      "audits": [
+        {
+          "name": "normal",
+          "encoding": "snorm16",
+          "itemSize": 3,
+          "count": 4,
+          "components": 12,
+          "inputBytes": 48,
+          "outputBytes": 24,
+          "maximumAbsoluteError": 0.000015064094866068523,
+          "rmsError": 0.00000948746849094407,
+          "errorLimit": 0.00003051850947599719
+        },
+        {
+          "name": "uv",
+          "encoding": "float16",
+          "itemSize": 2,
+          "count": 4,
+          "components": 8,
+          "inputBytes": 32,
+          "outputBytes": 16,
+          "maximumAbsoluteError": 0.0017249584197998047,
+          "rmsError": 0.0006978594410417946,
+          "errorLimit": 0.002
+        },
+        {
+          "name": "testColor",
+          "encoding": "float16",
+          "itemSize": 4,
+          "count": 4,
+          "components": 16,
+          "inputBytes": 64,
+          "outputBytes": 32,
+          "maximumAbsoluteError": 0.0006219148635864258,
+          "rmsError": 0.0002800297052831874,
+          "errorLimit": 0.002
+        }
+      ],
+      "maximumError": 0.000597834587097168,
+      "rmsError": 0.00026194616670495425,
+      "glError": 0
+    }
+  ],
+  "restorationExact": true,
+  "resources": {
+    "geometries": 0,
+    "textures": 0
+  },
+  "programs": 0,
+  "scope": "32x32 float-target vertex-format controls; not material/forest visual or performance acceptance.",
+  "errors": []
+}

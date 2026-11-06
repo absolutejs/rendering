@@ -3,30 +3,32 @@ const { chromium } = require("playwright"),
   fs = require("node:fs"),
   path = require("node:path");
 (async () => {
-  const threeRoot = process.env.CASCADE_THREE_ROOT;
+  const threeRoot = process.env.CASCADE_THREE_ROOT
+    ? path.resolve(process.env.CASCADE_THREE_ROOT)
+    : undefined;
   const build = await Bun.build({
     entrypoints: ["scripts/geometry-bounds-entry.ts"],
     target: "browser",
-    plugins: threeRoot
-      ? [
-          {
-            name: "three-version",
-            setup(b) {
-              b.onResolve(
-                { filter: /^three($|\/addons\/)/ },
-                ({ path: p }) => ({
-                  path: path.join(
-                    threeRoot,
-                    p === "three"
-                      ? "build/three.module.js"
-                      : "examples/jsm/" + p.slice(13),
-                  ),
-                }),
-              );
-            },
-          },
-        ]
-      : [],
+    plugins: [
+      {
+        name: "qualified-inputs",
+        setup(b) {
+          if (process.env.BOUNDS_MODULE)
+            b.onResolve({ filter: /^\.\.\/src\/geometryBounds$/ }, () => ({
+              path: path.resolve(process.env.BOUNDS_MODULE),
+            }));
+          if (threeRoot)
+            b.onResolve({ filter: /^three($|\/addons\/)/ }, ({ path: p }) => ({
+              path: path.join(
+                threeRoot,
+                p === "three"
+                  ? "build/three.module.js"
+                  : "examples/jsm/" + p.slice(13),
+              ),
+            }));
+        },
+      },
+    ],
   });
   assert(build.success, String(build.logs));
   const browser = await chromium.launch({
@@ -58,9 +60,12 @@ const { chromium } = require("playwright"),
     assert(result.endedOnDispose);
     assert.deepEqual(result.memory, { geometries: 0, textures: 0 });
     assert.equal(result.glError, 0);
-    fs.mkdirSync("docs/geometry-bounds-2026-11-06", { recursive: true });
+    const report =
+      process.env.BOUNDS_REPORT ||
+      `docs/geometry-bounds-2026-11-06/browser-${result.revision}.json`;
+    fs.mkdirSync(path.dirname(report), { recursive: true });
     fs.writeFileSync(
-      `docs/geometry-bounds-2026-11-06/browser-${result.revision}.json`,
+      report,
       JSON.stringify({ ...result, errors }, null, 2) + "\n",
     );
     console.log(result);

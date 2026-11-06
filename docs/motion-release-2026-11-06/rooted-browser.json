@@ -1,0 +1,131 @@
+{
+  "rows": [
+    {
+      "phase": 0,
+      "rotation": 0,
+      "glError": 0
+    },
+    {
+      "phase": 0.7,
+      "rotation": 0,
+      "glError": 0
+    },
+    {
+      "phase": 2.2,
+      "rotation": 0,
+      "glError": 0
+    },
+    {
+      "phase": 4.5,
+      "rotation": 0,
+      "glError": 0
+    },
+    {
+      "phase": 6.28,
+      "rotation": 0,
+      "glError": 0
+    },
+    {
+      "phase": 0,
+      "rotation": 0.7,
+      "glError": 0
+    },
+    {
+      "phase": 0.7,
+      "rotation": 0.7,
+      "glError": 0
+    },
+    {
+      "phase": 2.2,
+      "rotation": 0.7,
+      "glError": 0
+    },
+    {
+      "phase": 4.5,
+      "rotation": 0.7,
+      "glError": 0
+    },
+    {
+      "phase": 6.28,
+      "rotation": 0.7,
+      "glError": 0
+    },
+    {
+      "phase": 0,
+      "rotation": 1.5707963267948966,
+      "glError": 0
+    },
+    {
+      "phase": 0.7,
+      "rotation": 1.5707963267948966,
+      "glError": 0
+    },
+    {
+      "phase": 2.2,
+      "rotation": 1.5707963267948966,
+      "glError": 0
+    },
+    {
+      "phase": 4.5,
+      "rotation": 1.5707963267948966,
+      "glError": 0
+    },
+    {
+      "phase": 6.28,
+      "rotation": 1.5707963267948966,
+      "glError": 0
+    },
+    {
+      "phase": 0,
+      "rotation": -2.1,
+      "glError": 0
+    },
+    {
+      "phase": 0.7,
+      "rotation": -2.1,
+      "glError": 0
+    },
+    {
+      "phase": 2.2,
+      "rotation": -2.1,
+      "glError": 0
+    },
+    {
+      "phase": 4.5,
+      "rotation": -2.1,
+      "glError": 0
+    },
+    {
+      "phase": 6.28,
+      "rotation": -2.1,
+      "glError": 0
+    }
+  ],
+  "baselineTextures": 1,
+  "firstResources": {
+    "geometries": 0,
+    "textures": 1
+  },
+  "worst": {
+    "i": 44,
+    "j": 0,
+    "phase": 0.7,
+    "expected": 0.35023824999837966,
+    "actual": 0.35017210245132446
+  },
+  "maximumError": 0.00006614754705519532,
+  "restorationExact": true,
+  "changedPixels": 188,
+  "counts": [
+    336,
+    336,
+    336
+  ],
+  "resources": {
+    "geometries": 0,
+    "textures": 1
+  },
+  "programs": 0,
+  "glError": 0,
+  "errors": []
+}

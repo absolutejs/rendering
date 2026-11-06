@@ -1,0 +1,793 @@
+{
+  "status": "qualified, unpublished; user confirmation queued",
+  "version": "0.13.0",
+  "sourceCommit": "46a3fb21600896c2dafb47649e95aea6df1f2e2b",
+  "bun": "1.4.4+absolute.1",
+  "archive": {
+    "path": ".qualification/motion-0.13.0/absolutejs-rendering-0.13.0.tgz",
+    "bytes": 44881,
+    "sha256": "55363ff2a33f47869337660ffb82f324c69c4867e74f8de4370e8c7d8f9f59cf",
+    "integrity": "sha512-5GetTajE+nXbv6v5Lz49tVqQUmoBsNiIA37ZT4W7sSlIFmwC3hcd4A/e/fdnlc8jsjrud13oV9dbnfz3C+GKvg==",
+    "shasum": "0f3115218dfc3b65100a334d621e0e669a7f9c29"
+  },
+  "independentBuild": {
+    "matchedFiles": 42,
+    "files": [
+      {
+        "path": "alphaColor.d.ts",
+        "bytes": 1194,
+        "sha256": "2388b3a0aac6957b2d2d736b88bf7931bfc06dde73f327800f5046f7c6192cec"
+      },
+      {
+        "path": "alphaColor.js",
+        "bytes": 4426,
+        "sha256": "d1c590a8f874002ec27f7c48e795a3af1915decfd9e3a2deaad53c2d6c18f065"
+      },
+      {
+        "path": "alphaCoverage.d.ts",
+        "bytes": 694,
+        "sha256": "7bceb9dc9492e35504842e9c5e50a0f3c7b158c0748a26e6dd05a9b60067fd48"
+      },
+      {
+        "path": "alphaCoverage.js",
+        "bytes": 2738,
+        "sha256": "0c4435f18336fda102ccee2ad909ed91da75d82c741e298e635dc8b4622f6a58"
+      },
+      {
+        "path": "associatedColorMap.d.ts",
+        "bytes": 519,
+        "sha256": "2c1924bbaf9d6b869337534fcb986f60e3054e3ea6011d6d85a0317100b33c61"
+      },
+      {
+        "path": "associatedColorMap.js",
+        "bytes": 1691,
+        "sha256": "839bb9c9874bf90e4b19159e40ca55a642abc6cf7e08cd61a868c982ea637681"
+      },
+      {
+        "path": "coalescedInvalidation.d.ts",
+        "bytes": 1334,
+        "sha256": "2fe040f4722201414ae6af523f17ced8e1e03cbedd638b24dcc972b6dbe3bbb8"
+      },
+      {
+        "path": "coalescedInvalidation.js",
+        "bytes": 3810,
+        "sha256": "04541ddaa75b7b746ff9d37185e39bfe3c24f997a0f86c4e8d1b71f54a7901aa"
+      },
+      {
+        "path": "compactFloatAttribute.d.ts",
+        "bytes": 1058,
+        "sha256": "edd5c2f4023654d3a87366b30596ba6347949b39d8051310cebf62a8dad16a7e"
+      },
+      {
+        "path": "compactFloatAttribute.js",
+        "bytes": 2805,
+        "sha256": "9fccb755217ea156cca15d07cdd6daa137d08ef29610d3cce03065f7aa4d8378"
+      },
+      {
+        "path": "geometryBounds.d.ts",
+        "bytes": 785,
+        "sha256": "c546d9360a654c528a6164b5d39d2f97ea43f091addb4a4ae2220ae0c7aa4e4e"
+      },
+      {
+        "path": "geometryBounds.js",
+        "bytes": 4645,
+        "sha256": "5b6915a38d6fcbbc1a7cf99a48046550eed321da947a94e238df40ed9bb37eaa"
+      },
+      {
+        "path": "index.d.ts",
+        "bytes": 2718,
+        "sha256": "b6e4d8d7211a627780131da840811444721626fe6b9083a1f8919c3c213485bf"
+      },
+      {
+        "path": "index.js",
+        "bytes": 4505,
+        "sha256": "dcac05c3f32df4f0a50e50f6f1aad0162b4d41a0a5f35b167d4fa35a85d3d95c"
+      },
+      {
+        "path": "indirectVisibility.d.ts",
+        "bytes": 346,
+        "sha256": "9a30311e571f2f326ce2948b7d8dbc6791b96d08e4ba9a0f83c00261eb7e8127"
+      },
+      {
+        "path": "indirectVisibility.js",
+        "bytes": 838,
+        "sha256": "0c4499451ac3c80098470c04bee7091b23538ff07db6eeac1d58b52f1869a97b"
+      },
+      {
+        "path": "instanceAttributeStream.d.ts",
+        "bytes": 1005,
+        "sha256": "70b8f9c020f99cc4b885d1ff2bd9b20d923ec036e5ddd5f1f1451e5f4f55a45e"
+      },
+      {
+        "path": "instanceAttributeStream.js",
+        "bytes": 2914,
+        "sha256": "ea6a078583f7804fff330bf691239f805099a94b1c649ac27e2ca3bfda98f4ec"
+      },
+      {
+        "path": "leafLighting.d.ts",
+        "bytes": 2347,
+        "sha256": "72f9721436d4fca77d89a8763d43af21e6494eb88f0de950b36ef0e951d32300"
+      },
+      {
+        "path": "leafLighting.js",
+        "bytes": 4520,
+        "sha256": "db2c8ff985946fb9e3aef255705bebfcdf5c85ab3147ef15cce1a4a32b5764dc"
+      },
+      {
+        "path": "objectTriplanar.d.ts",
+        "bytes": 1128,
+        "sha256": "b40aa67d39fb83661da248fc3141627dae4e6858aa4fcfa71e3430d72eea5ef5"
+      },
+      {
+        "path": "objectTriplanar.js",
+        "bytes": 6539,
+        "sha256": "3155bc70e1f68f1012e8d6a8b99a35aa265b549eba6c0ffdbb74a7a390349c8c"
+      },
+      {
+        "path": "preparedMipArrayTexture.d.ts",
+        "bytes": 1053,
+        "sha256": "81749ebe1fa894dfdced471d1a4a9a4794e1fde75745e7a5bad13fd8281031f5"
+      },
+      {
+        "path": "preparedMipArrayTexture.js",
+        "bytes": 3863,
+        "sha256": "b82edd9c591efd365d5ab2ef4571e0a5e659adb78f5e56222e454001eaba59fa"
+      },
+      {
+        "path": "preparedMipTexture.d.ts",
+        "bytes": 638,
+        "sha256": "52539b395e0854a79aa3d6ec9e52835f4bfb49f46563d04b159a6ee3aee8e3c6"
+      },
+      {
+        "path": "preparedMipTexture.js",
+        "bytes": 3260,
+        "sha256": "c101584e6f31247e749b5162abf154b64eb04cc9eee209ef15ee603c669018ce"
+      },
+      {
+        "path": "renderTargetScope.d.ts",
+        "bytes": 1490,
+        "sha256": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa"
+      },
+      {
+        "path": "renderTargetScope.js",
+        "bytes": 2339,
+        "sha256": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb"
+      },
+      {
+        "path": "rootedBend.d.ts",
+        "bytes": 2901,
+        "sha256": "0051cd13c4111f4504b73ab07b89499f3056e8fc2bd8e3dc584586e9a978ca9d"
+      },
+      {
+        "path": "rootedBend.js",
+        "bytes": 7563,
+        "sha256": "c63af3465516470a2876259fff154c30587637247e7b840178d8dc9556cf94fa"
+      },
+      {
+        "path": "scopedCascades.d.ts",
+        "bytes": 1002,
+        "sha256": "da02e6ca50a9c2d6978abd55ef2002e8960675e5598b4fb1fb25b29186a39af1"
+      },
+      {
+        "path": "scopedCascades.js",
+        "bytes": 5915,
+        "sha256": "e48a2f0a6eba5f6030dbd089e5f5ff53994aa4a62490cd527071528277e00c1d"
+      },
+      {
+        "path": "spring.d.ts",
+        "bytes": 776,
+        "sha256": "4ee9c54aa8c20e689a89f59e5c4e4cdaf915ffa381449e09d260bfc44c6b3505"
+      },
+      {
+        "path": "spring.js",
+        "bytes": 783,
+        "sha256": "1a15f09c946a87964e348ef0e24163b10328cb2a06792d9010c5886db03e5311"
+      },
+      {
+        "path": "thinFoliage.d.ts",
+        "bytes": 733,
+        "sha256": "ae96f8c2bddb0de29f04ea89602ab920d186b4486ae6ca04069a4d804acd4813"
+      },
+      {
+        "path": "thinFoliage.js",
+        "bytes": 1275,
+        "sha256": "c01b7da7314002bfeebbb2e83c32a91403dfce7ed688ab5eb78852f7f74c058b"
+      },
+      {
+        "path": "viewCamera.d.ts",
+        "bytes": 957,
+        "sha256": "854aa380fafe65c18f8b90da2aaea03fb7d8f4529ccb88e3b984df9446c3d1c8"
+      },
+      {
+        "path": "viewCamera.js",
+        "bytes": 3165,
+        "sha256": "684750aa94012d2fe5e5c76dd1f9954ae7804b846386958b5bb449fe371ca29f"
+      },
+      {
+        "path": "visibility.d.ts",
+        "bytes": 2336,
+        "sha256": "8c559f0e939dd67f95afd1982068e3ae0102a1e2b32c5bc92c4e6ef7e276b33e"
+      },
+      {
+        "path": "visibility.js",
+        "bytes": 12313,
+        "sha256": "222886dd3c6ba3d6b1f67a1634b1bd80c72e97967ab8a8c76a335e30c2bde894"
+      },
+      {
+        "path": "visibilityProbe.d.ts",
+        "bytes": 3232,
+        "sha256": "7534249e342501c3b59e1a494a1f897b6f0ea67abdc8f588cc5caff40f58d1e6"
+      },
+      {
+        "path": "visibilityProbe.js",
+        "bytes": 7377,
+        "sha256": "09bb5d985a709e3bcd35e3d1b035972e31c169e27920ff038df4a90b04fba5de"
+      }
+    ]
+  },
+  "archiveSuite": {
+    "tests": 92,
+    "assertions": 177008,
+    "files": 19,
+    "failures": 0,
+    "mappedImports": 24
+  },
+  "nodeEsmConsumer": "passed, including immediate refresh and bounds exports",
+  "browser": {
+    "threeVersions": [
+      "0.186.1",
+      "0.187.0"
+    ],
+    "rootedBendControlsPerVersion": 20,
+    "compactAttributeControlsPerVersion": 4,
+    "bounds": "36 visible pixels with padded/shared bounds; exact original restoration and zero owned GPU resources on teardown",
+    "pageErrors": []
+  },
+  "gamePlayback": {
+    "path": "hello-world/docs/native-sapling-motion-2026-11-06/live-spring-archive/result.json",
+    "controls": 8,
+    "frames": 37,
+    "requests": 65,
+    "emissions": 15,
+    "errors": []
+  },
+  "fixtureCorrection": "The initial r187 bounds build rejected a relative onResolve path before launching Chromium. The runner now resolves CASCADE_THREE_ROOT to an absolute path; the corrected archive browser run passes.",
+  "limitations": [
+    "Not published or adopted by production game",
+    "Controlled software rendering does not qualify hardware FPS or moving-shadow appearance",
+    "Internal cascade experiment is not enabled in production"
+  ],
+  "removed": [
+    {
+      "path": ".qualification/motion-0.13.0/archive-tests.log",
+      "bytes": 10203,
+      "sha256": "e4dedb6c14fc0633a0c4a0150a1be1bac37fa60cc849e28c2b040fb9f07d1118"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/bounds-browser-r186.log",
+      "bytes": 381,
+      "sha256": "66093855329081715e6caba38bb12a8e8e4ea4b729008b5ea0e29b2c63114bc9"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/bounds-browser-r187-final.log",
+      "bytes": 381,
+      "sha256": "2732969c5edcefc21d0bd44f6970dcf3d3db0cf42e352df325e44bf22b282b22"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/bounds-browser-r187.log",
+      "bytes": 2561,
+      "sha256": "3dfb3db74ae1728d5d70ca907336d2cba549e8b46ed074cc9614659b8d2bc4d8"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/build-comparison.json",
+      "bytes": 6479,
+      "sha256": "076f9a482a84d8fa33b2d462e4cc081e222eff4223037c97fdb9305dbabfbd65"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/build.log",
+      "bytes": 23,
+      "sha256": "29c5ee0f6b0b20dbb259b99d01276198c3d28190090706394608d4deda6d2c0b"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/compact-browser-r187.log",
+      "bytes": 127,
+      "sha256": "8a96bf57550dd7a65da32158ddb22d51f3a4bebee80d9ad7fb74eaba0e967336"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/compact-browser.log",
+      "bytes": 127,
+      "sha256": "8a96bf57550dd7a65da32158ddb22d51f3a4bebee80d9ad7fb74eaba0e967336"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/consumer.log",
+      "bytes": 482,
+      "sha256": "2caa975f10498821dd1529cb2bbf3b19285b5283b6d18d7675c4cfe42894bfec"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/consumer.mjs",
+      "bytes": 2753,
+      "sha256": "8ff7a79ff7c7943e44851b50aee4a819d79eef22df5baf588dc8eba0d9b84755"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/LICENSE",
+      "bytes": 3435,
+      "sha256": "55f5d27c3dcfd0e3899b3c22f97bf16a68841b9769223949cbf83d8071e9fd95"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/README.md",
+      "bytes": 25360,
+      "sha256": "e2b469569a7446d79df4aac8c9c902d0e7afa9023db6a413fdaa8bd3df6340a4"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/alphaColor.d.ts",
+      "bytes": 1194,
+      "sha256": "2388b3a0aac6957b2d2d736b88bf7931bfc06dde73f327800f5046f7c6192cec"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/alphaColor.js",
+      "bytes": 4426,
+      "sha256": "d1c590a8f874002ec27f7c48e795a3af1915decfd9e3a2deaad53c2d6c18f065"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/alphaCoverage.d.ts",
+      "bytes": 694,
+      "sha256": "7bceb9dc9492e35504842e9c5e50a0f3c7b158c0748a26e6dd05a9b60067fd48"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/alphaCoverage.js",
+      "bytes": 2738,
+      "sha256": "0c4435f18336fda102ccee2ad909ed91da75d82c741e298e635dc8b4622f6a58"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/associatedColorMap.d.ts",
+      "bytes": 519,
+      "sha256": "2c1924bbaf9d6b869337534fcb986f60e3054e3ea6011d6d85a0317100b33c61"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/associatedColorMap.js",
+      "bytes": 1691,
+      "sha256": "839bb9c9874bf90e4b19159e40ca55a642abc6cf7e08cd61a868c982ea637681"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/coalescedInvalidation.d.ts",
+      "bytes": 1334,
+      "sha256": "2fe040f4722201414ae6af523f17ced8e1e03cbedd638b24dcc972b6dbe3bbb8"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/coalescedInvalidation.js",
+      "bytes": 3810,
+      "sha256": "04541ddaa75b7b746ff9d37185e39bfe3c24f997a0f86c4e8d1b71f54a7901aa"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/compactFloatAttribute.d.ts",
+      "bytes": 1058,
+      "sha256": "edd5c2f4023654d3a87366b30596ba6347949b39d8051310cebf62a8dad16a7e"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/compactFloatAttribute.js",
+      "bytes": 2805,
+      "sha256": "9fccb755217ea156cca15d07cdd6daa137d08ef29610d3cce03065f7aa4d8378"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/geometryBounds.d.ts",
+      "bytes": 785,
+      "sha256": "c546d9360a654c528a6164b5d39d2f97ea43f091addb4a4ae2220ae0c7aa4e4e"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/geometryBounds.js",
+      "bytes": 4645,
+      "sha256": "5b6915a38d6fcbbc1a7cf99a48046550eed321da947a94e238df40ed9bb37eaa"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/index.d.ts",
+      "bytes": 2718,
+      "sha256": "b6e4d8d7211a627780131da840811444721626fe6b9083a1f8919c3c213485bf"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/index.js",
+      "bytes": 4505,
+      "sha256": "dcac05c3f32df4f0a50e50f6f1aad0162b4d41a0a5f35b167d4fa35a85d3d95c"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/indirectVisibility.d.ts",
+      "bytes": 346,
+      "sha256": "9a30311e571f2f326ce2948b7d8dbc6791b96d08e4ba9a0f83c00261eb7e8127"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/indirectVisibility.js",
+      "bytes": 838,
+      "sha256": "0c4499451ac3c80098470c04bee7091b23538ff07db6eeac1d58b52f1869a97b"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/instanceAttributeStream.d.ts",
+      "bytes": 1005,
+      "sha256": "70b8f9c020f99cc4b885d1ff2bd9b20d923ec036e5ddd5f1f1451e5f4f55a45e"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/instanceAttributeStream.js",
+      "bytes": 2914,
+      "sha256": "ea6a078583f7804fff330bf691239f805099a94b1c649ac27e2ca3bfda98f4ec"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/leafLighting.d.ts",
+      "bytes": 2347,
+      "sha256": "72f9721436d4fca77d89a8763d43af21e6494eb88f0de950b36ef0e951d32300"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/leafLighting.js",
+      "bytes": 4520,
+      "sha256": "db2c8ff985946fb9e3aef255705bebfcdf5c85ab3147ef15cce1a4a32b5764dc"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/objectTriplanar.d.ts",
+      "bytes": 1128,
+      "sha256": "b40aa67d39fb83661da248fc3141627dae4e6858aa4fcfa71e3430d72eea5ef5"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/objectTriplanar.js",
+      "bytes": 6539,
+      "sha256": "3155bc70e1f68f1012e8d6a8b99a35aa265b549eba6c0ffdbb74a7a390349c8c"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/preparedMipArrayTexture.d.ts",
+      "bytes": 1053,
+      "sha256": "81749ebe1fa894dfdced471d1a4a9a4794e1fde75745e7a5bad13fd8281031f5"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/preparedMipArrayTexture.js",
+      "bytes": 3863,
+      "sha256": "b82edd9c591efd365d5ab2ef4571e0a5e659adb78f5e56222e454001eaba59fa"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/preparedMipTexture.d.ts",
+      "bytes": 638,
+      "sha256": "52539b395e0854a79aa3d6ec9e52835f4bfb49f46563d04b159a6ee3aee8e3c6"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/preparedMipTexture.js",
+      "bytes": 3260,
+      "sha256": "c101584e6f31247e749b5162abf154b64eb04cc9eee209ef15ee603c669018ce"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/renderTargetScope.d.ts",
+      "bytes": 1490,
+      "sha256": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/renderTargetScope.js",
+      "bytes": 2339,
+      "sha256": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/rootedBend.d.ts",
+      "bytes": 2901,
+      "sha256": "0051cd13c4111f4504b73ab07b89499f3056e8fc2bd8e3dc584586e9a978ca9d"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/rootedBend.js",
+      "bytes": 7563,
+      "sha256": "c63af3465516470a2876259fff154c30587637247e7b840178d8dc9556cf94fa"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/scopedCascades.d.ts",
+      "bytes": 1002,
+      "sha256": "da02e6ca50a9c2d6978abd55ef2002e8960675e5598b4fb1fb25b29186a39af1"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/scopedCascades.js",
+      "bytes": 5915,
+      "sha256": "e48a2f0a6eba5f6030dbd089e5f5ff53994aa4a62490cd527071528277e00c1d"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/spring.d.ts",
+      "bytes": 776,
+      "sha256": "4ee9c54aa8c20e689a89f59e5c4e4cdaf915ffa381449e09d260bfc44c6b3505"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/spring.js",
+      "bytes": 783,
+      "sha256": "1a15f09c946a87964e348ef0e24163b10328cb2a06792d9010c5886db03e5311"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/thinFoliage.d.ts",
+      "bytes": 733,
+      "sha256": "ae96f8c2bddb0de29f04ea89602ab920d186b4486ae6ca04069a4d804acd4813"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/thinFoliage.js",
+      "bytes": 1275,
+      "sha256": "c01b7da7314002bfeebbb2e83c32a91403dfce7ed688ab5eb78852f7f74c058b"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/viewCamera.d.ts",
+      "bytes": 957,
+      "sha256": "854aa380fafe65c18f8b90da2aaea03fb7d8f4529ccb88e3b984df9446c3d1c8"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/viewCamera.js",
+      "bytes": 3165,
+      "sha256": "684750aa94012d2fe5e5c76dd1f9954ae7804b846386958b5bb449fe371ca29f"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/visibility.d.ts",
+      "bytes": 2336,
+      "sha256": "8c559f0e939dd67f95afd1982068e3ae0102a1e2b32c5bc92c4e6ef7e276b33e"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/visibility.js",
+      "bytes": 12313,
+      "sha256": "222886dd3c6ba3d6b1f67a1634b1bd80c72e97967ab8a8c76a335e30c2bde894"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/visibilityProbe.d.ts",
+      "bytes": 3232,
+      "sha256": "7534249e342501c3b59e1a494a1f897b6f0ea67abdc8f588cc5caff40f58d1e6"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/dist/visibilityProbe.js",
+      "bytes": 7377,
+      "sha256": "09bb5d985a709e3bcd35e3d1b035972e31c169e27920ff038df4a90b04fba5de"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/extracted/package/package.json",
+      "bytes": 2925,
+      "sha256": "168d4636c76af58b0e3927f87c90c03c9dfcd4756ef58883be614f894958bf7d"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/alphaColor.d.ts",
+      "bytes": 1194,
+      "sha256": "2388b3a0aac6957b2d2d736b88bf7931bfc06dde73f327800f5046f7c6192cec"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/alphaColor.js",
+      "bytes": 4426,
+      "sha256": "d1c590a8f874002ec27f7c48e795a3af1915decfd9e3a2deaad53c2d6c18f065"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/alphaCoverage.d.ts",
+      "bytes": 694,
+      "sha256": "7bceb9dc9492e35504842e9c5e50a0f3c7b158c0748a26e6dd05a9b60067fd48"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/alphaCoverage.js",
+      "bytes": 2738,
+      "sha256": "0c4435f18336fda102ccee2ad909ed91da75d82c741e298e635dc8b4622f6a58"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/associatedColorMap.d.ts",
+      "bytes": 519,
+      "sha256": "2c1924bbaf9d6b869337534fcb986f60e3054e3ea6011d6d85a0317100b33c61"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/associatedColorMap.js",
+      "bytes": 1691,
+      "sha256": "839bb9c9874bf90e4b19159e40ca55a642abc6cf7e08cd61a868c982ea637681"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/coalescedInvalidation.d.ts",
+      "bytes": 1334,
+      "sha256": "2fe040f4722201414ae6af523f17ced8e1e03cbedd638b24dcc972b6dbe3bbb8"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/coalescedInvalidation.js",
+      "bytes": 3810,
+      "sha256": "04541ddaa75b7b746ff9d37185e39bfe3c24f997a0f86c4e8d1b71f54a7901aa"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/compactFloatAttribute.d.ts",
+      "bytes": 1058,
+      "sha256": "edd5c2f4023654d3a87366b30596ba6347949b39d8051310cebf62a8dad16a7e"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/compactFloatAttribute.js",
+      "bytes": 2805,
+      "sha256": "9fccb755217ea156cca15d07cdd6daa137d08ef29610d3cce03065f7aa4d8378"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/geometryBounds.d.ts",
+      "bytes": 785,
+      "sha256": "c546d9360a654c528a6164b5d39d2f97ea43f091addb4a4ae2220ae0c7aa4e4e"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/geometryBounds.js",
+      "bytes": 4645,
+      "sha256": "5b6915a38d6fcbbc1a7cf99a48046550eed321da947a94e238df40ed9bb37eaa"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/index.d.ts",
+      "bytes": 2718,
+      "sha256": "b6e4d8d7211a627780131da840811444721626fe6b9083a1f8919c3c213485bf"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/index.js",
+      "bytes": 4505,
+      "sha256": "dcac05c3f32df4f0a50e50f6f1aad0162b4d41a0a5f35b167d4fa35a85d3d95c"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/indirectVisibility.d.ts",
+      "bytes": 346,
+      "sha256": "9a30311e571f2f326ce2948b7d8dbc6791b96d08e4ba9a0f83c00261eb7e8127"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/indirectVisibility.js",
+      "bytes": 838,
+      "sha256": "0c4499451ac3c80098470c04bee7091b23538ff07db6eeac1d58b52f1869a97b"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/instanceAttributeStream.d.ts",
+      "bytes": 1005,
+      "sha256": "70b8f9c020f99cc4b885d1ff2bd9b20d923ec036e5ddd5f1f1451e5f4f55a45e"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/instanceAttributeStream.js",
+      "bytes": 2914,
+      "sha256": "ea6a078583f7804fff330bf691239f805099a94b1c649ac27e2ca3bfda98f4ec"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/leafLighting.d.ts",
+      "bytes": 2347,
+      "sha256": "72f9721436d4fca77d89a8763d43af21e6494eb88f0de950b36ef0e951d32300"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/leafLighting.js",
+      "bytes": 4520,
+      "sha256": "db2c8ff985946fb9e3aef255705bebfcdf5c85ab3147ef15cce1a4a32b5764dc"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/objectTriplanar.d.ts",
+      "bytes": 1128,
+      "sha256": "b40aa67d39fb83661da248fc3141627dae4e6858aa4fcfa71e3430d72eea5ef5"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/objectTriplanar.js",
+      "bytes": 6539,
+      "sha256": "3155bc70e1f68f1012e8d6a8b99a35aa265b549eba6c0ffdbb74a7a390349c8c"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/preparedMipArrayTexture.d.ts",
+      "bytes": 1053,
+      "sha256": "81749ebe1fa894dfdced471d1a4a9a4794e1fde75745e7a5bad13fd8281031f5"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/preparedMipArrayTexture.js",
+      "bytes": 3863,
+      "sha256": "b82edd9c591efd365d5ab2ef4571e0a5e659adb78f5e56222e454001eaba59fa"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/preparedMipTexture.d.ts",
+      "bytes": 638,
+      "sha256": "52539b395e0854a79aa3d6ec9e52835f4bfb49f46563d04b159a6ee3aee8e3c6"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/preparedMipTexture.js",
+      "bytes": 3260,
+      "sha256": "c101584e6f31247e749b5162abf154b64eb04cc9eee209ef15ee603c669018ce"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/renderTargetScope.d.ts",
+      "bytes": 1490,
+      "sha256": "543e959468914c407c9cdbdddc969154f5362dc8a69db7c8060c141d3ee942aa"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/renderTargetScope.js",
+      "bytes": 2339,
+      "sha256": "f21b399e02b243fa7cdbd34c27db48d365a272ad05627780e442fe45086be9bb"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/rootedBend.d.ts",
+      "bytes": 2901,
+      "sha256": "0051cd13c4111f4504b73ab07b89499f3056e8fc2bd8e3dc584586e9a978ca9d"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/rootedBend.js",
+      "bytes": 7563,
+      "sha256": "c63af3465516470a2876259fff154c30587637247e7b840178d8dc9556cf94fa"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/scopedCascades.d.ts",
+      "bytes": 1002,
+      "sha256": "da02e6ca50a9c2d6978abd55ef2002e8960675e5598b4fb1fb25b29186a39af1"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/scopedCascades.js",
+      "bytes": 5915,
+      "sha256": "e48a2f0a6eba5f6030dbd089e5f5ff53994aa4a62490cd527071528277e00c1d"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/spring.d.ts",
+      "bytes": 776,
+      "sha256": "4ee9c54aa8c20e689a89f59e5c4e4cdaf915ffa381449e09d260bfc44c6b3505"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/spring.js",
+      "bytes": 783,
+      "sha256": "1a15f09c946a87964e348ef0e24163b10328cb2a06792d9010c5886db03e5311"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/thinFoliage.d.ts",
+      "bytes": 733,
+      "sha256": "ae96f8c2bddb0de29f04ea89602ab920d186b4486ae6ca04069a4d804acd4813"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/thinFoliage.js",
+      "bytes": 1275,
+      "sha256": "c01b7da7314002bfeebbb2e83c32a91403dfce7ed688ab5eb78852f7f74c058b"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/viewCamera.d.ts",
+      "bytes": 957,
+      "sha256": "854aa380fafe65c18f8b90da2aaea03fb7d8f4529ccb88e3b984df9446c3d1c8"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/viewCamera.js",
+      "bytes": 3165,
+      "sha256": "684750aa94012d2fe5e5c76dd1f9954ae7804b846386958b5bb449fe371ca29f"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/visibility.d.ts",
+      "bytes": 2336,
+      "sha256": "8c559f0e939dd67f95afd1982068e3ae0102a1e2b32c5bc92c4e6ef7e276b33e"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/visibility.js",
+      "bytes": 12313,
+      "sha256": "222886dd3c6ba3d6b1f67a1634b1bd80c72e97967ab8a8c76a335e30c2bde894"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/visibilityProbe.d.ts",
+      "bytes": 3232,
+      "sha256": "7534249e342501c3b59e1a494a1f897b6f0ea67abdc8f588cc5caff40f58d1e6"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent/visibilityProbe.js",
+      "bytes": 7377,
+      "sha256": "09bb5d985a709e3bcd35e3d1b035972e31c169e27920ff038df4a90b04fba5de"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/independent.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/npm-cache/_cacache/content-v2/sha512/e4/67/ad4da8c4fa75dbbfabf92f3e3db55a90526a01b0d888037ed94f85bbb12948166c02de171de00fdefdf76795cf23b23aee775de857d75b9dfcf70be18abe",
+      "bytes": 44881,
+      "sha256": "55363ff2a33f47869337660ffb82f324c69c4867e74f8de4370e8c7d8f9f59cf"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/npm-cache/_cacache/index-v5/7c/c3/8382ba240ab002539037bae46b40f2042727c6c2453186e7ebca66416a1c",
+      "bytes": 256,
+      "sha256": "1a172a3b65dab14a23d02bf5041eb0e6a222391f109266c9f7b5fea55866f321"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/npm-cache/_logs/2026-11-06T11_17_10_695Z-debug-0.log",
+      "bytes": 1318,
+      "sha256": "477cd8147bc3ff350bd5a7d68488154e277ea49bbfc422ecc7ef642140739bae"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/npm-cache/_update-notifier-last-checked",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/pack.json",
+      "bytes": 5010,
+      "sha256": "a0fc5b994e1ba326bc871ae51521324abead020f697c0ed00ee0e0bbab27e0d0"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/rooted-browser-r187.log",
+      "bytes": 130,
+      "sha256": "25edc8f50653ec06e80a1e76ed4a26c210306a16257e9d7cb02839a8c8dab352"
+    },
+    {
+      "path": ".qualification/motion-0.13.0/rooted-browser.log",
+      "bytes": 130,
+      "sha256": "25edc8f50653ec06e80a1e76ed4a26c210306a16257e9d7cb02839a8c8dab352"
+    }
+  ],
+  "supersededArchive": {
+    "path": ".qualification/visibility-0.12.0/absolutejs-rendering-0.12.0.tgz",
+    "bytes": 34612,
+    "sha256": "8a6906e756bb01716a3afe8823fccbdb90989b77ee302eaab5cdb5cbe7a6ce35",
+    "reason": "Superseded by exact-archive-qualified 0.13.0; retained source and earlier qualification records allow reconstruction."
+  }
+}
