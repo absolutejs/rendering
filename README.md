@@ -388,3 +388,9 @@ immediate/trailing refresh stream for cached render products. It has no idle tim
 coalesces intermediate requests and cancels pending work on disposal. Callbacks
 read the latest scene state; renderer submission and refresh-quality policy remain
 the caller's responsibility. See [contract and checks](docs/rooted-bend-2026-11-06/refresh.md).
+
+The rooted state also exposes `motionBound(fromPhase, toPhase, projection?)` for
+constant-cost conservative displacement measurement under a fixed linear X/Z
+projection. It can express metres or orthographic shadow texels. It does **not**
+bound rasterized shadow-mask error; see the
+[motion-bound contract and counterexample](docs/rooted-bend-2026-11-06/motion-bound.md).

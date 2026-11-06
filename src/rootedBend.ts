@@ -1,5 +1,10 @@
 import { Box3, Vector3, Vector4 } from "three";
 
+const wrappedPhase = (value: number) => {
+  const phase = value % (2 * Math.PI);
+  return phase < 0 ? phase + 2 * Math.PI : phase;
+};
+
 export type RootedBendOptions = {
   /** Local positive-Y height at which the full bend envelope is reached. */
   height: number;
@@ -32,7 +37,54 @@ export function createRootedBend(options: RootedBendOptions) {
     /** Set a bounded absolute phase. Call from an existing animation clock. */
     setPhase(value: number) {
       if (!Number.isFinite(value)) throw Error("Invalid rooted bend phase");
-      phase.value = ((value % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
+      phase.value = wrappedPhase(value);
+    },
+    /** Conservative pointwise motion under a fixed linear projection of local
+     * X/Z displacement. Identity gives local metres; shadow-camera rows can give
+     * texels. This does not bound changes to projection, geometry or transforms. */
+    motionBound(
+      fromPhase: number,
+      toPhase: number,
+      projection: readonly [number, number, number, number] = [1, 0, 0, 1],
+    ) {
+      if (
+        ![fromPhase, toPhase].every(Number.isFinite) ||
+        projection.length !== 4 ||
+        !projection.every(Number.isFinite)
+      )
+        throw Error("Invalid rooted bend motion query");
+      const [xx, xz, yx, yz] = projection;
+      const a = xx * amplitudeX,
+        b = xz * amplitudeZ,
+        c = yx * amplitudeX,
+        d = yz * amplitudeZ;
+      const scale = Math.max(
+        Math.abs(a),
+        Math.abs(b),
+        Math.abs(c),
+        Math.abs(d),
+      );
+      if (!Number.isFinite(scale))
+        throw Error("Unbounded rooted bend projection");
+      if (scale === 0) return 0;
+      const aa = a / scale,
+        bb = b / scale,
+        cc = c / scale,
+        dd = d / scale;
+      const sum = aa * aa + bb * bb + cc * cc + dd * dd,
+        determinant = aa * dd - bb * cc;
+      const norm =
+        scale *
+        Math.sqrt(
+          (sum +
+            Math.sqrt(Math.max(0, sum * sum - 4 * determinant * determinant))) /
+            2,
+        );
+      const delta = wrappedPhase(toPhase) - wrappedPhase(fromPhase);
+      const bound = 2 * norm * Math.abs(Math.sin(delta / 2));
+      if (!Number.isFinite(bound))
+        throw Error("Unbounded rooted bend projection");
+      return bound;
     },
     /** Conservative all-phase bounds, without mutating the source box. Apply
      * before world/instance transforms. Recompute from the original box. */
@@ -53,7 +105,7 @@ export function createRootedBend(options: RootedBendOptions) {
       const dh = y > 0 && y < height ? 1 / height : 0;
       const envelope = h * h * (3 - 2 * h);
       const slope = 6 * h * (1 - h) * dh;
-      const a = angle + verticalPhase * envelope;
+      const a = wrappedPhase(angle) + verticalPhase * envelope;
       return {
         x: amplitudeX * envelope * Math.sin(a),
         z: amplitudeZ * envelope * Math.cos(a),
