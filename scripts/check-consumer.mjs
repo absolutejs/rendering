@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { MeshBasicMaterial } from "three";
+import { MeshBasicMaterial, BoxGeometry } from "three";
 import {
   bindAlphaToCoverageDestination,
   cloneRenderMaterial,
@@ -46,3 +46,16 @@ assert(Math.abs(Math.hypot(...direction) - 1) < 1e-12);
 console.log(
   "Visibility Node ESM exports and structural direction target passed",
 );
+
+const boundedGeometry = new BoxGeometry();
+const boundsLease = scoped.leaseGeometryBounds(boundedGeometry, {
+  x: 0.1,
+  y: 0,
+  z: 0.2,
+});
+assert(boundsLease.active);
+assert.equal(boundedGeometry.boundingBox.max.x, 0.6);
+boundsLease.release();
+assert.equal(boundedGeometry.boundingBox, null);
+boundedGeometry.dispose();
+console.log("Geometry bounds Node ESM export and lifetime passed");
