@@ -1,0 +1,16 @@
+{
+  "removedArchives": [
+    {
+      "path": ".qualification/scene-0.14.0/absolutejs-rendering-0.14.0.tgz",
+      "sha256": "eb3f47bebeae8f26da028c3a3156b5be78aac48ecae71f292865c1c33f5ea2b5",
+      "reason": "Superseded by qualified 0.15.0 archive"
+    }
+  ],
+  "removedTemporaryCopies": [
+    "build-a",
+    "build-b",
+    "extracted",
+    "npm-cache"
+  ],
+  "retainedArchive": ".qualification/grounded-0.15.0/absolutejs-rendering-0.15.0.tgz"
+}

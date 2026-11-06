@@ -52,5 +52,16 @@
     "visibility.js": "8df35a140837f109b0452a8e69df81542c6c3b8b70bc8f2b9837bc1b28e36774",
     "visibilityProbe.d.ts": "4f8f5dff30113aca5f68020c330fcdf541b8c25bb8afecf51ec948845cffa47e",
     "visibilityProbe.js": "09bb5d985a709e3bcd35e3d1b035972e31c169e27920ff038df4a90b04fba5de"
-  }
+  },
+  "sourceCommit": "ed7cd6b08dac46cdb20098fdb20145a88733a9a6",
+  "tests": 106,
+  "assertions": 177633,
+  "nodeESM": true,
+  "browserControlsPerVersion": 169,
+  "browserVersions": [
+    "186",
+    "187"
+  ],
+  "maxLinearByteError": 1,
+  "gameActualAssetArchiveCheck": true
 }
