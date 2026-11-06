@@ -6,8 +6,12 @@ const { chromium } = require("playwright"),
   const threeRoot = process.env.CASCADE_THREE_ROOT;
   const firstSplit = Number(process.env.CASCADE_REFLECTION_SPLIT ?? 27.2);
   assert([16, 27.2].includes(firstSplit));
+  const steep = process.env.CASCADE_REFLECTION_SCENARIO === "steep";
   const build = await Bun.build({
-    define: { __REFLECTION_SPLIT__: String(firstSplit) },
+    define: {
+      __REFLECTION_SPLIT__: String(firstSplit),
+      __REFLECTION_STEEP__: String(steep),
+    },
     entrypoints: ["scripts/cascade-reflection-entry.ts"],
     target: "browser",
     plugins: threeRoot
@@ -54,12 +58,28 @@ const { chromium } = require("playwright"),
     assert.deepEqual(errors, []);
     assert.equal(result.restorationDifferences, 0);
     assert.equal(result.glError, 0);
+    for (const name of ["renderView", "refittedView"]) {
+      const c = result.coverage[name];
+      assert(c.tested > 2000 && c.shadowed > 40 && c.outsideMainTested > 700);
+      assert.equal(c.missing, 0);
+      assert.equal(c.falseShadow, 0);
+    }
+    if (steep) {
+      assert(result.coverage.atlasView.falseShadow > 200);
+      assert.equal(
+        result.coverage.atlasView.outsideMainFalseShadow,
+        result.coverage.atlasView.falseShadow,
+      );
+    } else {
+      assert.equal(result.coverage.atlasView.missing, 0);
+      assert.equal(result.coverage.atlasView.falseShadow, 0);
+    }
     const compact = result;
-    if (firstSplit === 27.2) assert(result.changedPixels > 100);
+    if (steep || firstSplit === 27.2) assert(result.changedPixels > 100);
     else assert.equal(result.changedPixels, 0);
     fs.mkdirSync("docs/scoped-cascades-2026-11-06", { recursive: true });
     fs.writeFileSync(
-      `docs/scoped-cascades-2026-11-06/reflection-${result.revision}-${firstSplit}.json`,
+      `docs/scoped-cascades-2026-11-06/reflection-${result.revision}-${firstSplit}${steep ? "-steep" : ""}.json`,
       JSON.stringify({ ...compact, errors }, null, 2) + "\n",
     );
     console.log(compact);

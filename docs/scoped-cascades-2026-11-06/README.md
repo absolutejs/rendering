@@ -58,3 +58,35 @@ coverage against an independently fitted reflected-view reference and include
 points outside the main frustum. Do not adopt a selector rewrite based on these
 pixel differences alone. The 16 m negative control is not proof that custom
 splits avoid the issue at other viewpoints.
+
+## Ray-validated coverage and rejected workaround
+
+The same fixture now independently ray-tests axis-aligned occluder boxes against
+visible points on the receiver wall. It rejects pixels near visibility or shadow
+boundaries using a 3×3 neighborhood spanning ±2 pixels. The unshadowed image
+provides each receiver's illumination baseline; a greater-than-50% reduction is
+classified as shadow. This distinguishes missing/incorrect interior coverage
+from PCF edge differences. It also refits separate maps to the reflected view as
+an additional rendering reference; that reference is not the ray ground truth.
+
+In the standard control, 2,722 accepted receiver samples include 49 shadowed
+samples and 756 outside the main view. All three strategies classify those
+interiors correctly. The earlier 866/878 changed pixels therefore do not prove
+missing shadows in this fixture; resolution/filter differences remain relevant.
+
+A steep-view control (`CASCADE_REFLECTION_SCENARIO=steep`) looks down from
+(0,12,8) and reflects from (0,-12,8) onto a taller wall. Of 3,860 accepted receiver
+samples, 103 are shadowed and 1,486 lie outside the main view. On both Three
+versions, the normal render-view selector and separately refitted reflection
+have zero missing or falsely dark samples. The proposed atlas-view selector
+incorrectly darkens 289 lit samples, all outside the main view. In this region
+atlas-view depth is behind the main camera and CSM's direct-light selection
+excludes every cascade. The shader experiment is rejected as a remedy.
+
+All six standard/steep controls pass their ray-based assertions and restoration
+checks with zero browser/GL errors. Focused strict TypeScript checking covers both
+browser fixtures. No production shader changes follow from this study. These
+controls do not establish universal cached-atlas coverage for arbitrary moving
+cameras, terrain, water clipping, or caster arrangements. Retain the original
+selector while investigating coverage and refresh policies; do not replace it
+merely because reflected and main-view depths differ.

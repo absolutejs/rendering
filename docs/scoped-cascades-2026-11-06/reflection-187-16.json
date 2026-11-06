@@ -1,12 +1,49 @@
 {
   "revision": "187",
   "firstSplit": 16,
+  "scenario": "standard",
+  "coverage": {
+    "renderView": {
+      "tested": 2722,
+      "shadowed": 49,
+      "lit": 2673,
+      "missing": 0,
+      "falseShadow": 0,
+      "outsideMainFalseShadow": 0,
+      "absoluteError": 0.5283018867924527,
+      "outsideMainTested": 756,
+      "outsideMainMissing": 0
+    },
+    "atlasView": {
+      "tested": 2722,
+      "shadowed": 49,
+      "lit": 2673,
+      "missing": 0,
+      "falseShadow": 0,
+      "outsideMainFalseShadow": 0,
+      "absoluteError": 0.5283018867924527,
+      "outsideMainTested": 756,
+      "outsideMainMissing": 0
+    },
+    "refittedView": {
+      "tested": 2722,
+      "shadowed": 49,
+      "lit": 2673,
+      "missing": 0,
+      "falseShadow": 0,
+      "outsideMainFalseShadow": 0,
+      "absoluteError": 0.5283018867924527,
+      "outsideMainTested": 756,
+      "outsideMainMissing": 0
+    }
+  },
+  "rejectedBoundary": 633,
   "changedPixels": 0,
   "maxDifference": 0,
   "restorationDifferences": 0,
   "width": 192,
   "height": 192,
   "glError": 0,
-  "scope": "Same cached main-view CSM maps and reflected render camera; compare render-view versus atlas-view depth selection only. Neither image is asserted to be ground truth.",
+  "scope": "Same cached main-view CSM maps and reflected render camera; compare render-view versus atlas-view depth selection only. Ray-box ground truth tests visible wall interiors with a 2-pixel stable neighborhood; refitted-view map is an additional reference, not ground truth.",
   "errors": []
 }
