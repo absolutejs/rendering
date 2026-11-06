@@ -133,3 +133,8 @@ export {
 } from "./instanceAttributeStream.js";
 
 export { withIndirectDiffuseVisibility } from "./indirectVisibility.js";
+
+export {
+  createCompactFloatAttribute,
+  type CompactAttributeEncoding,
+} from "./compactFloatAttribute.js";

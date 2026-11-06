@@ -362,3 +362,14 @@ states. Regenerate its directions with `hemisphereVisibilityDirection` to
 reweight changed sky radiance without retracing unchanged geometry. Check the
 revision and completion state before consuming it. See the
 [sample-mask contract](docs/visibility-2026-11-05/sample-mask.md).
+
+### Explicit compact attributes (0.13 candidate)
+
+`createCompactFloatAttribute(float32, itemSize, { encoding, maximumAbsoluteError })`
+creates owned `snorm16` or `float16` attribute storage with a measured component-error
+bound. It rejects invalid ranges instead of silently clamping. Use during offline
+or bounded pre-upload preparation; geometry ownership, GPU lifetime and deciding
+which attributes may lose precision remain the caller's responsibility. The helper
+does not automatically quantize positions or change topology. Half-float arrays hold
+encoded bits: CPU users must use typed attribute accessors or decode explicitly.
+See `docs/compact-attributes-2026-11-05/README.md` for limits and qualification scope.
