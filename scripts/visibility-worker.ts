@@ -1,6 +1,7 @@
 import { BufferGeometry, BufferAttribute, Ray, Vector3, Box3 } from "three";
 import {
   PreparedAlphaVisibility,
+  PreparedBoundsIndex,
   HemisphereVisibilityProbe,
 } from "../src/visibility";
 self.onmessage = async () => {
@@ -80,12 +81,38 @@ self.onmessage = async () => {
     const cancelled = makeProbe();
     cancelled.step(1);
     cancelled.cancel();
+    const boundsOwner = new PreparedBoundsIndex(
+      [
+        {
+          id: 7,
+          bounds: new Box3(new Vector3(-1, -1, 1), new Vector3(1, 1, 2)),
+        },
+        {
+          id: 3,
+          bounds: new Box3(new Vector3(10, 10, 1), new Vector3(11, 11, 2)),
+        },
+      ],
+      { revision: "worker-bounds:1" },
+    );
+    const indexed = boundsOwner.query(ray);
+    const limitedIndex = boundsOwner.query(ray, { maxBoundsTests: 0 });
+    boundsOwner.dispose();
+    let disposedIndexRejected = false;
+    try {
+      boundsOwner.query(ray);
+    } catch {
+      disposedIndexRejected = true;
+    }
     const bytes = q.ownedBytes;
     q.dispose();
     const mask = probe.exportSamples();
     self.postMessage(
       {
         mask,
+        indexed,
+        limitedIndex,
+        disposedIndexRejected,
+        indexSizeAfterDispose: boundsOwner.size,
         rows,
         probe: probe.snapshot(),
         single,

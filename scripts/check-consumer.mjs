@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { MeshBasicMaterial, BoxGeometry } from "three";
+import { MeshBasicMaterial, BoxGeometry, Box3, Ray, Vector3 } from "three";
 import {
   bindAlphaToCoverageDestination,
   cloneRenderMaterial,
@@ -76,3 +76,15 @@ assert.equal(refresh.snapshot().pending, false);
 refresh.dispose();
 assert.equal(refresh.requestImmediate(), false);
 console.log("Built immediate invalidation API passed");
+
+const boundsIndex = new visibility.PreparedBoundsIndex(
+  [{ id: 4, bounds: new Box3(new Vector3(-1, -1, 2), new Vector3(1, 1, 3)) }],
+  { revision: "esm-bounds" },
+);
+assert.deepEqual(
+  boundsIndex.query(new Ray(new Vector3(), new Vector3(0, 0, 1))).candidates,
+  [{ id: 4, near: 2, far: 3 }],
+);
+boundsIndex.dispose();
+assert.equal(boundsIndex.size, 0);
+console.log("Built bounds index ESM consumer passed");

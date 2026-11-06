@@ -91,6 +91,14 @@ const { chromium } = require("playwright"),
     );
     assert(!result.error, result.error);
     assert.equal(result.realm, "undefined");
+    assert.equal(result.indexed.revision, "worker-bounds:1");
+    assert.equal(result.indexed.status, "complete");
+    assert.deepEqual(result.indexed.candidates, [{ id: 7, near: 1, far: 2 }]);
+    assert.equal(result.limitedIndex.status, "budget-exhausted");
+    assert.equal(result.limitedIndex.candidates, null);
+    assert.equal(result.limitedIndex.boundsTests, 0);
+    assert.equal(result.indexSizeAfterDispose, 0);
+    assert.equal(result.disposedIndexRejected, true);
     assert.equal(result.detachedMaskBytes, 0);
     assert.equal(result.retainedMaskBytes, 8);
     assert.equal(result.mask.packed.length, 8);

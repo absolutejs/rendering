@@ -410,3 +410,32 @@ padding without compounding it between owners. Leases support `update`, `release
 and `active`; final release or geometry disposal restores original bounds while
 owned. Source positions must remain immutable. The caller owns scene residency
 and GPU geometry lifetime. See [bounds lifetime checks](docs/geometry-bounds-2026-11-06/README.md).
+
+### Immutable scene-bound queries (0.14 candidate)
+
+`PreparedBoundsIndex` from `@absolutejs/rendering/visibility` uses upstream
+`ObjectBVH` to select candidate objects before more expensive geometry/alpha
+queries. The optional visibility peer now requires `three-mesh-bvh >=0.9.18 <0.10`.
+It does not patch Mesh prototypes or attach anything to a rendered scene.
+
+Construct it from up to 4,096 unique uint32 IDs and conservative `Box3` bounds,
+with `{ revision, origin? }`. The owner copies the bounds and origin. World
+coordinates are bounded to ±1e12 and local coordinates to ±1e6; use a nearby
+origin for distant worlds. Builds belong in a worker or preparation phase.
+Identity proxy bounds are rounded outward to Float32 before hierarchy creation;
+queries still filter against the exact original local bounds.
+
+`query(ray, { near?, far?, maxBoundsTests? })` returns revision, status, counters
+and candidates ordered by entry distance then ID. Directions are normalized;
+near/far use distance units. Defaults are near 0, far 64 and 8,192 geometric tests.
+Finite ranges extend at most 1e6 units and budgets allow 0..1e6 tests. Exhaustion
+returns `candidates: null`, never a partial list disguised as clear space. Callback
+overhead is recorded separately and may exceed the geometric-test allowance.
+Candidates describe AABB intervals, not confirmed triangle/alpha intersections.
+
+The snapshot is immutable: replace the owner after changes and reject obsolete
+worker results using its revision. `dispose()` is idempotent, releases the owned
+CPU proxy geometries, clears the hierarchy and rejects further queries. It never
+disposes caller geometry or owns GPU buffers. Empty snapshots answer complete with
+an empty list and no geometric tests. See `docs/scene-query-2026-11-06/` for the
+captured grazing-ray regression, generated forest comparisons and limits.

@@ -150,7 +150,7 @@ export class PreparedAlphaVisibility {
     try {
       this.bvh = new MeshBVH(geometry, {
         maxDepth: 40,
-        maxLeafTris: 8,
+        targetLeafSize: 8,
         verbose: false,
       });
       this.geometry = geometry;
@@ -382,3 +382,6 @@ export type {
   VisibilityTrace,
   VisibilityProbeInput,
 } from "./visibilityProbe.js";
+
+export { PreparedBoundsIndex } from "./boundsIndex.js";
+export type { BoundsIndexEntry, BoundsIndexResult } from "./boundsIndex.js";

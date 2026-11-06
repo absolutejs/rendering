@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/rendering",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Three.js material ownership, destination coverage, rigid-object triplanar mapping and isolated React Spring hosts.",
   "type": "module",
   "main": "./dist/index.js",
@@ -58,7 +58,7 @@
     "@react-spring/animated": ">=10.1.2 <11",
     "@react-spring/web": ">=10.1.2 <11",
     "@react-spring/three": ">=10.1.2 <11",
-    "three-mesh-bvh": ">=0.8.3 <0.9.0"
+    "three-mesh-bvh": ">=0.9.18 <0.10.0"
   },
   "devDependencies": {
     "three": "0.186.1",
@@ -75,7 +75,7 @@
     "@react-spring/web": "10.1.2",
     "@react-spring/three": "10.1.2",
     "@react-spring/shared": "10.1.2",
-    "three-mesh-bvh": "0.8.3"
+    "three-mesh-bvh": "0.9.18"
   },
   "peerDependenciesMeta": {
     "react": {
