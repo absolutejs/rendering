@@ -1,0 +1,12 @@
+{
+  "revision": "186",
+  "firstSplit": 16,
+  "changedPixels": 0,
+  "maxDifference": 0,
+  "restorationDifferences": 0,
+  "width": 192,
+  "height": 192,
+  "glError": 0,
+  "scope": "Same cached main-view CSM maps and reflected render camera; compare render-view versus atlas-view depth selection only. Neither image is asserted to be ground truth.",
+  "errors": []
+}
