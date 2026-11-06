@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/rendering",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Three.js material ownership, destination coverage, rigid-object triplanar mapping and isolated React Spring hosts.",
   "type": "module",
   "main": "./dist/index.js",
@@ -15,6 +15,11 @@
       "types": "./dist/spring.d.ts",
       "import": "./dist/spring.js",
       "default": "./dist/spring.js"
+    },
+    "./visibility": {
+      "types": "./dist/visibility.d.ts",
+      "import": "./dist/visibility.js",
+      "default": "./dist/visibility.js"
     }
   },
   "files": [
@@ -43,7 +48,8 @@
     "test:foliage:environment": "bun scripts/verify-foliage-environment.cjs",
     "test:mips:browser": "bun scripts/verify-prepared-mips.cjs",
     "test:arrays:browser": "bun scripts/verify-prepared-arrays.cjs",
-    "test:instances:browser": "bun scripts/verify-instance-stream.cjs"
+    "test:instances:browser": "bun scripts/verify-instance-stream.cjs",
+    "test:visibility:browser": "bun scripts/verify-visibility.cjs"
   },
   "peerDependencies": {
     "three": ">=0.186.0 <0.188.0",
@@ -51,7 +57,8 @@
     "@react-three/fiber": ">=9.8.2 <10",
     "@react-spring/animated": ">=10.1.2 <11",
     "@react-spring/web": ">=10.1.2 <11",
-    "@react-spring/three": ">=10.1.2 <11"
+    "@react-spring/three": ">=10.1.2 <11",
+    "three-mesh-bvh": ">=0.8.3 <0.9.0"
   },
   "devDependencies": {
     "three": "0.186.1",
@@ -67,7 +74,8 @@
     "@react-spring/animated": "10.1.2",
     "@react-spring/web": "10.1.2",
     "@react-spring/three": "10.1.2",
-    "@react-spring/shared": "10.1.2"
+    "@react-spring/shared": "10.1.2",
+    "three-mesh-bvh": "0.8.3"
   },
   "peerDependenciesMeta": {
     "react": {
@@ -83,6 +91,9 @@
       "optional": true
     },
     "@react-spring/three": {
+      "optional": true
+    },
+    "three-mesh-bvh": {
       "optional": true
     }
   }

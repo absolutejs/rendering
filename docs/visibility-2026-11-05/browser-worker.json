@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "status": "occluded",
+      "boundsTests": 0,
+      "triangleTests": 2,
+      "alphaTests": 2,
+      "hitDistance": 2
+    },
+    {
+      "status": "clear",
+      "boundsTests": 0,
+      "triangleTests": 2,
+      "alphaTests": 1,
+      "hitDistance": null
+    },
+    {
+      "status": "budget-exhausted",
+      "boundsTests": 0,
+      "triangleTests": 1,
+      "alphaTests": 1,
+      "hitDistance": null
+    }
+  ],
+  "bytes": 298,
+  "releasedBytes": 0,
+  "originalIndex": null,
+  "realm": "undefined",
+  "errors": [],
+  "bundleBytes": 335342,
+  "scope": "Real browser module worker, CPU query, no WebGL context or FPS claim"
+}

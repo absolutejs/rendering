@@ -258,3 +258,42 @@ Invalid prefixes reject atomically. Geometry/mesh disposal owns GPU lifetime;
 release your stream reference with that owner. No frame callback or global
 renderer modification is installed. Instance matrices use item size 16; ordinary
 custom attributes use their shader component count.
+
+### Bounded cutout visibility (separate entry point)
+
+`@absolutejs/rendering/visibility` provides `PreparedAlphaVisibility`. Install its
+optional peer `three-mesh-bvh` (qualified range 0.8.3–0.8.x) when using this entry.
+The base material and spring entry points do not import the BVH library.
+
+```ts
+import { PreparedAlphaVisibility } from '@absolutejs/rendering/visibility';
+const visibility = new PreparedAlphaVisibility(geometry, {
+  data: alphaBytes, width, height, cutoff: 0.4,
+  wrapS: 'repeat', wrapT: 'repeat',
+});
+const result = visibility.query(localRay, {
+  near: 0.01, far: 64, maxBoundsTests: 8192, maxTriangleTests: 4096,
+});
+// Handle all three outcomes: occluded, clear, budget-exhausted.
+visibility.dispose();
+```
+
+Build the snapshot outside the render loop, preferably in a worker. It copies
+positions, UVs, indices and alpha; it never patches Three prototypes or reorders
+the caller's geometry. `ownedBytes` counts owned typed-array/BVH storage, not JS
+object overhead or the caller's original resources. Disposal is idempotent.
+
+Queries normalize direction and use local-space distances. A confirmed hit is
+any opaque intersection, not necessarily the nearest. Exhaustion is unresolved,
+never clear sky. Bounds and triangle tests have separate limits; traversal may
+finish pruning queued sibling bounds without performing further box tests.
+
+Supply one full triangle primitive per owner, at most 300,000 vertices / 200,000
+triangles, and an optional single 8-bit alpha field up to 4096×4096. The cutoff
+must be in (0,1]. UV transforms and image orientation must already be reflected
+in the supplied UVs/bytes. Sampling is bilinear at the base texture level with
+explicit clamp or repeat wrapping. This is hard-cutout geometry visibility, not
+mipmapped/A2C raster equivalence, translucent transmission or a complete ambient
+occlusion system. Separate alpha maps with different UV sets, material graphs,
+wind, per-instance deformations and scene overlap require caller-side treatment.
+Geometry and ray origins must be finite local coordinates within ±1,000,000.
