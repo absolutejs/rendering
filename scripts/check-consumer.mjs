@@ -88,3 +88,28 @@ assert.deepEqual(
 boundsIndex.dispose();
 assert.equal(boundsIndex.size, 0);
 console.log("Built bounds index ESM consumer passed");
+
+const volume = scoped.createGroundedSH9Volume({
+  resolution: [2, 2],
+  elevations: [0, 1],
+  size: [4, 4],
+  lowerFade: [-1, 0],
+  upperFade: [0.5, 1],
+});
+const volumeUpload = {
+  revision: "scene",
+  lightingRevision: "sky",
+  center: [0, 0],
+  coefficients: Array.from({ length: 7 }, () => new Float32Array(32)),
+  ground: new Float32Array(16),
+  open: new Float32Array(27),
+};
+volume.upload(volumeUpload, volumeUpload);
+assert.equal(volume.snapshot().textureBytes, 960);
+assert.equal(
+  scoped.supportsGroundedSH9Volume({ extensions: { has: () => false } }),
+  false,
+);
+volume.dispose();
+assert.equal(volume.snapshot().textureBytes, 0);
+console.log("Built grounded SH9 volume ESM consumer passed");

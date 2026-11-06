@@ -151,3 +151,12 @@ export {
 } from "./coalescedInvalidation.js";
 
 export { leaseGeometryBounds } from "./geometryBounds.js";
+
+export {
+  createGroundedSH9Volume,
+  supportsGroundedSH9Volume,
+  type GroundedSH9VolumeOptions,
+  type GroundedSH9Upload,
+  type GroundedSH9Mode,
+  type GroundedSH9Volume,
+} from "./groundedSH9Volume.js";

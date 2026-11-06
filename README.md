@@ -439,3 +439,64 @@ CPU proxy geometries, clears the hierarchy and rejects further queries. It never
 disposes caller geometry or owns GPU buffers. Empty snapshots answer complete with
 an empty list and no geometric tests. See `docs/scene-query-2026-11-06/` for the
 captured grazing-ray regression, generated forest comparisons and limits.
+
+### Ground-relative SH9 volumes
+
+`createGroundedSH9Volume` owns a bounded, Y-up local lighting volume. It packs seven
+RGBA coefficient groups into one 3D texture and keeps one ground-height texture.
+It copies uploads into stable storage; updates do not recreate textures or shader
+programs. The package does not generate probes, choose world regions, schedule
+frames or infer scene revisions.
+
+```ts
+import {
+  createGroundedSH9Volume,
+  supportsGroundedSH9Volume,
+} from '@absolutejs/rendering';
+
+if (supportsGroundedSH9Volume(renderer)) {
+  const field = createGroundedSH9Volume({
+    resolution: [3, 3], // X/Z samples
+    elevations: [0.15, 2, 8],
+    size: [16, 16], // world-space X/Z footprint
+    lowerFade: [-0.5, 0],
+    upperFade: [7, 8],
+  });
+  const unbind = field.bind(material, 'leaf-environment');
+  // The material must already use withLeafLighting/withLeafTransmissionField.
+  field.upload({
+    revision: sceneRevision,
+    lightingRevision: skyRevision,
+    center: [worldX, worldZ],
+    coefficients: sevenRGBAFloat32Groups,
+    ground: rgbaFloat32Ground,
+    open: unoccludedRGBSH9,
+  }, { revision: sceneRevision, lightingRevision: skyRevision });
+  // Content invalidation restores baseline lighting immediately.
+  field.invalidate();
+  unbind();
+  field.dispose();
+}
+```
+
+The `indirect-diffuse` mode applies the ratio only to accumulated indirect diffuse;
+`leaf-environment` applies front/back environment visibility before the leaf's
+transmission mixture. Neither mode changes direct light, emissive or specular.
+The field is an attenuation approximation, not full GI. Dark/nonpositive reference
+channels and invalidated/out-of-footprint samples retain baseline lighting.
+
+Inputs use linear radiance in Three's nine RGB SH coefficient order. Each of seven
+coefficient arrays has `width * depth * layers * 4` floats, ordered X, then Z, then
+height. The ground grid has `width * depth * 4` floats with world ground Y in R.
+There are 2–8 ordered height layers and 2–64 samples per horizontal axis. Extents
+and fade intervals are explicit, with validation before allocation. Maximum typed
+texture payload is under 4 MiB; `snapshot().textureBytes` is payload accounting,
+not total JS/GPU process memory.
+
+This WebGL2 path requires `OES_texture_float_linear`; check support before binding
+and retain ordinary lighting when unavailable. Binding also checks capability at
+compilation. SharedArrayBuffer-backed payloads reject; ordinary input must not be
+mutated during a synchronous upload. Disposal clears owned typed storage, releases
+textures and restores only material callbacks it still owns. Two owners cannot
+bind the same material. Use a floating origin for worlds beyond useful Float32
+render-coordinate precision; the package does not move the scene for you.

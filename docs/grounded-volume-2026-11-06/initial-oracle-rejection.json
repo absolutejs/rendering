@@ -1,0 +1,20 @@
+{
+  "layout": 0,
+  "query": 0,
+  "x": 1.1,
+  "z": 0.5,
+  "height": -0.25,
+  "pixel": [
+    251,
+    251,
+    251,
+    255
+  ],
+  "incorrectExpected": [
+    255,
+    255,
+    255
+  ],
+  "glError": 0,
+  "resolution": "Use the unmodified MeshStandardMaterial baseline at each normal/view sample, then multiply its diffuse output by the independently computed field ratio. Keep the two-byte tolerance. The original reference incorrectly assumed ideal Lambert white."
+}
