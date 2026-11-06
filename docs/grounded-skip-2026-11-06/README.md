@@ -17,8 +17,16 @@ vertical-boundary, batched, dark-reference and rectangular-grid cases. This show
 unchanged output, not an actual count of executed GPU instructions or a hardware
 FPS improvement. Driver compilation and divergent fragment groups affect cost.
 
-Full-world comparison and exact-archive replacement are in progress. The existing
-pending 0.15.0 archive predates this optimization and is not evidence for this
-source change. Keep its identity until the replacement is independently qualified;
-do not publish from an arbitrary current build directory. No new npm prompt is
-needed while the user is away.
+The full application off/on/off images are byte-identical to the preceding
+shader. The exact replacement archive repeats that result, including packaged
+worker queries and material ownership. Both runs leave zero owned field bytes,
+material bindings and live workers after addon disposal. See the game's
+`docs/forest-live-world-skip-2026-11-06/` and
+`docs/forest-live-world-archive-2026-11-06/`.
+
+The consolidated 0.15.0 archive passes 106 tests / 177,633 assertions, Node ESM
+consumers and both 169-case browser matrices. Two independent builds and archive
+contents match all 46 emitted files. `archive.json` records its exact identity.
+The superseded, never-published 0.15.0 archive and temporary build/extracted copies
+are removed; `cleanup.json` retains their identities. Only the new pending archive
+remains. Publication still waits for the user's return; no npm prompt was opened.

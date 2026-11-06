@@ -1,0 +1,17 @@
+{
+  "removedArchive": {
+    "path": ".qualification/grounded-0.15.0/absolutejs-rendering-0.15.0.tgz",
+    "sha256": "a74bee9e686daad8125c1dc99e0a221646e375aa89606103b1884f958ec95526",
+    "sourceCommit": "ed7cd6b08dac46cdb20098fdb20145a88733a9a6"
+  },
+  "retainedArchive": ".qualification/grounded-skip-0.15.0/absolutejs-rendering-0.15.0.tgz",
+  "retainedSha256": "c916c37347d077d49d9f18eda9c7fec633992f3863f15770281d03d5477954fe",
+  "removedTemporaryCopies": [
+    "build-a",
+    "build-b",
+    "extracted",
+    "npm-cache",
+    "redirected consumer",
+    "duplicate console logs"
+  ]
+}

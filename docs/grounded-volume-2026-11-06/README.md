@@ -44,3 +44,6 @@ Publication and production adoption are pending. The game's separate controlled
 fern/shrub view validates actual material composition, but does not establish
 whole-landscape visual acceptance. Continuous sky updates, world routing and
 moving/cut canopy policy remain game integration work.
+
+The initial unpublished archive documented here is superseded by the optimized
+0.15.0 candidate in `../grounded-skip-2026-11-06/`; its old archive is removed.
