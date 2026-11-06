@@ -2,6 +2,7 @@ import { expect, test } from "bun:test";
 import { Vector3 } from "three";
 import {
   HemisphereVisibilityProbe,
+  hemisphereVisibilityDirection,
   type VisibilityResult,
 } from "../src/visibility";
 const result = (status: VisibilityResult["status"]): VisibilityResult => ({
@@ -157,4 +158,72 @@ test("malformed and over-budget traces reject without accepting a sample", () =>
   expect(() => p.step(0)).toThrow();
   p.step(1);
   expect(p.snapshot().processed).toBe(1);
+});
+
+test("exported two-bit samples preserve pending, unresolved and cancellation without aliasing", () => {
+  let n = 0;
+  const probe = new HemisphereVisibilityProbe(
+    { revision: "scene:2", origin: new Vector3(), samples: 5 },
+    () =>
+      result(
+        (
+          [
+            "clear",
+            "occluded",
+            "budget-exhausted",
+            "clear",
+            "occluded",
+          ] as const
+        )[n++]!,
+      ),
+  );
+  expect([...probe.exportSamples().packed]).toEqual([0, 0]);
+  probe.step(3);
+  const partial = probe.exportSamples();
+  expect([...partial.packed]).toEqual([57, 0]);
+  expect(partial.processed).toBe(3);
+  partial.packed.fill(255);
+  expect([...probe.exportSamples().packed]).toEqual([57, 0]);
+  probe.step(2);
+  const complete = probe.exportSamples();
+  expect(complete.state).toBe("complete");
+  expect([...complete.packed]).toEqual([121, 2]);
+  probe.cancel();
+  expect(probe.exportSamples().state).toBe("cancelled");
+  expect([...probe.exportSamples().packed]).toEqual([121, 2]);
+  expect(n).toBe(5);
+});
+test("exported direction addresses reproduce traced rays and failed callbacks remain pending", () => {
+  let n = 0,
+    fail = true;
+  const probe = new HemisphereVisibilityProbe(
+    { revision: "a", origin: new Vector3(), samples: 13 },
+    (ray) => {
+      expect(ray.direction.toArray()).toEqual(
+        hemisphereVisibilityDirection(n, 13, new Vector3()).toArray(),
+      );
+      if (fail) {
+        fail = false;
+        throw Error("retry");
+      }
+      n++;
+      return result("clear");
+    },
+  );
+  expect(() => probe.step(1)).toThrow("retry");
+  expect([...probe.exportSamples().packed]).toEqual([0, 0, 0, 0]);
+  probe.step(13);
+  expect([...probe.exportSamples().packed]).toEqual([85, 85, 85, 1]);
+  expect(n).toBe(13);
+  for (const args of [
+    [-1, 1],
+    [1, 1],
+    [0, 0],
+    [0, 4097],
+    [0.5, 2],
+    [0, NaN],
+  ])
+    expect(() =>
+      hemisphereVisibilityDirection(args[0]!, args[1]!, new Vector3()),
+    ).toThrow();
 });

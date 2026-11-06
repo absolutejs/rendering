@@ -61,10 +61,15 @@ const { chromium } = require("playwright"),
             worker.terminate();
             reject(Error("Worker deadline"));
           }, 10000);
+          let payload;
           worker.onmessage = (e) => {
+            if (e.data.mask) {
+              payload = e.data;
+              return;
+            }
             clearTimeout(timer);
             worker.terminate();
-            resolve(e.data);
+            resolve(e.data.error ? e.data : { ...payload, ...e.data });
           };
           worker.onerror = (e) => {
             clearTimeout(timer);
@@ -86,6 +91,15 @@ const { chromium } = require("playwright"),
     );
     assert(!result.error, result.error);
     assert.equal(result.realm, "undefined");
+    assert.equal(result.detachedMaskBytes, 0);
+    assert.equal(result.retainedMaskBytes, 8);
+    assert.equal(result.mask.packed.length, 8);
+    assert.equal(result.mask.state, "complete");
+    assert.equal(result.mask.revision, result.probe.revision);
+    for (let i = 0; i < 32; i++)
+      assert(
+        [1, 2].includes((result.mask.packed[i >> 2] >> ((i & 3) * 2)) & 3),
+      );
     assert.deepEqual(
       result.rows.map((r) => r.status),
       ["occluded", "clear", "budget-exhausted"],

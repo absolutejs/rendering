@@ -72,7 +72,8 @@ ${diffuse}
 }
 
 /** Compose AFTER a leaf lighting hook. The caller declares a GLSL function
- * `float name(vec3 viewSpaceNormal)` before the physical lighting chunk. It owns
+ * `float name(vec3 viewSpaceNormal)` (or vec3 for per-channel attenuation)
+ * before the physical lighting chunk. It owns
  * world-normal transforms, position/height sampling, revisions and the material
  * cache key. Evaluates front/back visibility BEFORE their transmitted diffuse
  * mixture; leaves direct lighting, emissive and specular compensation untouched.

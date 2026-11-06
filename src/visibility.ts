@@ -374,5 +374,8 @@ export class PreparedAlphaVisibility {
   }
 }
 
-export { HemisphereVisibilityProbe } from "./visibilityProbe";
+export {
+  HemisphereVisibilityProbe,
+  hemisphereVisibilityDirection,
+} from "./visibilityProbe";
 export type { VisibilityTrace, VisibilityProbeInput } from "./visibilityProbe";

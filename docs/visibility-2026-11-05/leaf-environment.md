@@ -38,3 +38,15 @@ FOLIAGE_THREE=/home/alexkahn/alex/hello-world/node_modules/three/build/three.mod
 This is the unpublished 0.12.0 candidate. No production dependency adoption,
 release archive qualification, frame-rate result or full-forest visual acceptance
 is implied. No screenshots or tarballs were produced by these checks.
+
+## Colored attenuation follow-up
+
+The supplied visibility function may return `vec3` instead of `float` for separate
+RGB attenuation. The same clamped front/back multiplication supports this without
+changing the hook's shader transformation. Four additional actual-browser controls
+use unequal RGB attenuation on each side at transmission 0, 0.28, 0.5 and 1. Both
+Three versions pass their expected per-channel mixtures and exactly unchanged
+black-material specular controls. The original 32 scalar controls and direct/emissive
+checks are rerun alongside them. See `leaf-colored-environment*.json` for results.
+This is necessary for colored sky fields; a grayscale visibility ratio cannot in
+general preserve the spectral change caused by directional canopy openings.

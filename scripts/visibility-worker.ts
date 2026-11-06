@@ -82,18 +82,27 @@ self.onmessage = async () => {
     cancelled.cancel();
     const bytes = q.ownedBytes;
     q.dispose();
+    const mask = probe.exportSamples();
+    self.postMessage(
+      {
+        mask,
+        rows,
+        probe: probe.snapshot(),
+        single,
+        cancelled: cancelled.snapshot(),
+        deformed,
+        recoveredError,
+        recovered,
+        bytes,
+        releasedBytes: q.ownedBytes,
+        originalIndex: g.index,
+        realm: typeof document,
+      },
+      [mask.packed.buffer],
+    );
     self.postMessage({
-      rows,
-      probe: probe.snapshot(),
-      single,
-      cancelled: cancelled.snapshot(),
-      deformed,
-      recoveredError,
-      recovered,
-      bytes,
-      releasedBytes: q.ownedBytes,
-      originalIndex: g.index,
-      realm: typeof document,
+      detachedMaskBytes: mask.packed.byteLength,
+      retainedMaskBytes: probe.exportSamples().packed.byteLength,
     });
   } catch (error) {
     self.postMessage({ error: String(error) });

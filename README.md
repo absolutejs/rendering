@@ -348,9 +348,17 @@ worker or animation loop is allocated by this string transform.
 
 For directional thin-foliage environment attenuation, compose
 `withLeafEnvironmentVisibility(fragment, 'sampleLeafVisibility')` after a leaf
-lighting hook. Declare `float sampleLeafVisibility(vec3 viewSpaceNormal)` before
+lighting hook. Declare `float sampleLeafVisibility(vec3 viewSpaceNormal)` (or
+return `vec3` for per-channel attenuation) before
 the physical lighting chunk. The callback is evaluated separately for the front
 and back normals before their transmitted diffuse mixture, with results clamped
 to [0,1]. It affects environment diffuse only. The caller owns field coordinates,
 revision checks, lifetime and material program-cache identity. See
 [composition qualification](docs/visibility-2026-11-05/leaf-environment.md).
+
+The optional `/visibility` probe also supports `exportSamples()`: a copied,
+transferable two-bit mask retaining pending, clear, occluded and exhausted ray
+states. Regenerate its directions with `hemisphereVisibilityDirection` to
+reweight changed sky radiance without retracing unchanged geometry. Check the
+revision and completion state before consuming it. See the
+[sample-mask contract](docs/visibility-2026-11-05/sample-mask.md).

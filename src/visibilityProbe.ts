@@ -13,6 +13,28 @@ export type VisibilityProbeInput = {
   budget?: VisibilityBudget;
 };
 
+/** Deterministic equal-solid-angle sample direction used by exported probe masks.
+ * Kept public so sky reweighting need not retain or retrace scene geometry. */
+export function hemisphereVisibilityDirection(
+  index: number,
+  samples: number,
+  target: Vector3,
+): Vector3 {
+  if (
+    !Number.isSafeInteger(samples) ||
+    samples < 1 ||
+    samples > 4096 ||
+    !Number.isSafeInteger(index) ||
+    index < 0 ||
+    index >= samples
+  )
+    throw Error("Invalid hemisphere sample address");
+  const y = (index + 0.5) / samples,
+    angle = index * Math.PI * (3 - Math.sqrt(5)),
+    r = Math.sqrt(1 - y * y);
+  return target.set(Math.cos(angle) * r, y, Math.sin(angle) * r);
+}
+
 /** Incremental upper-world-hemisphere visibility integration. Run bounded steps
  * in a worker, yielding between steps for cancellation. No scheduler is installed.
  * Accessibility is cosine-weighted for an upward horizontal receiver, not an
@@ -24,6 +46,7 @@ export class HemisphereVisibilityProbe {
   private readonly budget: Readonly<Required<VisibilityBudget>>;
   readonly revision: string;
   readonly samples: number;
+  private readonly packed: Uint8Array;
   private cursor = 0;
   private clearWeight = 0;
   private unresolvedWeight = 0;
@@ -79,6 +102,7 @@ export class HemisphereVisibilityProbe {
       budget.maxTriangleTests > 200000
     )
       throw Error("Invalid probe budget");
+    this.packed = new Uint8Array(Math.ceil(this.samples / 4));
     this.budget = Object.freeze(budget);
     this.revision = input.revision;
     this.origin = new Vector3().copy(origin);
@@ -101,11 +125,13 @@ export class HemisphereVisibilityProbe {
     try {
       const end = Math.min(this.samples, this.cursor + maximumRays);
       while (this.cursor < end) {
-        const y = (this.cursor + 0.5) / this.samples,
-          angle = this.cursor * Math.PI * (3 - Math.sqrt(5)),
-          r = Math.sqrt(1 - y * y);
+        const y = (this.cursor + 0.5) / this.samples;
         this.ray.origin.copy(this.origin);
-        this.ray.direction.set(Math.cos(angle) * r, y, Math.sin(angle) * r);
+        hemisphereVisibilityDirection(
+          this.cursor,
+          this.samples,
+          this.ray.direction,
+        );
         const result = this.trace!(this.ray, this.budget);
         if (
           !result ||
@@ -126,6 +152,10 @@ export class HemisphereVisibilityProbe {
           this.unresolvedWeight += y;
           this.unresolved++;
         }
+        const code =
+          result.status === "clear" ? 1 : result.status === "occluded" ? 2 : 3;
+        this.packed[this.cursor >> 2] =
+          this.packed[this.cursor >> 2]! | (code << ((this.cursor & 3) * 2));
         this.cursor++;
       }
       if (this.cursor === this.samples) this.trace = null;
@@ -162,6 +192,22 @@ export class HemisphereVisibilityProbe {
       boundsTests: this.boundsTests,
       triangleTests: this.triangleTests,
       alphaTests: this.alphaTests,
+    };
+  }
+
+  /** Owned transferable COPY: low-to-high two-bit sample codes in each byte.
+   * 0=pending, 1=clear, 2=occluded, 3=budget-exhausted. Never interpret 0/3
+   * as clear. Tail bits are zero. Revision/state must be checked by consumers.
+   * Directions are regenerated with hemisphereVisibilityDirection, not stored.
+   * Each sample has solid angle 2*pi/samples. This retains no scene callback. */
+  exportSamples() {
+    return {
+      distribution: "upper-fibonacci-1" as const,
+      revision: this.revision,
+      state: this.snapshot().state,
+      samples: this.samples,
+      processed: this.cursor,
+      packed: this.packed.slice(),
     };
   }
 

@@ -73,6 +73,7 @@ const identity = ext
       fieldHook = false,
       visibility?: [number, number],
       withoutEnvironment = false,
+      visibilityRGB?: [number, number, number, number, number, number],
     ) => {
       const material = fieldHook
         ? new MeshStandardMaterial({
@@ -112,6 +113,16 @@ const identity = ext
             withLeafEnvironmentVisibility(
               shader.fragmentShader,
               "testLeafVisibility",
+            );
+        }
+        if (visibilityRGB) {
+          shader.uniforms.testFront = { value: visibilityRGB.slice(0, 3) };
+          shader.uniforms.testBack = { value: visibilityRGB.slice(3, 6) };
+          shader.fragmentShader =
+            "uniform vec3 testFront;uniform vec3 testBack;\nvec3 testColorVisibility(vec3 normal) {return normal.z >= 0. ? testFront : testBack;}\n" +
+            withLeafEnvironmentVisibility(
+              shader.fragmentShader,
+              "testColorVisibility",
             );
         }
         dfg = shader.uniforms.dfgLUT;
@@ -203,6 +214,45 @@ const identity = ext
       throw Error(
         "Directional visibility mismatch: " + JSON.stringify(visibilityRows),
       );
+    const coloredRows = [];
+    for (const t of [0, 0.28, 0.5, 1]) {
+      const visibility: [number, number, number, number, number, number] = [
+        0.1, 0.6, 0.9, 0.8, 0.3, 0.2,
+      ];
+      const value = render(
+          t,
+          false,
+          false,
+          false,
+          undefined,
+          false,
+          visibility,
+        ),
+        black = render(t, true, false, false, undefined, false, visibility);
+      let maxError = 0,
+        maxSpecularError = 0;
+      for (let i = 0; i < value.length; i++)
+        if (i % 4 !== 3) {
+          const c = i % 4,
+            expected =
+              sa[i]! +
+              (a[i]! - sa[i]!) * (1 - t) * visibility[c]! +
+              (b[i]! - sb[i]!) * t * visibility[c + 3]!;
+          maxError = Math.max(maxError, Math.abs(value[i]! - expected));
+          maxSpecularError = Math.max(
+            maxSpecularError,
+            Math.abs(black[i]! - sa[i]!),
+          );
+        }
+      if (maxError > 2e-5 || maxSpecularError !== 0)
+        throw Error("Colored visibility mismatch");
+      coloredRows.push({
+        transmission: t,
+        visibility,
+        maxError,
+        maxSpecularError,
+      });
+    }
     let maxDirectEmissiveError = 0;
     for (const t of [0, 0.28, 0.5, 1]) {
       const baseline = render(t, false, false, false, undefined, true),
@@ -241,6 +291,7 @@ const identity = ext
     return {
       rows,
       visibilityRows,
+      coloredRows,
       maxDirectEmissiveError,
       contrast,
       retainedRendererDFGLUT,
